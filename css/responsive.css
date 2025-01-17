@@ -1,6 +1,6 @@
 
 /* Tablet Screen */
-@media only screen and (min-width: 1022px)  { /* main max-width: 991px */
+@media only screen and (min-width: 1024px)  { /* main max-width: 991px */
 /* }
 @media only screen and (min-width: 768px) and (max-width: 991px) { */
 	/* Header Sticky */
@@ -353,26 +353,10 @@
 	.doctor-calendar-table table tbody tr td span.time {
 		font-size: 14px;
 	}
-	.footer .single-footer {
-		margin: 20px 0;
-	}
-	.footer .single-footer h2 {
-		padding-bottom: 20px;
-	}
-	.footer .footer-top {
-		padding: 65px 0px;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	}
-	/* Mobile Screen */
-	@media only screen and (max-width: 767px) {
+}
+
+/* Mobile Screen */
+@media only screen and (max-width: 1024px) {
 	.header.sticky{
 		
 	}
@@ -1009,31 +993,9 @@
 	.doctor-calendar-table table tbody tr td span.time {
 		font-size: 14px;
 	}
-	.footer .single-footer {
-		margin: 15px 0;
-	}
-	.footer .single-footer h2 {
-		padding-bottom: 20px;
-		margin-bottom: 20px;
-	}
-	.footer .footer-top {
-		padding: 50px 0px 60px 0;
-	}
-	.footer .single-footer.f-link ul {
-		margin-bottom: 12px;
-	}
-	.footer .single-footer.f-link ul li a{
-		display:inline-block;
-	}
-	.footer .copyright {
-		padding: 20px 0;
-	}
-	
-	
-	}
-	/* Mobile Screen */
-	@media only screen and (max-width: 450px) {
-	
+}
+/* Mobile Screen */
+@media only screen and (max-width: 1024px) {
 	
 	.section{
 		padding:50px 0px;
@@ -1114,27 +1076,6 @@
 	}
 	.slider .owl-carousel .owl-nav {
 		display:none;
-	}
-	.Feautes .single-features .signle-icon i {
-		font-size: 42px;
-		left: 50%;
-		margin-left: -40px;
-		height:80px;
-		width: 80px;
-		line-height: 80px;
-	}
-	.Feautes .single-features::before {
-		display:none;
-	}
-	.Feautes .single-features {
-		text-align: center;
-		position: relative;
-		padding:0px;
-		margin: 15px 0;
-	}
-	.Feautes .single-features h3 {
-		padding-top: 105px;
-		font-size: 20px;
 	}
 	.fun-facts.section{
 		padding:70px 0;
@@ -1294,19 +1235,4 @@
 		padding:0;
 		padding:0px 20px;
 	}
-	.footer .single-footer {
-		margin: 20px 0;
-	}
-	.footer .single-footer h2 {
-		padding-bottom: 20px;
-	}
-	.footer .footer-top {
-		padding: 65px 0px;
-	}
-	
-	
-	
-	
-	
-	
-	}
+}

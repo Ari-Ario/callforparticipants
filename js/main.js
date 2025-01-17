@@ -144,34 +144,6 @@ loadFooter();
 			}
 		});
 		
-		/*===============================
-			Portfolio Slider JS
-		=================================*/ 
-		$('.portfolio-slider').owlCarousel({
-			autoplay:true,
-			autoplayTimeout:4000,
-			margin:15,
-			smartSpeed:300,
-			autoplayHoverPause:true,
-			loop:true,
-			nav:true,
-			dots:false,
-			responsive:{
-				300: {
-					items:1,
-				},
-				480: {
-					items:2,
-				},
-				768: {
-					items:2,
-				},
-				1170: {
-					items:4,
-				},
-			}
-		});
-		
 		/*=====================================
 			Counter Up JS
 		======================================*/
@@ -207,22 +179,6 @@ loadFooter();
 					items:5,
 				},
 			}
-		});
-		
-		/*====================================
-			Single Portfolio Slider JS
-		======================================*/ 
-		$('.pf-details-slider').owlCarousel({
-			items:1,
-			autoplay:false,
-			autoplayTimeout:5000,
-			smartSpeed: 400,
-			autoplayHoverPause:true,
-			loop:true,
-			merge:true,
-			nav:true,
-			dots:false,
-			navText: ['<i class="icofont-rounded-left"></i>', '<i class="icofont-rounded-right"></i>'],
 		});
 		
 		/*===================
@@ -277,13 +233,7 @@ loadFooter();
 			$('.sidebar-menu').removeClass('active');
 		});
 		
-		/*=====================
-			Video Popup JS
-		=======================*/ 
-		$('.video-popup').magnificPopup({
-			type: 'video',	
-		});
-		
+
 		/*================
 			Wow JS
 		==================*/		
@@ -302,16 +252,6 @@ loadFooter();
 			animation: 'fade'
 		}); 
 
-		/*=======================
-			Animate Scroll JS
-		=========================*/
-		$('.scroll').on("click", function (e) {
-			var anchor = $(this);
-				$('html, body').stop().animate({
-					scrollTop: $(anchor.attr('href')).offset().top - 100
-				}, 1000);
-			e.preventDefault();
-		});
 		
 		/*=======================
 			Stellar JS
