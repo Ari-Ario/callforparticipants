@@ -15,13 +15,12 @@
 ===============================*/
 body{
     font-family: 'Poppins', sans-serif;
-	background-image: url('img/slider.jpg');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
 	font-weight: 400;
 	font-size:14px;
-	color:#888;
+	/* color:#888; */
 }
 /*=============================
 	End Global CSS 
@@ -31,20 +30,27 @@ body{
 	Start Header CSS 
 =====================*/
 .header{
-	background-color:#fff;
+	background-color:#ffffff00;
 	position:relative;
+	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .header .header-inner {
-	background:#fff;
 	z-index:999;
 	width:100%;
+	height: 80px;
 }
 .header .logo {
 	float: left;
-	margin-top: 18px;
+}
+.header .logo span{
+	background-color: #8DF4F0;
+}
+.header .nav li .button .btn{
+	background-color: #7E22FF;
+	max-height: 50px;
 }
 .header .nav li{
-	margin-right: 15px;
+	margin-right: 10px;
     float: left;
 	position:relative;
 }
@@ -52,7 +58,7 @@ body{
 	margin:0;
 }
 .header .nav li a {
-	color: #2C2D3F;
+	color: #2d006d;
 	font-size: 14px;
 	font-weight: 500;
 	text-transform: capitalize;
@@ -68,7 +74,7 @@ body{
 	bottom: 0;
 	height: 3px;
 	width:0%;
-	background: #1A76D1;
+	background: #7E22FF;
 	border-radius: 5px 5px 0 0;
 	opacity:0;
 	visibility:hidden;
@@ -82,21 +88,29 @@ body{
 	width: 100%;
 }
 .header .nav li.active a{
-	color:#1A76D1;
+	color:#7E22FF;
 }
 .header .nav li:hover a:before{
 	opacity:1;
 	width: 100%;
 	visibility:visible;
 }
+.header .nav li .dropdown li a:before{
+	display:none;
+}
+.header .search-top.active .search i:before{
+	content:"\eee1";
+	font-size:15px;
+}
 .header .nav li:hover a{
-	color:#ffffff;
+	color:#7E22FF;
 }
 .header .nav li a i {
 	display: inline-block;
 	margin-left: 1px;
 	font-size: 13px;
 }
+
 /* Header Sticky */
 .header.sticky .header-inner{
 	position:fixed;
@@ -127,7 +141,6 @@ body{
 	margin-top:120px;
 }
 .slider .single-slider h1 {
-	color: #2C2D3F;
 	font-size: 38px;
 	font-weight: 700;
 	margin: 0;
@@ -135,10 +148,9 @@ body{
 	line-height: 42px;
 }
 .slider .single-slider h1 span{
-	color:#1a76d1;
+	color: #7E22FF;
 }
 .slider .single-slider p {
-	color: #2C2D3F;
 	margin-top: 27px;
 	font-weight: 400;
 }
@@ -147,7 +159,7 @@ body{
 }
 .slider .single-slider .btn{
 	color:#fff;
-	background:#1a76d1;
+	background:#7E22FF;
 	font-weight:500;
 	display:inline-block;
 	margin:0;
@@ -164,22 +176,25 @@ body{
 # Stats Section
 ===============================*/
 .stats .stats-item {
-	background-color: var(--surface-color);
-	box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+	/* background-color: var(--surface-color); */
+	/* box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1); */
 	padding: 20px;
 }
 .stats .stats-item i {
-	color: var(--accent-color);
+	/* color: var(--accent-color); */
 	font-size: 42px;
 	line-height: 0;
 	margin-right: 20px;
 }
 .stats .stats-item span {
-	color: var(--heading-color);
+	/* color: var(--heading-color); */
 	font-size: 36px;
-	display: block;
+	display: flex;
+	align-items: center;
 	font-weight: 600;
+	background-color: #8DF4F0;
 }
+
 .stats .stats-item p {
 	padding: 0;
 	margin: 0;
@@ -194,26 +209,14 @@ body{
 	Start Footer CSS
 ===========================*/
 .footer{
-	position: fixed; bottom: 0;
-	width: 100%; background-color: #f1f1f1;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: #f1f1f100;
 	padding: 10px 0;
 	text-align: center;
 }
-.footer .copyright{
-	background:#1A76D1;
-	padding:25px 0px 25px 0px;
-	text-align:center;
-}
-.footer .copyright .copyright-content p{
-	color:#fff;
-}
-.footer .copyright .copyright-content p a{
-	color:#fff;
-	font-weight:400;
-	text-decoration:underline;
-	display:inline-block;
-	margin-left:4px;
-}
+
 /*=========================
 	End Footer CSS
 ===========================*/
