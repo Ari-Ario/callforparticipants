@@ -1,28 +1,19 @@
 
-  
-:root { 
-    --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-    --default-color: #212529; /* Default color used for the majority of the text content across the entire website */
-    --heading-color: #2d465e; /* Color for headings, subheadings and title throughout the website */
-    --accent-color: #F5F3FF; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-    --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-    --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
-}
-  
   /* Smooth scroll */
 :root {
     scroll-behavior: smooth;
 }
 
-
 /*==========================
 # Pricing Section
 ==========================*/
-
+.header .header-inner {
+	background:#fff;
+}
 .pricing .pricing-card {
     height: 100%;
     padding: 2rem;
-    background: var(--surface-color);
+    background: #ffffff;
     border: #7E22FF 1px solid;
     /* border-radius: 1rem; */
     transition: all 0.3s ease;
@@ -97,7 +88,7 @@
   }
   
   .pricing .pricing-card .features-list li i {
-    color: var(--accent-color);
+    color: #F5F3FF;
     margin-right: 0.75rem;
     font-size: 1.25rem;
   }
@@ -116,11 +107,136 @@
   .pricing .pricing-card .btn.btn-primary {
     background: #7E22FF;
     border: none;
-    color: var(--contrast-color);
+    color: #ffffff;
   }
+
+  /* Pricing Controls */
+.pricing .btn-outline-primary {
+  border: 2px solid #7E22FF;
+  color: #7E22FF;
+  border-radius: 30px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+}
+
+.pricing .btn-outline-primary.active {
+  background-color: #7E22FF;
+  color: #fff;
+}
+
+.pricing .form-select {
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* Popular Badge */
+.pricing .popular-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #7E22FF;
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  border-radius: 30px;
+}
+
+/* Details Toggle */
+.pricing .details-toggle {
+  font-size: 0.9rem;
+  color: #7E22FF;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  text-decoration: none;
+}
+
+.pricing .details-toggle i {
+  font-size: 0.8rem;
+  transition: transform 0.3s;
+}
+
+.pricing .details-toggle.open i {
+  transform: rotate(180deg);
+}
+
   /* a:visited {
 	color: white;
 } */
+
+/* Table Styles */
+.table {
+  margin: 2rem 0;
+  color: #333;
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.table th {
+  background: #f9f9f9;
+  color: #555;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.table tbody tr:nth-child(even) {
+  background: #f4f4f4;
+}
+
+.table tbody tr:hover {
+  background: #ececec;
+}
+
+.table td:first-child {
+  text-align: left;
+  font-weight: 500;
+}
+
+.table .btn-primary {
+  background-color: #7E22FF;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s;
+}
+
+.table .btn-primary:hover {
+  background-color: #5917b3;
+}
+
+.table .btn-outline-primary {
+  color: #7E22FF;
+  border: 1px solid #7E22FF;
+  background: transparent;
+  padding: 0.5rem 1rem;
+}
+
+.table .btn-outline-primary:hover {
+  background-color: #7E22FF;
+  color: white;
+}
+
+.table td i {
+  color: #7E22FF;
+  font-size: 1.25rem;
+}
+
+.table .fw-bold {
+  font-weight: 700;
+  color: #000;
+}
+
   
 /* Mobile Screen */
 @media only screen and (max-width: 912px) {

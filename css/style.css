@@ -34,8 +34,6 @@ body{
 	width: 100vw;
 }
 .header .header-inner {
-	background:#fff;
-
 	z-index:999;
 	width:100%;
 	height: 80px;

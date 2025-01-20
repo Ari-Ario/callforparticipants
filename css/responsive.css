@@ -1,6 +1,6 @@
 
 /* Tablet Screen */
-@media only screen and (min-width: 1330px)  { /* main max-width: 991px */
+@media only screen and (min-width: 1357px)  { /* main max-width: 991px */
 
 		/* Header Sticky */
 
@@ -85,7 +85,7 @@
 	}
 	
 	/* Mobile Screen */
-	@media only screen and (max-width: 1330px) {
+	@media only screen and (max-width: 1357px) {
 		.header.sticky{
 			
 		}
