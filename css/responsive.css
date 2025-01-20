@@ -47,7 +47,9 @@
 			padding: 10px 15px;
 			font-size: 13px;
 		}
-
+		.header .nav li:nth-child(6) {
+			padding: 20px;
+		}
 		.slider .single-slider {
 			height: 380px;
 		}
@@ -141,7 +143,6 @@
 		}
 		.slicknav_nav {
 			clear: both;
-			/* color: #2C2D3F; */
 			margin: 0;
 			font-size: .875em;
 			background: #fff;
