@@ -72,7 +72,6 @@
   
   .pricing .pricing-card .price .period {
     font-size: 1rem;
-    color: color-mix(in srgb, var(--default-color), transparent 40%);
   }
   
   .pricing .pricing-card .description {
@@ -111,14 +110,17 @@
     justify-content: center;
     gap: 0.5rem;
     font-weight: 500;
-    border-radius: 50px;
+    border-radius: 5px;
   }
   
   .pricing .pricing-card .btn.btn-primary {
-    background: var(--accent-color);
+    background: #7E22FF;
     border: none;
     color: var(--contrast-color);
   }
+  /* a:visited {
+	color: white;
+} */
   
 /* Mobile Screen */
 @media only screen and (max-width: 912px) {
