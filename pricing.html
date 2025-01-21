@@ -14,7 +14,8 @@
 		
 		<!-- Favicon -->
         <link rel="icon" href="img/favicon.png">
-		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 		<!-- Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
@@ -106,62 +107,77 @@
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
                 <h2>Get the ideal pricing plan for your studies</h2>
-                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-            </div><!-- End Section Title -->
+                <!-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> -->
+            </div>
+            <!-- End Section Title -->
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
                 
                 <!-- Pricing Controls -->
                 <div class="d-flex justify-content-center mb-4">
-                    <button class="btn btn-outline-primary active">Single Call</button>
-                    <button class="btn btn-outline-primary">Volume License</button>
+                    <div class="col">
+                        <div class="switch6" style="">
+                            <label class="switch6-light" onclick="">
+                                    <input type="checkbox" >
+                                    <span>
+                                        <span>Single Call</span>
+                                        <span>Volume License</span>
+                                    </span>
+                                    <a class="btn btn-primary"></a>
+                            </label>
+                        </div>
+                    </div>
+
                     <select class="form-select w-auto ms-2">
                         <option value="euro" selected>Euro</option>
                         <option value="usd">USD</option>
                     </select>
                 </div>
+                <!-- End Pricing Controls -->
 
                 <div class="row g-4 justify-content-center">
-                    <!-- &#10003;	 -->
                     <!-- Basic Academic -->
                     <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="pricing-card">
                             <h3>Basic Academic</h3>
                             <div class="price">
-                                <span class="currency">Free</span>
+                                <span class="currency">Free call</span>
                             </div>
                             <p>max. 10 participants<br>2 Months laufzeit</p>
-                            <a href="#" class="btn btn-primary">
-                                Chose Basic
-                            </a>
+                            <button class="btn btn-outline-primary">Choose Basic
+                                <a href="#" >
+                                </a>
+                            </button>
                             <ul class="features-list">
-                                <li>Direct contact only</li>
-                                <li>Basic participant verification</li>
-                                <li>No geofence</li>
-                                <li>Minimum reviews</li>
-                                <li>Only sent to matching participants</li>
+                                <li>&#x2022; Direct contact only</li>
+                                <li>&#x2022; Basic participant verification</li>
+                                <li>&#x2022; No geofence</li>
+                                <li>&#x2022; Minimum reviews</li>
+                                <li>&#x2022; Only sent to matching participants</li>
                             </ul>
-                            <a href="#" class="details-toggle">more details <i class="bi bi-chevron-down"></i></a>
+                            <a href="#" class="details-toggle">more details &#x2304; <i class="bi bi-chevron-down"></i></a>
                         </div>
                     </div>
 
                     <!-- Advanced Academic -->
                     <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="pricing-card popular">
-                            <div class="popular-badge">Popular</div>
+                            <div class="popular-badge"></div>
                             <h3>Advanced Academic</h3>
                             <div class="price">
-                                <span class="currency">€</span>
                                 <span class="amount">150</span>
+                                <span class="currency">€</span>
                                 <span class="period">/ mtl.</span>
                             </div>
                             <p>unlimited participants<br>50€ per call</p>
                             <div class="d-flex mb-2">
-                                <select class="form-select me-2">
+                                <select class="form-select form-select-inner me-2">
                                     <option selected>10 calls</option>
                                     <option>20 calls</option>
                                 </select>
-                                <select class="form-select">
+                            </div>
+                            <div class="d-flex mb-2">
+                                <select class="form-select form-select-inner">
                                     <option selected>contract period 6 month</option>
                                     <option>contract period 12 month</option>
                                 </select>
@@ -170,13 +186,13 @@
                                 Chose Advanced
                             </a>
                             <ul class="features-list">
-                                <li>Direct contact + automatic instructions</li>
-                                <li>Advanced participant verification</li>
-                                <li>Geofence available</li>
-                                <li>Minimum reviews</li>
-                                <li>Send to matching participants and participants at the same organisation or in the same region as the organisation</li>
+                                <li>&#x2022; Direct contact + automatic instructions</li>
+                                <li>&#x2022; Advanced participant verification</li>
+                                <li>&#x2022; Geofence available</li>
+                                <li>&#x2022; Minimum reviews</li>
+                                <li>&#x2022; Send to matching participants and participants at the same organisation or in the same region as the organisation</li>
                             </ul>
-                            <a href="#" class="details-toggle">more details <i class="bi bi-chevron-down"></i></a>
+                            <a href="#" class="details-toggle">more details &#x2304; <i class="bi bi-chevron-down"></i></a>
                         </div>
                     </div>
 
@@ -185,17 +201,19 @@
                         <div class="pricing-card">
                             <h3>Commercial</h3>
                             <div class="price">
-                                <span class="currency">€</span>
                                 <span class="amount">350</span>
+                                <span class="currency">€</span>
                                 <span class="period">/ mtl.</span>
                             </div>
                             <p>unlimited participants<br>84€ per call</p>
                             <div class="d-flex mb-2">
-                                <select class="form-select me-2">
+                                <select class="form-select form-select-inner me-2">
                                     <option selected>50 calls</option>
                                     <option>100 calls</option>
                                 </select>
-                                <select class="form-select">
+                            </div>
+                            <div class="d-flex mb-2">
+                                <select class="form-select form-select-inner">
                                     <option selected>contract period 12 month</option>
                                     <option>contract period 24 month</option>
                                 </select>
@@ -204,13 +222,13 @@
                                 Chose Commercial
                             </a>
                             <ul class="features-list">
-                                <li>&#10003;	Direct contact + automatic instructions</li>
-                                <li>Advanced participant verification</li>
-                                <li>Geofence available</li>
-                                <li>Minimum reviews</li>
-                                <li>Send to matching participants and participants at the same organisation or in the same region as the organisation</li>
+                                <li>&#x2022;	Direct contact + automatic instructions</li>
+                                <li>&#x2022; Advanced participant verification</li>
+                                <li>&#x2022; Geofence available</li>
+                                <li>&#x2022; Minimum reviews</li>
+                                <li>&#x2022; Send to matching participants and participants at the same organisation or in the same region as the organisation</li>
                             </ul>
-                            <a href="#" class="details-toggle">more details <i class="bi bi-chevron-down"></i></a>
+                            <a href="#" class="details-toggle">more details &#x2304; <i class="bi bi-chevron-down"></i></a>
                         </div>
                     </div>
 
@@ -221,72 +239,114 @@
         </section>
         <!-- /Pricing Section -->
 
-        <!-- Compare-table of Section -->
+        <!-- Compare-table Section -->
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="table-responsive">
-                <table class="table table-striped text-center border-light">
-                    <thead class="border-light">
+                <table class="table text-center">
+                    <thead class="">
                         <tr>
                             <th scope="col"></th>
                             <th scope="col"><strong>Basic Academic</strong></th>
                             <th scope="col"><strong>Advanced Academic</strong></th>
                             <th scope="col"><strong>Commercial</strong></th>
                         </tr>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Free for 10 participants</th>
+                            <th scope="col">From 50€ for unlimited participants</th>
+                            <th scope="col">From 100€ for unlimited participants</th>
+                        </tr>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col"><button class="btn btn-outline-primary">Choose Basic <a href=""></a></button></th>
+                            <th scope="col"><button class="btn btn-primary">Choose Advanced <a href=""></a></button></th>
+                            <th scope="col"><button class="btn btn-outline-primary">Choose Commercial <a href=""></a></button></th>
+                        </tr>
+                        <tr>
+                            <th scope="col" class="row"> <strong>Conditions </strong>  </th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">Contract type</th>
+                            <th scope="row" class="row-table">Contract type  <i class="fa fa-question-circle" style="font-size:24px; opacity: 50%;"></i></th>
                             <td>Single call</td>
                             <td>Single call / Volume license</td>
                             <td>Single call / Volume license</td>
                         </tr>
                         <tr>
-                            <th scope="row">Contract period</th>
+                            <th scope="row" class="row-table">Contract period <i class="fa fa-question-circle" style="font-size:24px; opacity: 50%;"></i></th>
                             <td>-</td>
                             <td>3/6/12 months</td>
                             <td>3/6/12 months</td>
                         </tr>
                         <tr>
-                            <th scope="row">Payment period</th>
+                            <th scope="row" class="row-table">Payment period <i class="fa fa-question-circle" style="font-size:24px; opacity: 50%;"></i></th>
                             <td>One-off payment</td>
                             <td>Monthly/Annually</td>
                             <td>Monthly/Annually</td>
                         </tr>
                         <tr>
-                            <th scope="row">Call term/duration</th>
+                            <th scope="row" class="row-table">Call term/duration<i class="fa fa-question-circle" style="font-size:24px; opacity: 50%;"></i></th>
                             <td>2 months</td>
                             <td>6 months</td>
                             <td>1 month</td>
                         </tr>
                         <tr>
-                            <th scope="row">Number of participants</th>
+                            <th scope="row" class="row-table">Number of participants</th>
                             <td>10</td>
                             <td>Unlimited</td>
                             <td>Unlimited</td>
                         </tr>
                         <tr>
-                            <th scope="row">Studies per month</th>
+                            <th scope="row" class="row-table">Studies per month</th>
                             <td>1 study</td>
                             <td>1 study</td>
                             <td>1 study</td>
                         </tr>
                         <tr>
-                            <th scope="row">Feature</th>
+                            <th scope="row" class="row-table">Condition XY</th>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="row-table"> <strong>Feature</strong> </th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="row-table">Feature</th>
                             <td>&#10003;</td>
                             <td>&#10003;</td>
                             <td>&#10003;</td>
                         </tr>
                         <tr>
+                            <th scope="row" class="row-table">Feature</th>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="row-table">Feature</th>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                        </tr>
+                        <!-- <tr>
                             <th scope="row"></th>
                             <td class="fw-bold">Free</td>
                             <td class="fw-bold">€150/mo</td>
                             <td class="fw-bold">€350/mo</td>
-                        </tr>
+                        </tr> -->
                         <tr>
                             <th></th>
-                            <th><button class="btn btn-outline-primary">Choose Basic</button></th>
-                            <th><button class="btn btn-primary">Choose Advanced</button></th>
-                            <th><button class="btn btn-primary">Choose Commercial</button></th>
+                            <th><button class="btn btn-outline-primary">Choose Basic <a href=""></a></button></th>
+                            <th><button class="btn btn-primary">Choose Advanced <a href=""></a></button></th>
+                            <th><button class="btn btn-outline-primary">Choose Commercial <a href=""></a></button></th>
                         </tr>
                     </tbody>
                 </table>

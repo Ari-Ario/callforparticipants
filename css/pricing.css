@@ -15,7 +15,6 @@
     padding: 2rem;
     background: #ffffff;
     border: #7E22FF 1px solid;
-    /* border-radius: 1rem; */
     transition: all 0.3s ease;
     position: relative;
   }
@@ -29,8 +28,6 @@
     position: sticky;
     margin-top: -34px;
     margin-left: -32px;
-    /* left: 50%; */
-    /* transform: translateX(-50%); */
     width: 123%;
     background: #7E22FF;
     padding: 0.5rem 1rem;
@@ -48,16 +45,11 @@
     text-align: center;
   }
   
-  .pricing .pricing-card .price .currency {
+  .pricing .pricing-card .price .currency,
+  .pricing .pricing-card .price .amount {
     font-size: 1.5rem;
     font-weight: 600;
     vertical-align: top;
-    line-height: 1;
-  }
-  
-  .pricing .pricing-card .price .amount {
-    font-size: 3.5rem;
-    font-weight: 700;
     line-height: 1;
   }
   
@@ -79,6 +71,7 @@
     list-style: none;
     padding: 0;
     margin: 0 0 2rem 0;
+    margin-top: 10px;
   }
   
   .pricing .pricing-card .features-list li {
@@ -92,43 +85,92 @@
     margin-right: 0.75rem;
     font-size: 1.25rem;
   }
-  
+
+/* all buttons */
   .pricing .pricing-card .btn {
+    margin-top: 10px;
+  }
+  .pricing .pricing-card .btn,
+  .table .btn-primary {
     width: 100%;
-    padding: 0.75rem 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    font-weight: 500;
-    border-radius: 5px;
+    background-color: #7E22FF;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+  }
+  .pricing .pricing-card .btn-outline-primary:hover,
+  .table .btn-outline-primary:hover {
+    background-color: #5917b3;
+    color: white;
+  }
+
+  .pricing .pricing-card .btn ,
+  .table .btn-outline-primary {
+    width: 100%;
+    color: #7E22FF;
+    border: 1px solid #7E22FF;
+    background: transparent;
+    padding: 0.5rem 1rem;
+  }
+  .pricing .pricing-card .btn.btn-primary,
+  .table .btn-outline-primary:hover {
+    background-color: #7E22FF;
+    color: white;
   }
   
-  .pricing .pricing-card .btn.btn-primary {
+  /* .pricing .pricing-card .btn {
+    width: 100%;
+    background-color: #7E22FF;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+  } */
+  
+  /* .pricing .pricing-card .btn.btn-primary {
     background: #7E22FF;
     border: none;
     color: #ffffff;
-  }
+  } */
 
-  /* Pricing Controls */
-.pricing .btn-outline-primary {
-  border: 2px solid #7E22FF;
-  color: #7E22FF;
-  border-radius: 30px;
-  padding: 0.5rem 1.5rem;
-  font-weight: 500;
+/* Pricing Controls */
+.switch6 {  max-width: 24em;  margin: 0 auto; border: 1px solid #cccccc9f; border-radius: 5px; }
+.switch6-light > span, .switch-toggle > span {  color: #000000; }
+.switch6-light span span, .switch6-light label, .switch-toggle span span, .switch-toggle label {  color: #2b2b2b; text-align: center; }
+
+.switch-toggle a, 
+.switch6-light span span { display: none; }
+
+.switch6-light { display: block; height: 40px; text-align: center; position: relative; overflow: visible; padding: 0px; margin-left:0px; margin: 0; }
+.switch6-light * { box-sizing: border-box; }
+.switch6-light a { display: block; transition: all 0.3s ease-out 0s; }
+
+.switch6-light label, 
+.switch6-light > span { line-height: 30px; vertical-align: middle;}
+
+.switch6-light label {font-weight: 700; margin-bottom: px; max-width: 100%;}
+
+.switch6-light input:focus ~ a, .switch6-light input:focus + label { outline: 1px dotted rgb(136, 136, 136); height: 100%; }
+.switch6-light input { position: absolute; opacity: 0; z-index: 5; }
+.switch6-light input:checked ~ a { right: 0%; }
+.switch6-light > span { position: absolute; left: -100px; width: 100%; height: 100%; margin: 0px;  padding-right: 100px; text-align: left; }
+.switch6-light > span span { position: absolute; top: 0px; padding-top: 4px;  height: 100%; left: 0px; z-index: 5; display: block; width: 50%; margin-left: 100px; text-align: center; }
+.switch6-light > span span:last-child { left: 50%; }
+.switch6-light a { position: absolute; right: 50%; top: 0px; z-index: 4; display: block; width: 50%; height: 100%; padding: 0px; }
+
+.pricing p {
+  text-align: center
 }
-
-.pricing .btn-outline-primary.active {
-  background-color: #7E22FF;
-  color: #fff;
-}
-
 .pricing .form-select {
-  border-radius: 30px;
-  border: 1px solid #ccc;
+  border-radius: 5px;
+  border: 1px solid #cccccc9f;
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
+}
+.pricing .form-select-inner {
+  width: 100%;
+  margin-top: 10px;
 }
 
 /* Popular Badge */
@@ -140,7 +182,7 @@
   color: #fff;
   padding: 0.25rem 0.75rem;
   font-size: 0.8rem;
-  border-radius: 30px;
+  margin-bottom: 16px;
 }
 
 /* Details Toggle */
@@ -162,20 +204,22 @@
   transform: rotate(180deg);
 }
 
-  /* a:visited {
-	color: white;
-} */
 
 /* Table Styles */
 .table {
+  table-layout: fixed;
   margin: 2rem 0;
-  color: #333;
+  color: #000000;
   border-collapse: separate;
   border-spacing: 0;
   width: 100%;
 }
 
-.table th, .table td {
+.table thead th {
+  border-bottom: none;
+}
+.table th, .table td, .table tr {
+  border: none;
   vertical-align: middle;
   padding: 1rem;
   font-size: 1rem;
@@ -183,15 +227,15 @@
   text-align: center;
 }
 
-.table th {
-  background: #f9f9f9;
-  color: #555;
-  font-weight: 600;
-  text-transform: uppercase;
+.row-table {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.table tbody tr:nth-child(even) {
-  background: #f4f4f4;
+.row-table i {
+  margin-left: auto; 
 }
 
 .table tbody tr:hover {
@@ -203,48 +247,53 @@
   font-weight: 500;
 }
 
-.table .btn-primary {
-  background-color: #7E22FF;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  transition: background-color 0.3s;
-}
-
-.table .btn-primary:hover {
-  background-color: #5917b3;
-}
-
-.table .btn-outline-primary {
-  color: #7E22FF;
-  border: 1px solid #7E22FF;
-  background: transparent;
-  padding: 0.5rem 1rem;
-}
-
-.table .btn-outline-primary:hover {
-  background-color: #7E22FF;
-  color: white;
-}
-
-.table td i {
-  color: #7E22FF;
-  font-size: 1.25rem;
-}
-
 .table .fw-bold {
   font-weight: 700;
   color: #000;
 }
 
-  
+.fa {
+  margin-right: 10px;
+}
+
+/* Vertical lines between columns */
+.table th, .table td {
+  border-left: 1px solid #00000059; 
+}
+
+/* Remove extra borders on the first and last columns */
+.table th:first-child, .table td:first-child {
+  border-left: none;
+}
+.table th:last-child, .table td:last-child {
+  border-right: none;
+}
+
+/* Horizontal line under "Conditions" row */
+.table thead tr:nth-child(4) th, .table thead tr:nth-child(4) td {
+  border-bottom: 2px solid #00000059; 
+}
+
+/* Horizontal line above "Feature" row */
+.table tbody tr:nth-child(9) th, .table tbody tr:nth-child(9) td {
+  border-top: 2px solid #00000059; 
+}
+
+/* Horizontal line above "Feature" row in thead */
+.table thead tr:nth-child(4) th, .table thead tr:nth-child(4) td {
+  border-bottom: 2px solid #00000059; 
+}
+
 /* Mobile Screen */
 @media only screen and (max-width: 912px) {
     .pricing .section-title {
         padding: 0;
         width: 100%;
     }
-    .pricing .pricing-card {
-        margin: 10px;
+    .pricing-card {
+      margin-top: 10px;
+    }
+    .table {
+      table-layout: auto;
     }
 }
