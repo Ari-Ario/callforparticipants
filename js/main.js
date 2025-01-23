@@ -288,14 +288,14 @@ loadFooter();
 		$('.preloader').addClass('preloader-deactivate');
 	});
 
-	  /**
-   * Initiate Pure Counter
-   */
+	  /*====================
+	  * Initiate Pure Counter
+	======================*/
 	  new PureCounter();
 
-	  /**
-   * Init swiper sliders
-   */
+	/*====================
+	* Init swiper sliders
+	======================*/
 	  function initSwiper() {
 		document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
 		  let config = JSON.parse(
@@ -311,6 +311,39 @@ loadFooter();
 	  }
 	
 	  window.addEventListener("load", initSwiper);
-	
-	
+
+	/*====================
+	* Hiding Elemnts
+	======================*/
+	// $('.switch6-light').on('click', function(event){
+	// 	event.preventDefault();
+	// 	$('.switch-hiding').toggle();
+
+	// })
+	// $(".switch").click(function() {
+ 
+	// 	var lable = $(".switch").attr("value");
+	// 	//alert(lable);
+		
+	// 	if(lable == "Show") {
+	// 		var lable1 = $(".switch").attr("value", "Hide");
+	// 		console.log(lable1.value)
+	// 	  	$(".switch-hiding").show();
+	// 	}
+	// 	else {
+	// 		var lable2 = $(".switch").attr("value", "Show");
+	// 		console.log(lable2.value)
+	// 	  	$(".switch-hiding").hide();
+	// 	}
+		
+	//   });
+	const items = document.querySelectorAll('.switch-hiding');
+
+	items.forEach(item => {
+	  item.addEventListener('click', (event) => {
+		item.classList.toggle('active');
+		$('.switch-hiding').toggle();
+	  });
+	});
+
 })(jQuery);

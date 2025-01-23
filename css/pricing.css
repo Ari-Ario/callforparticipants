@@ -137,7 +137,7 @@
 /* Pricing Controls */
 .switch6 {  max-width: 24em;  margin: 0 auto; border: 1px solid #cccccc9f; border-radius: 5px; }
 .switch6-light > span, .switch-toggle > span {  color: #000000; }
-.switch6-light span span, .switch6-light label, .switch-toggle span span, .switch-toggle label {  color: #2b2b2b; text-align: center; }
+.switch6-light span span, .switch6-light label, .switch-toggle span span, .switch-toggle label {  color: #fff; text-align: center; }
 
 .switch-toggle a, 
 .switch6-light span span { display: none; }
@@ -153,11 +153,27 @@
 
 .switch6-light input:focus ~ a, .switch6-light input:focus + label { outline: 1px dotted rgb(136, 136, 136); height: 100%; }
 .switch6-light input { position: absolute; opacity: 0; z-index: 5; }
-.switch6-light input:checked ~ a { right: 0%; }
+.switch6-light input:not(:checked) ~ a { right: 0%; }
+.switch6-light input:checked ~ a { right: 50%; }
 .switch6-light > span { position: absolute; left: -100px; width: 100%; height: 100%; margin: 0px;  padding-right: 100px; text-align: left; }
 .switch6-light > span span { position: absolute; top: 0px; padding-top: 4px;  height: 100%; left: 0px; z-index: 5; display: block; width: 50%; margin-left: 100px; text-align: center; }
 .switch6-light > span span:last-child { left: 50%; }
 .switch6-light a { position: absolute; right: 50%; top: 0px; z-index: 4; display: block; width: 50%; height: 100%; padding: 0px; }
+.switch6-light input:checked ~ span span:first-child {
+  color: #fff; 
+}
+.switch6-light input:checked ~ span span:last-child {
+  color: #000; 
+}
+.switch6-light input:not(:checked) ~ span span:first-child {
+  color: #000; 
+}
+.switch6-light input:not(:checked) ~ span span:last-child {
+  color: #fff; 
+}
+
+
+/* Time Controls css in html, in case to overwrite from css*/
 
 .pricing p {
   text-align: center
