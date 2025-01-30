@@ -16,40 +16,18 @@
 		#scrollUp {
 			bottom: 55px;
 		}
-		.header .top-link li a {
-			font-size: 13px;
-		}
-		.header .top-contact li a{
-			font-size:13px;
-		}
-		.header .top-contact li {
-			display: inline-block;
-			margin-right: 25px;
-			color: #2C2D3F;
-			font-size: 13px;
-		}
-		.header .header-inner .get-quote {
-			margin-top: 12px;
-			display: none;
-			margin: 0;
-		}
+
+
 		.header .nav li a {
 			font-size: 13px;
 			font-weight: 500;
-			padding: 20px 4px;
+			/* padding: 20px 4px; */
+			min-width: min-content;
 		}
-		.header .nav li .dropdown {
-			width: 200px;
-			left: -20px;
-			top: 65px;
-		}
-		.header .nav li .dropdown li a {
-			padding: 10px 15px;
-			font-size: 13px;
-		}
-		.header .nav li:nth-child(6) {
+
+		/* .header .nav li:nth-child(6) {
 			padding: 20px;
-		}
+		} */
 		.slider .single-slider {
 			height: 380px;
 		}
@@ -104,6 +82,7 @@
 			padding-bottom: 20px;
 		}
 		.mobile-nav {
+			position: fixed;
 			width: 95vw;
 		}
 		.header .logo {
@@ -197,42 +176,13 @@
 		.header .main-menu{
 			display:none;
 		}
-		.header .widget-main {
-			float: right;
-			display: none;
-		}
-		.header.style2 .slicknav_btn {
-			margin-top: 18px;
-		}
-		.header .slicknav_nav {
-			margin-top: 65px;
-		}
-		.header.style2 .slicknav_nav {
-			margin-top: 60px;
-		}
-		.header.style2 .header-inner{
-			display:none;
-		}
-		.header.style2 .main-menu{
-			display:none;
-		}
-		.header .header-inner .get-quote{
-			margin: 0;
-			padding: 0;
-		}
-		.header .header-inner .get-quote .btn {
-			color: #fff;
-			display: none;
-			margin: 0;
-			padding: 0;
-		}
-	
+
 		.header .nav li a {
-			font-size: 12px; /* Adjust the font size as needed */
-			padding: 15px 8px; /* Adjust the padding as needed */
+			font-size: 12px; 
+			padding: 15px 8px; 
 		}
 		.header .nav li {
-			margin-right: 10px; /* Adjust the margin as needed */
+			/* margin-right: 10px; */
 		}
 		
 		.btn {
@@ -350,5 +300,14 @@
 		}
 		.slicknav_btn {
 			margin-right: 20px;
+		}
+		.nav-hidden {
+			display: none;
+		}
+		.footer {
+			max-height: 30%;
+		}
+		.swiper{
+			background-color: #f1f1f1;
 		}
 	}

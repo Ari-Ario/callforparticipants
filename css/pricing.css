@@ -312,4 +312,13 @@
     .table {
       table-layout: auto;
     }
+    .popular-badge {
+      display: none;
+    }
+}
+
+@media only screen and (min-width: 912px) and (max-width: 1024px) {
+  .pricing .pricing-card.pricing  {
+    width: 123px;
+  }
 }
