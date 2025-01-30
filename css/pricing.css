@@ -172,6 +172,11 @@
   color: #fff; 
 }
 
+/* Initially show elements */
+.switch-hide {
+    display: block;
+}
+
 
 /* Time Controls css in html, in case to overwrite from css*/
 
@@ -312,6 +317,10 @@
     .table {
       table-layout: auto;
     }
+    .table-responsive, .table {
+      font-size: 80% !important;
+      font-weight: 400
+  }
     .popular-badge {
       display: none;
     }
