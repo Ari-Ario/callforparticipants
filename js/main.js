@@ -263,4 +263,19 @@ loadFooter();
 		});
 	});
 
+	/*====================
+	* Dark/Light Mode Toggle
+	======================*/
+	$(document).ready(function() {
+        $("#themeToggle").change(function() {
+            if($(this).is(":checked")) {
+                $("body").addClass("dark-mode").removeClass("light-mode");
+                localStorage.setItem("theme", "dark");
+            } else {
+                $("body").addClass("light-mode").removeClass("dark-mode");
+                localStorage.setItem("theme", "light");
+            }
+        });
+    });
+
 })(jQuery);

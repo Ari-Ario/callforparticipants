@@ -1,0 +1,193 @@
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* General Dark Mode Styles */
+body.dark-mode {
+    background-color: #120A2C;
+    color: white;
+}
+body.light-mode {
+    background-color: #f8f9fa;
+    color: black;
+}
+
+/* Header Styles */
+.header {
+    color: white;
+    padding-bottom: 10px;
+    position: relative;
+}
+.title {
+    color: #8DF4F0;
+}
+/* Progress Steps - Expands Properly */
+.progress-steps {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+/* Ensure Number & Text Are in a Row */
+.step-content {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between number and text */
+}
+
+/* Ensure <small> Always Breaks to a New Line */
+.step small {
+    display: block;
+    font-size: 10px;
+    color: #aaa;
+}
+
+
+/* Progress Bar */
+.progress-container {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.progress {
+    height: 4px;
+    background-color: #2D1F56;
+}
+.progress-bar {
+    background-color: #8DF4F0;
+}
+
+/* numbers styling in the header */
+.num {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    background: gray;
+    color: white;
+    margin-right: 10px;
+}
+.num.completed {
+    background: #8DF4F0;
+}
+.num.active {
+    background: #A855F7;
+}
+
+
+
+/* Info Box */
+.info-box {
+    background-color: #D6FCF8;
+    border-radius: 8px;
+}
+
+/* Ensure switch and label align horizontally */
+.switch-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adds spacing between switch and text */
+}
+
+
+
+/* iOS-style Switch */
+.ios-switch {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 24px;
+}
+.ios-switch .form-check-input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+.ios-switch .form-check-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 42px;
+    height: 24px;
+    background: #ccc;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+.ios-switch .form-check-label::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 3px;
+    left: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+.ios-switch .form-check-input:checked + .form-check-label {
+    background: #6f42c1;
+}
+.ios-switch .form-check-input:checked + .form-check-label::after {
+    transform: translateX(18px);
+}
+
+/* Label beside switch */
+.switch-text {
+    font-size: 16px;
+    white-space: nowrap; /* Prevents breaking */
+}
+
+
+
+/* Pricing Options */
+.pricing-options {
+    display: flex;
+    flex-direction: column;
+}
+.pricing-card {
+    display: block;
+    cursor: pointer;
+}
+.pricing-card input {
+    display: none;
+}
+.pricing-card .card {
+    border: 1px solid #A855F7;
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+.pricing-card input:checked + .card {
+    background: #A855F7;
+    color: white;
+}
+
+/* Light Mode Toggle */
+.form-check-input:checked {
+    background-color: #A855F7;
+    border-color: #A855F7;
+}
+
+/* Mobile Screen */
+@media only screen and (max-width: 912px) {
+    .step {
+        display: none;
+    }
+    .step.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 14px;
+        color: #6f42c1;
+        font-weight: bold;
+    }
+}

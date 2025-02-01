@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">  
+    <!-- Using Bootstrap 4 -->
+	<link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/slicknav.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/icofont.css">
+
+    <link rel="stylesheet" href="css/payment.css">  <!-- Custom Styles -->
+</head>
+<body class="dark-mode"> <!-- Default to Dark Mode -->
+
+<!-- Header Section -->
+<header class="header">
+    <div class="container-fluid py-3">
+        <div class="d-flex justify-content-between align-items-center">
+            
+            <!-- Title -->
+            <div class="col-lg-3" >
+                <h4 class="title"> <a href="#">Call for participants</a> </h4>
+            </div>
+
+            <!-- Progress Steps (Now Expands Properly) -->
+            <div class="col progress-steps d-flex justify-content-center flex-grow-1" >
+                <div class="col-lg-3 step active" >
+                    <div class="step-content">
+                        <div class="num completed">1</div> Researcher
+                    </div>
+                    <small>Subtitle</small>
+                </div>
+                <div class="col-lg-3 step">
+                    <div class="step-content">
+                        <div class="num active">2</div> <span>Study</span>
+                    </div>
+                    <small>Details ...</small>
+                </div>
+                <div class="col-lg-3 step">
+                    <div class="step-content">
+                        <div class="num">3</div> <span>Participants</span>
+                    </div>
+                    <small>Subtitle</small>
+                </div>
+                <div class="col-lg-3 step">
+                    <div class="step-content">
+                        <div class="num">4</div> <span>Done, draft created</span>
+                    </div>
+                    <small>Study can be published</small>
+                </div>
+            </div>
+
+            <!-- Light/Dark Mode Toggle -->
+            <div class="switch-container">
+                <label class="switch-text" for="themeToggle">Light</label>
+                <div class="form-check form-switch ios-switch">
+                    <input class="form-check-input" type="checkbox" id="themeToggle" checked>
+                    <label class="form-check-label" for="themeToggle"></label>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="container py-4">
+    <div class="row">
+        <!-- Left Column -->
+        <div class="col-md-6">
+            <h2 class="text-light">Take part in the widest selection of academic research and earn rewards</h2>
+            
+            <!-- Email Input -->
+            <label for="email" class="form-label text-light">E-Mail-Adresse</label>
+            <input type="email" class="form-control" id="email" placeholder="http://">
+            
+            <!-- Toggle Switch for Code -->
+            <div class="switch-container">
+                <div class="form-check form-switch ios-switch">
+                    <input class="form-check-input" type="checkbox" id="codeToggle">
+                    <label class="form-check-label" for="codeToggle"></label>
+                </div>
+                <label class="switch-text" for="codeToggle">Ja, ich habe einen Code</label>
+            </div>
+
+            <!-- Info Box -->
+            <div class="info-box p-3 mt-4">
+                <h5 class="text-primary">Hilfe</h5>
+                <p class="text-light">Lorem ipsum dolor sit amet, consectetur sadipscing elitr, sed diam...</p>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-md-6">
+            <h4 class="text-light">See which packages match your request</h4>
+
+            <!-- Pricing Selection -->
+            <div class="pricing-options">
+                <label class="pricing-card">
+                    <input type="radio" name="pricingOption" value="basic">
+                    <div class="card">
+                        <h5>Basic Academic</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur sadipscing elitr</p>
+                    </div>
+                </label>
+
+                <label class="pricing-card">
+                    <input type="radio" name="pricingOption" value="advanced">
+                    <div class="card">
+                        <h5>Advanced Academic</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur sadipscing elitr</p>
+                    </div>
+                </label>
+
+                <label class="pricing-card">
+                    <input type="radio" name="pricingOption" value="commercial" checked>
+                    <div class="card selected">
+                        <h5>Commercial</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur sadipscing elitr</p>
+                    </div>
+                </label>
+            </div>
+
+            <p class="text-primary mt-3">default</p>
+
+            <!-- Continue Button -->
+            <button class="btn btn-primary w-100 mt-3">weiter</button>
+        </div>
+    </div>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Custom JS -->
+<script src="js/main.js"></script> 
+<script>
+        $(document).ready(function() {
+        // Dark/Light Mode Toggle
+        $("#themeToggle").change(function() {
+            if($(this).is(":checked")) {
+                $("body").addClass("dark-mode").removeClass("light-mode");
+                localStorage.setItem("theme", "dark");
+            } else {
+                $("body").addClass("light-mode").removeClass("dark-mode");
+                localStorage.setItem("theme", "light");
+            }
+        });
+    });
+</script>
+</body>
+</html>
