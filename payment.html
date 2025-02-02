@@ -13,43 +13,56 @@
 
     <link rel="stylesheet" href="css/payment.css">  <!-- Custom Styles -->
 </head>
+
 <body class="dark-mode"> <!-- Default to Dark Mode -->
 
 <!-- Header Section -->
-<header class="header">
+<header id="header" class="header">
     <div class="container-fluid py-3">
         <div class="d-flex justify-content-between align-items-center">
             
             <!-- Title -->
-            <div class="col-lg-3" >
+            <div class="col-lg-2" >
                 <h4 class="title"> <a href="#">Call for participants</a> </h4>
             </div>
 
             <!-- Progress Steps (Now Expands Properly) -->
-            <div class="col progress-steps d-flex justify-content-center flex-grow-1" >
-                <div class="col-lg-3 step active" >
+            <div class="col progress-steps d-flex justify-content-center flex-grow-1">
+                <div class="col-lg-3 step active">
                     <div class="step-content">
-                        <div class="num completed">1</div> Researcher
+                        <div class="num completed">1</div>
+                        <div class="step-text">
+                            Researcher
+                            <small>Subtitle</small> <!-- Now inside .step-text -->
+                        </div>
                     </div>
-                    <small>Subtitle</small>
                 </div>
                 <div class="col-lg-3 step">
                     <div class="step-content">
-                        <div class="num active">2</div> <span>Study</span>
+                        <div class="num active">2</div>
+                        <div class="step-text">
+                            Study
+                            <small>Details ...</small>
+                        </div>
                     </div>
-                    <small>Details ...</small>
                 </div>
                 <div class="col-lg-3 step">
                     <div class="step-content">
-                        <div class="num">3</div> <span>Participants</span>
+                        <div class="num">3</div>
+                        <div class="step-text">
+                            Participants
+                            <small>Subtitle</small>
+                        </div>
                     </div>
-                    <small>Subtitle</small>
                 </div>
                 <div class="col-lg-3 step">
                     <div class="step-content">
-                        <div class="num">4</div> <span>Done, draft created</span>
+                        <div class="num">4</div>
+                        <div class="step-text">
+                            Done, draft created
+                            <small>Study can be published</small>
+                        </div>
                     </div>
-                    <small>Study can be published</small>
                 </div>
             </div>
 
@@ -77,61 +90,70 @@
 <main class="container py-4">
     <div class="row">
         <!-- Left Column -->
-        <div class="col-md-6">
-            <h2 class="text-light">Take part in the widest selection of academic research and earn rewards</h2>
+        <div class="col">
+            <div class="mb-5">
+                <h2 class="text-toggle">Take part in the widest selection of academic research and earn rewards</h2>
+            </div>
             
             <!-- Email Input -->
-            <label for="email" class="form-label text-light">E-Mail-Adresse</label>
-            <input type="email" class="form-control" id="email" placeholder="http://">
+             <div class="mb-5">
+                 <label for="email" class="form-label text-toggle">E-Mail-Adresse</label>
+                 <input type="email" class="form-control" id="email" placeholder="info@gmail.com">
+             </div>
             
             <!-- Toggle Switch for Code -->
-            <div class="switch-container">
+            <div class="switch-container switch-code mb-5">
                 <div class="form-check form-switch ios-switch">
                     <input class="form-check-input" type="checkbox" id="codeToggle">
                     <label class="form-check-label" for="codeToggle"></label>
                 </div>
-                <label class="switch-text" for="codeToggle">Ja, ich habe einen Code</label>
+                <label class="switch-text text-toggle" for="codeToggle">Ja, ich habe einen Code</label>
             </div>
 
             <!-- Info Box -->
-            <div class="info-box p-3 mt-4">
+            <div class="info-box p-3 mt-4 mb-5">
                 <h5 class="text-primary">Hilfe</h5>
-                <p class="text-light">Lorem ipsum dolor sit amet, consectetur sadipscing elitr, sed diam...</p>
+                <p class="text-help">Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                    Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                    Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                    , sed diam...</p>
             </div>
         </div>
 
         <!-- Right Column -->
-        <div class="col-md-6">
-            <h4 class="text-light">See which packages match your request</h4>
+        <div class="col-md-5">
+            <div class="mb-4">
+                <h4 class="text-toggle">See which packages match your request</h4>
+            </div>
 
             <!-- Pricing Selection -->
             <div class="pricing-options">
                 <label class="pricing-card">
                     <input type="radio" name="pricingOption" value="basic">
-                    <div class="card">
-                        <h5>Basic Academic</h5>
+                    <div class="card text-toggle">
+                        <h5 class="text-toggle">Basic Academic</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur sadipscing elitr</p>
                     </div>
                 </label>
 
                 <label class="pricing-card">
                     <input type="radio" name="pricingOption" value="advanced">
-                    <div class="card">
-                        <h5>Advanced Academic</h5>
+                    <div class="card text-toggle">
+                        <h5 class="text-toggle">Advanced Academic</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur sadipscing elitr</p>
                     </div>
                 </label>
 
                 <label class="pricing-card">
                     <input type="radio" name="pricingOption" value="commercial" checked>
-                    <div class="card selected">
-                        <h5>Commercial</h5>
+                    <div class="card selected text-toggle">
+                        <h5 class="text-toggle">Commercial</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur sadipscing elitr</p>
+                        <p class="text-primary mt-3">default</p>
                     </div>
                 </label>
             </div>
 
-            <p class="text-primary mt-3">default</p>
 
             <!-- Continue Button -->
             <button class="btn btn-primary w-100 mt-3">weiter</button>
@@ -139,10 +161,11 @@
     </div>
 </main>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Load jQuery Before Any Other Scripts -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
 <!-- Custom JS -->
-<script src="js/main.js"></script> 
-<script>
+<script src="js/main.js" defer></script>
+<!-- <script>
         $(document).ready(function() {
         // Dark/Light Mode Toggle
         $("#themeToggle").change(function() {
@@ -155,6 +178,6 @@
             }
         });
     });
-</script>
+</script> -->
 </body>
 </html>

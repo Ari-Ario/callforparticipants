@@ -27,30 +27,30 @@
 [End Activation Code]
 =========================================*/ 
 
-const loadHeader = () => {
-	fetch('./components/header.html')
-	.then(res => {
-		return res.text()
-	})
-	.then(data => {
-		document.querySelector('#header__part').innerHTML = data;
-	})
-	console.log('header');
-}
+// const loadHeader = () => {
+// 	fetch('./components/header.html')
+// 	.then(res => {
+// 		return res.text()
+// 	})
+// 	.then(data => {
+// 		document.querySelector('#header__part').innerHTML = data;
+// 	})
+// 	console.log('header');
+// }
 
-const loadFooter = () => {
-    fetch('./components/footer.html')
-    .then(res => {
-        return res.text();
-    })
-    .then(data => {
-        document.querySelector('#footer__part').innerHTML = data ; 
-    })
-    console.log('footer');
-}
+// const loadFooter = () => {
+//     fetch('./components/footer.html')
+//     .then(res => {
+//         return res.text();
+//     })
+//     .then(data => {
+//         document.querySelector('#footer__part').innerHTML = data ; 
+//     })
+//     console.log('footer');
+// }
 
-loadHeader();
-loadFooter();
+// loadHeader();
+// loadFooter();
 
 (function($) {
     "use strict";
@@ -230,10 +230,6 @@ loadFooter();
 		$('.preloader').addClass('preloader-deactivate');
 	});
 
-	  /*====================
-	  * Initiate Pure Counter
-	======================*/
-	  new PureCounter();
 
 	/*====================
 	* Init swiper sliders
@@ -266,16 +262,39 @@ loadFooter();
 	/*====================
 	* Dark/Light Mode Toggle
 	======================*/
-	$(document).ready(function() {
-        $("#themeToggle").change(function() {
-            if($(this).is(":checked")) {
-                $("body").addClass("dark-mode").removeClass("light-mode");
-                localStorage.setItem("theme", "dark");
-            } else {
-                $("body").addClass("light-mode").removeClass("dark-mode");
-                localStorage.setItem("theme", "light");
-            }
-        });
-    });
+	document.addEventListener("DOMContentLoaded", function() {
+		// Ensure jQuery is available
+		if (typeof jQuery !== "undefined") {
+			$(document).ready(function() {
+				// Dark/Light Mode Toggle
+				$("#themeToggle").change(function() {
+					if ($(this).is(":checked")) {
+						$("body").addClass("dark-mode").removeClass("light-mode");
+						localStorage.setItem("theme", "dark");
+					} else {
+						// console.log("changed to light mode");
+						$("body").addClass("light-mode").removeClass("dark-mode");
+						localStorage.setItem("theme", "light");
+					}
+				});
+	
+				// Apply saved theme on page load
+				if (localStorage.getItem("theme") === "dark") {
+					$("#themeToggle").prop("checked", true);
+					$("body").addClass("dark-mode").removeClass("light-mode");
+				} else {
+					$("#themeToggle").prop("checked", false);
+					$("body").addClass("light-mode").removeClass("dark-mode");
+				}
+			});
+		} else {
+			console.error("jQuery is not loaded. Please check your script order.");
+		}
+	});
+	
+	/*====================
+	  * Initiate Pure Counter
+	======================*/
+	new PureCounter();
 
 })(jQuery);
