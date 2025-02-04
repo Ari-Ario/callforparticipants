@@ -33,7 +33,7 @@
 // 		return res.text()
 // 	})
 // 	.then(data => {
-// 		document.querySelector('#header__part').innerHTML = data;
+// 		document.querySelector('#header').innerHTML = data;
 // 	})
 // 	console.log('header');
 // }
@@ -44,7 +44,7 @@
 //         return res.text();
 //     })
 //     .then(data => {
-//         document.querySelector('#footer__part').innerHTML = data ; 
+//         document.querySelector('#footer').innerHTML = data ; 
 //     })
 //     console.log('footer');
 // }
@@ -290,6 +290,21 @@
 		} else {
 			console.error("jQuery is not loaded. Please check your script order.");
 		}
+	});
+
+	/*====================
+	* Hiding Elemnts in Pricing page
+	======================*/
+	$(document).ready(function () {
+		// When any radio button inside .selection-grid is selected
+		$('input[name="studyRole"]').on("change", function () {
+			// Highlight the selected box
+			$(".selection-box").removeClass("selected");
+			$(this).closest(".selection-box").addClass("selected");
+	
+			// Show the hidden section & buttons
+			$(".hidden-section, .continue-btn").fadeIn(300);
+		});
 	});
 	
 	/*====================

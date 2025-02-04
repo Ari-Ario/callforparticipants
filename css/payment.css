@@ -149,24 +149,22 @@ body.light-mode .text-toggle {
 .info-box {
     background-color: #D6FCF8;
     border-radius: 8px;
-    padding: 20px; /* More spacing inside */
+    padding: 20px; 
+    margin: 20px;
 }
 
-/* Improve switch and label alignment */
 .switch-container {
     display: flex;
     align-items: center;
-    gap: 15px; /* More space between switch and text */
+    gap: 15px; 
 }
 
-/* Improve pricing card layout */
 .pricing-options {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* More spacing between pricing options */
+    gap: 15px;
 }
 
-/* Make the selected card stand out more */
 .switch-code,
 .pricing-card .card {
     border: 1px solid #A855F7;
@@ -188,7 +186,6 @@ body.light-mode .text-toggle {
     font-weight: bold;
 }
 
-/* Increase spacing below the button */
 .btn {
     margin-top: 20px;
 }
@@ -196,8 +193,151 @@ body.light-mode .text-toggle {
     color: black;
 }
 
+
+
+
+/* reasearch-about page styling --------------------------------------------------*/
+.about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.selection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    /* max-width: 800px; */
+}
+
+.selection-box input {
+    display: none;
+}
+
+.selection-box .box-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid #A855F7;
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.box-content {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.selection-box:hover {
+    background-color: #A855F7;
+    color: white;
+}
+
+.selection-box input:checked + .box-content {
+    background: #A855F7;
+    color: white;
+    font-weight: bold;
+}
+
+.selection-box input:checked ~ .hidden-section {
+    display: block;
+}
+
+.hidden-section {
+    display: none;
+    /* border: #8DF4F0 solid 1px; */
+}
+
+.continue-btn {
+    margin-top: 40px;
+    background-color: #6F42C1;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: not-allowed;
+    display: none;
+}
+
+/* ✅ Show hidden section & buttons when any radio button is checked */
+.selection-container:has(input[name="study-conductor"]:checked) .hidden-section {
+    display: block;
+}
+
+.selection-container:has(input[name="study-conductor"]:checked) .continue-btn {
+    display: inline-block;
+    cursor: pointer;
+    color: white;
+}
+.textarea {
+    width: 100%;
+    border-radius: 8px;
+    padding: 20px; 
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.save-btn {
+    background-color: #6e42c11a !important;
+}
+
+.next-btn {
+    background-color: #6F42C1;
+}
+
+.continue-btn {
+    color: white;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    display: none;
+    width: 300px; 
+    margin-top: 0;
+}
+
+.save-btn {
+    margin-right: auto; /* Pushes it to the left */
+}
+
+.next-btn {
+    margin-left: auto; /* Pushes it to the right */
+}
+
+/* End of reasearch-about page --------------------------------------------------*/
+
+
 /* Mobile Screen */
 @media only screen and (max-width: 412px) {
+    .header {
+        background-color: #120A2C;
+        z-index: 100;
+    }
+    .main-body {
+        z-index: 99;
+    }
     .title {
         font-size: small;
     }
@@ -210,6 +350,27 @@ body.light-mode .text-toggle {
         align-items: center;
         font-size: x-small;
         font-weight: bold;
+    }
+    .progress-steps {
+        margin-right: 20px;
+        max-width: fit-content;
+    }
+    .light-dark {
+        display: none;
+    }
+
+    .selection-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+        width: 98%;
+        /* max-width: 800px; */
+    }
+    .button-container {
+        display: block;
+    }
+    .continue-btn {
+        width: 100%;
     }
 }
 

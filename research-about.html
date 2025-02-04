@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Page</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">  
+    <link rel="stylesheet" href="css/payment.css">  <!-- Linking your existing CSS -->
+    
+    <style>
+
+    </style>
+</head>
+<body class="dark-mode">
+
+<!-- Header (Same as previous page, not changed) -->
+<header id="header" class="header">
+    <div class="container-fluid py-3">
+        <div class="d-flex justify-content-between align-items-center">
+            
+            <!-- Title -->
+            <div class="col-lg-2">
+                <h4 class="title"> <a href="#">Call for participants</a> </h4>
+            </div>
+
+            <!-- Progress Steps -->
+            <div class="col progress-steps d-flex justify-content-center flex-grow-1">
+                <div class="col-lg-3 step active">
+                    <div class="step-content">
+                        <div class="num completed">1</div>
+                        <div class="step-text">
+                            Researcher
+                            <small>Subtitle</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 step">
+                    <div class="step-content">
+                        <div class="num active">2</div>
+                        <div class="step-text">
+                            Study
+                            <small>Details ...</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 step">
+                    <div class="step-content">
+                        <div class="num">3</div>
+                        <div class="step-text">
+                            Participants
+                            <small>Subtitle</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 step">
+                    <div class="step-content">
+                        <div class="num">4</div>
+                        <div class="step-text">
+                            Done, draft created
+                            <small>Study can be published</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Light/Dark Mode Toggle -->
+            <div class="switch-container mr-3">
+                <label class="light-dark switch-text" for="themeToggle">Light</label>
+                <div class="form-check form-switch ios-switch">
+                    <input class="form-check-input" type="checkbox" id="themeToggle" checked>
+                    <label class="form-check-label" for="themeToggle"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="container main-body py-4">
+    <div class="row about-container">
+
+        <h2 class="about-title">Wer führt die Studie durch</h2>
+
+        <!-- Selection Grid -->
+        <div class="selection-grid mt-3">
+            <label class="selection-box">
+                <input type="radio" name="studyRole" value="doktorand">
+                <div class="box-content">Doktorand</div>
+            </label>
+
+            <label class="selection-box">
+                <input type="radio" name="studyRole" value="forscher">
+                <div class="box-content">Forscher</div>
+            </label>
+
+            <label class="selection-box">
+                <input type="radio" name="studyRole" value="option3">
+                <div class="box-content">...</div>
+            </label>
+
+            <label class="selection-box">
+                <input type="radio" name="studyRole" value="option4">
+                <div class="box-content">...</div>
+            </label>
+
+            <label class="selection-box">
+                <input type="radio" name="studyRole" value="option5">
+                <div class="box-content">...</div>
+            </label>
+
+            <label class="selection-box">
+                <input type="radio" name="studyRole" value="option6">
+                <div class="box-content">...</div>
+            </label>
+        </div>
+
+        <!-- Hidden Section (Initially Hidden) -->
+        <div class="hidden-section">
+            <!-- TextBox -->
+            <div class="p-3 mt-4 mb-2">
+                <p class="text-primary text-toggle">Schreiben Sie etwas über Ihren Hintergrund (optional)</p>
+                <textarea class="textarea" name="" id="" cols="30" rows="6"></textarea>
+                <p>up to 2000 characters</p>
+            </div>
+
+            <!-- Info Box -->
+            <div class="info-box p-3 mt-2 mb-2">
+                <p class="text-primary">Hilfe</p>
+                <p class="text-help">Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                    Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                    Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                    Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                    Lorem ipsum dolor sit amet, consectetur 
+                    , sed diam...</p>
+            </div>
+        </div>
+
+        <!-- Continue Buttons (Initially Hidden) -->
+        <div class="button-container float">
+            <button class="continue-btn text-toggle save-btn float-lg-left">Speichern, später fortsetzen</button>
+            <button class="continue-btn next-btn float-lg-right">weiter</button>
+        </div>
+    </div>
+</main>
+
+<!-- Load jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+<!-- Custom JS -->
+<script src="js/main.js" defer></script>
+
+
+</body>
+</html>
