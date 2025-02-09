@@ -86,7 +86,7 @@ body.light-mode .text-toggle {
     background: #8DF4F0;
 }
 .num.active {
-    background: #A855F7;
+    background: #8DF4F0;
 }
 
 
@@ -146,11 +146,16 @@ body.light-mode .text-toggle {
 
 
 /* Info Box */
+.info-box-payment{
+    background-color: #D6FCF8;
+    border-radius: 8px;
+    /* padding: 20px;  */
+    /* margin: 0; */
+}
 .info-box {
     background-color: #D6FCF8;
     border-radius: 8px;
     padding: 20px; 
-    margin: 20px;
 }
 
 .switch-container {
@@ -196,12 +201,13 @@ body.light-mode .text-toggle {
 
 
 
-/* reasearch-about page styling --------------------------------------------------*/
+/* -------------------- reasearch-about, research-approval, study-how, which pages -----------------*/
 .about-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
 }
 
 .about-title {
@@ -235,7 +241,21 @@ body.light-mode .text-toggle {
     transition: all 0.3s ease;
     background: transparent;
 }
-
+.selection-box .box-detail{
+    display: block !important;
+    justify-content: left !important;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+    border: 1px solid #A855F7;
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+.box-detail-title {
+    font-weight: bolder;
+}
 .box-content {
     text-align: center;
     width: 100%;
@@ -247,19 +267,71 @@ body.light-mode .text-toggle {
     color: white;
 }
 
+/* Hide checkmark by default */
+.checkboxs,
+.checkmark {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 18px;
+    color: white;
+    border: white solid 1px;
+    border-radius: 3px;
+    padding: 0 5px;
+    display: none; /* Hidden by default */
+}
+
+/* Ensure .selection-box is positioned correctly */
+.selection-box {
+    position: relative;
+}
+
+/* Show checkmark when radio is checked */
+.selection-box input:checked + .box-content .checkmark {
+    display: block ;
+}
+.selection-box input:checked + .box-detail .checkmark {
+    display: block ;
+
+}
+
+
+
+
+.selection-box input:checked + .box-detail,
 .selection-box input:checked + .box-content {
     background: #A855F7;
     color: white;
     font-weight: bold;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px 5px;
+
 }
 
 .selection-box input:checked ~ .hidden-section {
     display: block;
 }
 
-.hidden-section {
+.hidden-section,
+.hidden-section-person,
+.hidden-section-other,
+.hidden-section-interview {
     display: none;
     /* border: #8DF4F0 solid 1px; */
+    width: 100%;
+}
+
+/* ✅ Show hidden section & buttons when any radio button is checked */
+.selection-container:has(input[name="study-conductor"]:checked) .hidden-section {
+    display: block;
+}
+/* ------------button styling ---------------*/
+.selection-container:has(input[name="study-conductor"]:checked) .continue-btn {
+    display: inline-block;
+    cursor: pointer;
+    color: white;
 }
 
 .continue-btn {
@@ -273,32 +345,6 @@ body.light-mode .text-toggle {
     cursor: not-allowed;
     display: none;
 }
-
-/* ✅ Show hidden section & buttons when any radio button is checked */
-.selection-container:has(input[name="study-conductor"]:checked) .hidden-section {
-    display: block;
-}
-
-.selection-container:has(input[name="study-conductor"]:checked) .continue-btn {
-    display: inline-block;
-    cursor: pointer;
-    color: white;
-}
-.textarea {
-    width: 100%;
-    border-radius: 8px;
-    padding: 20px; 
-}
-
-.button-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin: 0;
-    padding: 0 20px;
-}
-
 .save-btn {
     background-color: #6e42c11a !important;
 }
@@ -307,7 +353,7 @@ body.light-mode .text-toggle {
     background-color: #6F42C1;
 }
 
-.continue-btn {
+.nav-btn {
     color: white;
     padding: 12px 30px;
     border-radius: 6px;
@@ -317,7 +363,6 @@ body.light-mode .text-toggle {
     width: 300px; 
     margin-top: 0;
 }
-
 .save-btn {
     margin-right: auto; /* Pushes it to the left */
 }
@@ -325,12 +370,85 @@ body.light-mode .text-toggle {
 .next-btn {
     margin-left: auto; /* Pushes it to the right */
 }
+.nav-button{
+    color: white;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 300px; 
+    margin-top: 0;
+    /* cursor: not-allowed; */
+}
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    margin-top: 20px;
+/*     
+    position: sticky !important;
+    bottom: 10px !important; */
+}
+/* ------------ End of button styling ---------------*/
 
+.textarea,
+.textinput {
+    width: 100%;
+    border-radius: 8px;
+    padding: 20px; 
+}
 /* End of reasearch-about page --------------------------------------------------*/
+
+/* ----------- input/select Clock icon and Globe icon page which------------------*/
+.input-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #A855F7;
+    padding: 10px;
+    border-radius: 6px;
+    background: white;
+    width: 100%;
+}
+
+.input-container i {
+    margin-right: 10px;
+    color: #A855F7;
+    font-size: 16px;
+}
+
+.input-container input,
+.input-container select {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 16px;
+    background: transparent;
+    min-width: 100%;
+}
+/* ----------- End Clock icon and Globe icon page which------------------------*/
+
+/* ----------- Checkboxes of page study-keywords------------------------*/
+.checkboxs {
+    display: none;
+    color: white;
+    font-size: 18px;
+    margin-left: 10px;
+}
+/* Show when checkbox is checked */
+.selection-box input:checked + .box-content .checkboxs {
+    display: inline-block;
+}
+/* ----------- Checkboxes of page study-keywords------------------------*/
+
 
 
 /* Mobile Screen */
-@media only screen and (max-width: 412px) {
+@media only screen and (max-width: 500px) {
+    body {
+        padding: 2%;
+    }
     .header {
         background-color: #120A2C;
         z-index: 100;
@@ -362,14 +480,30 @@ body.light-mode .text-toggle {
     .selection-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 5px;
+        gap: 10px;
         width: 98%;
         /* max-width: 800px; */
     }
-    .button-container {
-        display: block;
+    .selection-box .box-content{
+        font-size: small;
+        justify-content: space-between;
     }
-    .continue-btn {
+    .selection-box .box-detail{
+        font-size: small;
+    }
+    .selection-box input:checked + .box-detail,
+    .selection-box input:checked + .box-content {
+        width: 100%;
+        gap: 20px 5px;
+    }
+    .button-container {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 1%;
+        gap: 20px 5px;
+    }
+    .nav-btn ,
+    .nav-button {
         width: 100%;
     }
 }

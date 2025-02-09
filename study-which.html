@@ -6,7 +6,9 @@
     <title>New Page</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">  
     <link rel="stylesheet" href="css/rest.css">  <!-- Linking your existing CSS -->
-    
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
 <body class="dark-mode">
 
@@ -22,7 +24,7 @@
 
             <!-- Progress Steps -->
             <div class="col progress-steps d-flex justify-content-center flex-grow-1">
-                <div class="col-lg-3 step active">
+                <div class="col-lg-3 step">
                     <div class="step-content">
                         <div class="num active">1</div>
                         <div class="step-text">
@@ -31,9 +33,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 step">
+                <div class="col-lg-3 step active">
                     <div class="step-content">
-                        <div class="num ">2</div>
+                        <div class="num active">2</div>
                         <div class="step-text">
                             Study
                             <small>Details ...</small>
@@ -74,7 +76,7 @@
     <!-- Progress Bar -->
     <div class="progress-container">
         <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 36%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
     </div>
 </header>
@@ -83,72 +85,119 @@
 <main class="container main-body py-4">
     <div class="row about-container">
 
-        <h2 class="about-title">Wer führt die Studie durch</h2>
+        <h2 class="about-title">Um was für eine Studie handelt es sich?</h2>
 
         <!-- Selection Grid -->
         <div class="selection-grid mt-3">
             <label class="selection-box">
-                <input type="radio" name="studyRole" value="doktorand">
-                <div class="box-content">
-                    Doktorand
+                <input type="radio" name="studyWhich" class="interview" value="interview">
+                <div class="box-detail">
+                    <div>
+                        <p class="box-detail-title">Interview</p>
+                        
+                        <p>Lorem ipsum dolor sit amet, consectetur  amet, consectetur </p>
+                    </div>
                     <span class="checkmark">&#10004;</span>
                 </div>
             </label>
 
             <label class="selection-box">
-                <input type="radio" name="studyRole" value="forscher">
-                <div class="box-content">
-                    Forscher
+                <input type="radio" name="studyWhich" class="group" value="group">
+                <div class="box-detail">
+                    <div>
+                        <p class="box-detail-title">Group discusion</p>
+                        
+                        <p>Lorem ipsum dolor sit amet, consectetur </p>
+                    </div>
                     <span class="checkmark">&#10004;</span>
                 </div>
             </label>
 
             <label class="selection-box">
-                <input type="radio" name="studyRole" value="option3">
-                <div class="box-content">
-                    ...
+                <input type="radio" name="studyWhich" class="survay" value="survay">
+                <div class="box-detail">
+                    <div>
+                        <p class="box-detail-title">Survay & questionnaire</p>
+                        
+                        <p>Lorem ipsum dolor sit amet, consectetur </p>
+                    </div>
+                    <span class="checkmark">&#10004;</span>
+                </div>
+            </label>
+            <label class="selection-box">
+                <input type="radio" name="studyWhich" class="product" value="product">
+                <div class="box-detail">
+                    <div>
+                        <p class="box-detail-title">Product Testing</p>
+                        
+                        <p>Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur</p>
+                    </div>
                     <span class="checkmark">&#10004;</span>
                 </div>
             </label>
 
             <label class="selection-box">
-                <input type="radio" name="studyRole" value="option4">
-                <div class="box-content">
-                    ...
+                <input type="radio" name="studyWhich" class="observation" value="observation">
+                <div class="box-detail">
+                    <div>
+                        <p class="box-detail-title">Observation</p>
+                        
+                        <p>Lorem ipsum dolor sit amet, consectetur </p>
+                    </div>
                     <span class="checkmark">&#10004;</span>
                 </div>
             </label>
 
             <label class="selection-box">
-                <input type="radio" name="studyRole" value="option5">
-                <div class="box-content">
-                    ...
-                    <span class="checkmark">&#10004;</span>
-                </div>
-            </label>
-
-            <label class="selection-box">
-                <input type="radio" name="studyRole" value="option6">
-                <div class="box-content">
-                    ...
+                <input type="radio" name="studyWhich" class="other" value="other">
+                <div class="box-detail">
+                    <div>
+                        <p class="box-detail-title">Other</p>
+                        
+                        <p>Lorem ipsum dolor sit amet, consectetur </p>
+                    </div>
                     <span class="checkmark">&#10004;</span>
                 </div>
             </label>
         </div>
 
+        <!-- Hidden Section Interview Option (Initially Hidden) -->
+        <div class="hidden-section-interview hidden-section py-4">
+            <!-- Input with Clock Icon -->
+            <div class="mb-2">
+                <p class="text-toggle">Bitte geben Sie die ungefähre Dauer des Interviews in Minuten an</p>
+                <div class="input-container">
+                    <i class="fas fa-clock"></i> <!-- Clock icon -->
+                    <input class="" name="" id="" placeholder="0">
+                </div>
+            </div>
 
-        <!-- Hidden Section (Initially Hidden) -->
-        <div class="hidden-section">
+            <!-- Select Box with Globe Icon -->
+            <div class="mb-2 mt-4">
+                <label for="studyoption">In welcher Sprache wird die Studie durchgeführt?</label>
+                <div class="input-container">
+                    <i class="fas fa-globe"></i> <!-- Globe icon -->
+                    <select class="studyoption" name="studyoption" id="studyoption">
+                        <option value="">Deutsch</option>
+                        <option value="">English</option>
+                        <option value="">French</option>
+                        <option value="">Kurdish</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hidden Section Other Option (Initially Hidden) -->
+        <div class="hidden-section-other py-4">
             <!-- TextBox -->
-            <div class="mt-4 mb-2">
-                <p class="text-primary text-toggle">Schreiben Sie etwas über Ihren Hintergrund (optional)</p>
-                <textarea class="textarea" name="" id="" cols="30" rows="6"></textarea>
-                <p>up to 2000 characters</p>
+            <div class="mb-2">
+                <p class="text-toggle">Bitte bechreiben Sie Ihre Auswahl</p>
+                <textarea class="textarea" name="" id="" cols="30" rows="5"></textarea>
             </div>
 
             <!-- Info Box -->
-            <div class="info-box mt-2 mb-2">
-                <p class="text-primary">Hilfe</p>
+            <div class="info-box-payment p-3 mt-4 mb-5">
+                <h5 class="text-primary">Tipps</h5>
                 <p class="text-help">Lorem ipsum dolor sit amet, consectetur sadipscing elitr
                     Lorem ipsum dolor sit amet, consectetur sadipscing elitr
                     Lorem ipsum dolor sit amet, consectetur sadipscing elitr
@@ -160,8 +209,8 @@
 
         <!-- Continue Buttons (Initially Hidden) -->
         <div class="button-container float">
-            <button class="nav-btn text-toggle save-btn float-lg-left" onclick="window.location='pricing.html';">Speichern, später fortsetzen</button>
-            <button class="nav-btn next-btn float-lg-right" onclick="window.location='research-approval.html';">weiter</button>
+            <button class="nav-btn text-toggle save-btn float-lg-left" onclick="window.location='study-how.html';">Speichern, später fortsetzen</button>
+            <button class="nav-btn next-btn float-lg-right" onclick="window.location='study-title.html';">weiter</button>
         </div>
     </div>
 </main>

@@ -1,4 +1,14 @@
 
+/* small Monitor Screen */
+@media only screen and (max-width: 1451px)  { 
+	.mob {
+		min-width: 30%;
+	}
+	.header .nav li:nth-child(5) {
+		margin-right: 0% !important;
+	}
+}
+
 /* Tablet Screen */
 @media only screen and (min-width: 1357px)  { /* main max-width: 991px */
 

@@ -22,7 +22,7 @@
 
             <!-- Progress Steps -->
             <div class="col progress-steps d-flex justify-content-center flex-grow-1">
-                <div class="col-lg-3 step active">
+                <div class="col-lg-3 step">
                     <div class="step-content">
                         <div class="num active">1</div>
                         <div class="step-text">
@@ -31,9 +31,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 step">
+                <div class="col-lg-3 step active">
                     <div class="step-content">
-                        <div class="num ">2</div>
+                        <div class="num active">2</div>
                         <div class="step-text">
                             Study
                             <small>Details ...</small>
@@ -74,7 +74,7 @@
     <!-- Progress Bar -->
     <div class="progress-container">
         <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 36%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar" role="progressbar" style="width: 54%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
     </div>
 </header>
@@ -83,86 +83,115 @@
 <main class="container main-body py-4">
     <div class="row about-container">
 
-        <h2 class="about-title">Wer führt die Studie durch</h2>
+        <h2 class="about-title">Welches Themen beschreibt deine Studie?</h2>
+        <p class="mb-4">Wähle max. 5 Themen</p>
 
         <!-- Selection Grid -->
         <div class="selection-grid mt-3">
+            <!-- Checkboxes -->
             <label class="selection-box">
-                <input type="radio" name="studyRole" value="doktorand">
+                <input type="checkbox" name="Keyword1" value="Keyword1">
                 <div class="box-content">
-                    Doktorand
-                    <span class="checkmark">&#10004;</span>
+                    Keyword
+                    <span class="checkboxs">&#10004;</span>
                 </div>
             </label>
 
             <label class="selection-box">
-                <input type="radio" name="studyRole" value="forscher">
+                <input type="checkbox" name="Keyword2" value="Keyword2">
                 <div class="box-content">
-                    Forscher
-                    <span class="checkmark">&#10004;</span>
+                    Keyword
+                    <span class="checkboxs">&#10004;</span>
                 </div>
             </label>
 
             <label class="selection-box">
-                <input type="radio" name="studyRole" value="option3">
+                <input type="checkbox" name="Keyword3" value="Keyword3">
                 <div class="box-content">
-                    ...
-                    <span class="checkmark">&#10004;</span>
+                    Keyword
+                    <span class="checkboxs">&#10004;</span>
                 </div>
             </label>
 
             <label class="selection-box">
-                <input type="radio" name="studyRole" value="option4">
+                <input type="checkbox" name="Keyword4" value="Keyword4">
                 <div class="box-content">
-                    ...
-                    <span class="checkmark">&#10004;</span>
+                    Keyword
+                    <span class="checkboxs">&#10004;</span>
                 </div>
             </label>
 
             <label class="selection-box">
-                <input type="radio" name="studyRole" value="option5">
+                <input type="checkbox" name="Keyword5" value="Keyword5">
                 <div class="box-content">
-                    ...
-                    <span class="checkmark">&#10004;</span>
+                    Keyword
+                    <span class="checkboxs">&#10004;</span>
                 </div>
             </label>
 
             <label class="selection-box">
-                <input type="radio" name="studyRole" value="option6">
+                <input type="checkbox" name="Keyword6" value="Keyword6">
                 <div class="box-content">
-                    ...
-                    <span class="checkmark">&#10004;</span>
+                    Keyword
+                    <span class="checkboxs">&#10004;</span>
+                </div>
+            </label>
+
+            <label class="selection-box">
+                <input type="checkbox" name="Keyword7" value="Keyword7">
+                <div class="box-content">
+                    Keyword
+                    <span class="checkboxs">&#10004;</span>
+                </div>
+            </label>
+
+            <label class="selection-box">
+                <input type="checkbox" name="Keyword8" value="Keyword8">
+                <div class="box-content">
+                    Keyword
+                    <span class="checkboxs">&#10004;</span>
+                </div>
+            </label>
+
+            <label class="selection-box">
+                <input type="checkbox" name="Keyword9" value="Keyword9">
+                <div class="box-content">
+                    Keyword
+                    <span class="checkboxs">&#10004;</span>
+                </div>
+            </label>
+
+            <label class="selection-box">
+                <input type="checkbox" name="Keyword10" value="Keyword10">
+                <div class="box-content">
+                    Keyword
+                    <span class="checkboxs">&#10004;</span>
+                </div>
+            </label>
+
+            <label class="selection-box">
+                <input type="checkbox" name="Keyword11" value="Keyword11">
+                <div class="box-content">
+                    Keyword
+                    <span class="checkboxs">&#10004;</span>
+                </div>
+            </label>
+
+            <label class="selection-box">
+                <input type="checkbox" name="other" value="other">
+                <div class="box-content">
+                    Other
+                    <span class="checkboxs">&#10004;</span>
                 </div>
             </label>
         </div>
 
-
-        <!-- Hidden Section (Initially Hidden) -->
-        <div class="hidden-section">
-            <!-- TextBox -->
-            <div class="mt-4 mb-2">
-                <p class="text-primary text-toggle">Schreiben Sie etwas über Ihren Hintergrund (optional)</p>
-                <textarea class="textarea" name="" id="" cols="30" rows="6"></textarea>
-                <p>up to 2000 characters</p>
-            </div>
-
-            <!-- Info Box -->
-            <div class="info-box mt-2 mb-2">
-                <p class="text-primary">Hilfe</p>
-                <p class="text-help">Lorem ipsum dolor sit amet, consectetur sadipscing elitr
-                    Lorem ipsum dolor sit amet, consectetur sadipscing elitr
-                    Lorem ipsum dolor sit amet, consectetur sadipscing elitr
-                    Lorem ipsum dolor sit amet, consectetur sadipscing elitr
-                    Lorem ipsum dolor sit amet, consectetur 
-                    , sed diam...</p>
-            </div>
-        </div>
-
-        <!-- Continue Buttons (Initially Hidden) -->
+        <!-- Continue Buttons -->
         <div class="button-container float">
-            <button class="nav-btn text-toggle save-btn float-lg-left" onclick="window.location='pricing.html';">Speichern, später fortsetzen</button>
-            <button class="nav-btn next-btn float-lg-right" onclick="window.location='research-approval.html';">weiter</button>
+            <button class="nav-button text-toggle save-btn float-lg-left" onclick="window.location='study-title.html';">Speichern, später fortsetzen</button>
+            <button class="nav-button next-btn float-lg-right" onclick="window.location='study-description.html';" >weiter</button>
         </div>
+
     </div>
 </main>
 

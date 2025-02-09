@@ -74,7 +74,7 @@
     <!-- Progress Bar -->
     <div class="progress-container">
         <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 36%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
     </div>
 </header>
@@ -83,71 +83,19 @@
 <main class="container main-body py-4">
     <div class="row about-container">
 
-        <h2 class="about-title">Wer führt die Studie durch</h2>
+        <h2 class="about-title">Beschreiben Sie das Zulassungsverfahren</h2>
 
-        <!-- Selection Grid -->
-        <div class="selection-grid mt-3">
-            <label class="selection-box">
-                <input type="radio" name="studyRole" value="doktorand">
-                <div class="box-content">
-                    Doktorand
-                    <span class="checkmark">&#10004;</span>
-                </div>
-            </label>
-
-            <label class="selection-box">
-                <input type="radio" name="studyRole" value="forscher">
-                <div class="box-content">
-                    Forscher
-                    <span class="checkmark">&#10004;</span>
-                </div>
-            </label>
-
-            <label class="selection-box">
-                <input type="radio" name="studyRole" value="option3">
-                <div class="box-content">
-                    ...
-                    <span class="checkmark">&#10004;</span>
-                </div>
-            </label>
-
-            <label class="selection-box">
-                <input type="radio" name="studyRole" value="option4">
-                <div class="box-content">
-                    ...
-                    <span class="checkmark">&#10004;</span>
-                </div>
-            </label>
-
-            <label class="selection-box">
-                <input type="radio" name="studyRole" value="option5">
-                <div class="box-content">
-                    ...
-                    <span class="checkmark">&#10004;</span>
-                </div>
-            </label>
-
-            <label class="selection-box">
-                <input type="radio" name="studyRole" value="option6">
-                <div class="box-content">
-                    ...
-                    <span class="checkmark">&#10004;</span>
-                </div>
-            </label>
-        </div>
-
-
-        <!-- Hidden Section (Initially Hidden) -->
-        <div class="hidden-section">
+        <!-- Showed Section  -->
+        <div class="">
             <!-- TextBox -->
-            <div class="mt-4 mb-2">
-                <p class="text-primary text-toggle">Schreiben Sie etwas über Ihren Hintergrund (optional)</p>
-                <textarea class="textarea" name="" id="" cols="30" rows="6"></textarea>
+            <div class=" mt-4 mb-2">
+                <p class="text-toggle">Schreiben Sie etwas über Ihren Hintergrund (optional)</p>
+                <textarea class="textarea" name="" id="" cols="30" rows="13"></textarea>
                 <p>up to 2000 characters</p>
             </div>
 
             <!-- Info Box -->
-            <div class="info-box mt-2 mb-2">
+            <div class="info-box p-3 mt-2 mb-2">
                 <p class="text-primary">Hilfe</p>
                 <p class="text-help">Lorem ipsum dolor sit amet, consectetur sadipscing elitr
                     Lorem ipsum dolor sit amet, consectetur sadipscing elitr
@@ -160,8 +108,8 @@
 
         <!-- Continue Buttons (Initially Hidden) -->
         <div class="button-container float">
-            <button class="nav-btn text-toggle save-btn float-lg-left" onclick="window.location='pricing.html';">Speichern, später fortsetzen</button>
-            <button class="nav-btn next-btn float-lg-right" onclick="window.location='research-approval.html';">weiter</button>
+            <button class="nav-button text-toggle save-btn float-lg-left" onclick="window.location='research-about.html';">Speichern, später fortsetzen</button>
+            <button class="nav-button next-btn float-lg-right" onclick="window.location='study-how.html';">weiter</button>
         </div>
     </div>
 </main>

@@ -293,7 +293,29 @@
 	});
 
 	/*====================
-	* Hiding Elemnts in Pricing page
+	* Display next-btn "weiter"
+	======================*/
+	// $(document).ready(function () {
+	// 	function toggleNextButton() {
+	// 		let isChecked = $("input[type='checkbox']:checked").length > 0;
+	
+	// 		if (isChecked) {
+	// 			$(".next-btn").prop("disabled", false).css({ "opacity": "1", "cursor": "pointer" });
+	// 		} else {
+	// 			$(".next-btn").prop("disabled", true).css({ "opacity": "0.5", "cursor": "not-allowed" });
+	// 		}
+	// 	}
+	
+	// 	// Listen for changes on checkboxes only
+	// 	$("input[type='checkbox']").on("change", toggleNextButton);
+	
+	// 	// Initial state check
+	// 	toggleNextButton();
+	// });	
+	
+
+	/*====================
+	* Hidden Elemnts research-about
 	======================*/
 	$(document).ready(function () {
 		// When any radio button inside .selection-grid is selected
@@ -303,9 +325,117 @@
 			$(this).closest(".selection-box").addClass("selected");
 	
 			// Show the hidden section & buttons
-			$(".hidden-section, .continue-btn").fadeIn(300);
+			$(".hidden-section, .nav-btn").fadeIn(300);
+
+			// Update progress bar to 56%
+			$(".progress-bar").css({
+				"width": "56%",
+				"transition": "width 0.5s ease-in-out" // Smooth animation
+			});
 		});
 	});
+
+	/*====================
+	* Hidden Elemnts study-how
+	======================*/
+	$(document).ready(function () {
+		// When any radio button inside .selection-grid is selected
+		$('input[name="studyHow"]').on("change", function () {
+			// Highlight the selected box
+			$(".selection-box").removeClass("selected");
+			$(this).closest(".selection-box").addClass("selected");
+	
+			// Hide all sections first
+			$(".hidden-section, .hidden-section-person, .hidden-section-other, .nav-btn").hide();
+
+			// Show only the relevant section based on the selected radio button
+			if ($(this).hasClass("studyOnline")) {
+				$(".hidden-section, .nav-btn").fadeIn(300);
+			}
+			if ($(this).hasClass("studyPerson")) {
+				$(".hidden-section-person, .nav-btn").fadeIn(300);
+			}
+			if ($(this).hasClass("studyOther")) {
+				$(".hidden-section-other, .nav-btn").fadeIn(300);
+			}
+		});
+	});
+
+	/*====================
+	* Hidden Elemnts studyWhich selection
+	======================*/
+	$(document).ready(function () {
+		$('input[name="studyWhich"]').on("change", function () {
+			// Highlight the selected box
+			$(".selection-box").removeClass("selected");
+			$(this).closest(".selection-box").addClass("selected");
+	
+			// Hide all sections first
+			$(".hidden-section-interview, .hidden-section-group, .hidden-section-survey, .hidden-section-product, .hidden-section-observation, .hidden-section-other").hide();
+	
+			// Show only the relevant section based on the selected radio button
+			if ($(this).hasClass("interview")) {
+				$(".hidden-section-interview, .nav-btn").fadeIn(300);
+			}
+			if ($(this).hasClass("group")) {
+				$(".hidden-section-group, .nav-btn").fadeIn(300);
+			}
+			if ($(this).hasClass("survay")) {
+				$(".hidden-section-survey, .nav-btn").fadeIn(300);
+			}
+			if ($(this).hasClass("product")) {
+				$(".hidden-section-product, .nav-btn").fadeIn(300);
+			}
+			if ($(this).hasClass("observation")) {
+				$(".hidden-section-observation, .nav-btn").fadeIn(300);
+			}
+			if ($(this).hasClass("other")) {
+				$(".hidden-section-other, .nav-btn").fadeIn(300);
+			}
+		});
+	});
+
+	/*====================
+	* Select-Unselect study-keywords
+	======================*/
+	$(document).ready(function () {
+		$(".selection-box input[type='checkbox']").on("click", function () {
+			let parentBox = $(this).closest(".selection-box");
+	
+			if ($(this).prop("checked")) {
+				parentBox.addClass("selected");
+			} else {
+				parentBox.removeClass("selected");
+			}
+		});
+	});
+	
+
+	/*====================
+	* Reset color, 2000 letters onward
+	======================*/
+	$(document).ready(function () {
+		$(".textarea").on("input", function () {
+			let maxChars = 2000;
+			let text = $(this).val();
+			let textLength = $(this).val().length;
+			let warningText = $(this).next("p"); 
+			
+			if (textLength > maxChars) {
+				let normalText = text.substring(0, maxChars);
+				let extraText = text.substring(maxChars);
+				// console.log(normalText);
+				// console.log(extraText);
+				$(this).css("color", "red");
+				warningText.css("color", "red");
+			} else {
+				// Reset text color
+				$(this).css("color", "");
+				warningText.css("color", ""); 
+			}
+		});
+	});
+	
 	
 	/*====================
 	  * Initiate Pure Counter

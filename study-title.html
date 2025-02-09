@@ -22,7 +22,7 @@
 
             <!-- Progress Steps -->
             <div class="col progress-steps d-flex justify-content-center flex-grow-1">
-                <div class="col-lg-3 step active">
+                <div class="col-lg-3 step">
                     <div class="step-content">
                         <div class="num active">1</div>
                         <div class="step-text">
@@ -31,9 +31,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 step">
+                <div class="col-lg-3 step active">
                     <div class="step-content">
-                        <div class="num ">2</div>
+                        <div class="num active">2</div>
                         <div class="step-text">
                             Study
                             <small>Details ...</small>
@@ -83,73 +83,25 @@
 <main class="container main-body py-4">
     <div class="row about-container">
 
-        <h2 class="about-title">Wer führt die Studie durch</h2>
+        <h2 class="about-title">Geben Sie einen Title für die Studie ein.</h2>
 
-        <!-- Selection Grid -->
-        <div class="selection-grid mt-3">
-            <label class="selection-box">
-                <input type="radio" name="studyRole" value="doktorand">
-                <div class="box-content">
-                    Doktorand
-                    <span class="checkmark">&#10004;</span>
-                </div>
-            </label>
-
-            <label class="selection-box">
-                <input type="radio" name="studyRole" value="forscher">
-                <div class="box-content">
-                    Forscher
-                    <span class="checkmark">&#10004;</span>
-                </div>
-            </label>
-
-            <label class="selection-box">
-                <input type="radio" name="studyRole" value="option3">
-                <div class="box-content">
-                    ...
-                    <span class="checkmark">&#10004;</span>
-                </div>
-            </label>
-
-            <label class="selection-box">
-                <input type="radio" name="studyRole" value="option4">
-                <div class="box-content">
-                    ...
-                    <span class="checkmark">&#10004;</span>
-                </div>
-            </label>
-
-            <label class="selection-box">
-                <input type="radio" name="studyRole" value="option5">
-                <div class="box-content">
-                    ...
-                    <span class="checkmark">&#10004;</span>
-                </div>
-            </label>
-
-            <label class="selection-box">
-                <input type="radio" name="studyRole" value="option6">
-                <div class="box-content">
-                    ...
-                    <span class="checkmark">&#10004;</span>
-                </div>
-            </label>
-        </div>
-
-
-        <!-- Hidden Section (Initially Hidden) -->
-        <div class="hidden-section">
-            <!-- TextBox -->
-            <div class="mt-4 mb-2">
-                <p class="text-primary text-toggle">Schreiben Sie etwas über Ihren Hintergrund (optional)</p>
-                <textarea class="textarea" name="" id="" cols="30" rows="6"></textarea>
-                <p>up to 2000 characters</p>
+        <!-- Hidden Section Online Option (Initially Hidden) -->
+        <div class="py-4">
+            <!-- Link Input -->
+            <div class="mb-5">
+                <label for="link" class="form-label text-toggle">Title</label>
+                <input type="link" class="form-control" id="link" placeholder="Worum geht es?">
             </div>
 
             <!-- Info Box -->
-            <div class="info-box mt-2 mb-2">
-                <p class="text-primary">Hilfe</p>
+            <div class="info-box-payment p-3 mt-4 mb-5">
+                <h5 class="text-primary">Tipps</h5>
                 <p class="text-help">Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                    Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                    Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                    Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                    Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                    Lorem ipsum dolor sit amet, consectetur sadipscing elitr
                     Lorem ipsum dolor sit amet, consectetur sadipscing elitr
                     Lorem ipsum dolor sit amet, consectetur sadipscing elitr
                     Lorem ipsum dolor sit amet, consectetur sadipscing elitr
@@ -160,8 +112,8 @@
 
         <!-- Continue Buttons (Initially Hidden) -->
         <div class="button-container float">
-            <button class="nav-btn text-toggle save-btn float-lg-left" onclick="window.location='pricing.html';">Speichern, später fortsetzen</button>
-            <button class="nav-btn next-btn float-lg-right" onclick="window.location='research-approval.html';">weiter</button>
+            <button class="nav-button text-toggle save-btn float-lg-left" onclick="window.location='study-which.html';">Speichern, später fortsetzen</button>
+            <button class="nav-button next-btn float-lg-right" onclick="window.location='study-keywords.html';">weiter</button>
         </div>
     </div>
 </main>
