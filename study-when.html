@@ -74,7 +74,7 @@
     <!-- Progress Bar -->
     <div class="progress-container">
         <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 66%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
     </div>
 </header>
@@ -83,20 +83,46 @@
 <main class="container main-body py-4">
     <div class="row about-container">
 
-        <h2 class="about-title">Formuliere um was es in deiner Studie geht</h2>
+        <h2 class="about-title">Wann soll die Studie stattfinden?</h2>
+        <p>Die LAufezeit Entspricht dem gewählten Lizenz-Packet.</p>
+        <p>Die Lizenz kann hier jederzeit ungewählt werden.</p>
 
-        <!-- Showed Section  -->
-        <div class="">
-            <!-- TextBox -->
-            <div class=" mt-4 mb-2">
-                <p class="text-toggle">Schreiben Sie etwas über Ihren Hintergrund (optional)</p>
-                <textarea class="textarea" name="" id="" cols="30" rows="10"></textarea>
-                <p>up to 2000 characters</p>
+        <!-- Date Section -->
+        <form action="" method="post" autocomplete="off" class=" py-4">
+            <!-- Date Inputs -->
+            <div class="row mb-4">
+                <div class="col-md-6">
+                  <div class="md-form md-outline input-with-post-icon timepicker" twelvehour="true">
+                      <label for="light-version-examples">Start datum wählen</label>
+                    <input type="date" id="light-version-examples" class="form-control" placeholder="Select time" required>
+                    <i class="fas fa-envelope input-prefix"></i>
+                  </div>
+                </div>
+              
+                <div class="col-md-6">
+                  <div class="md-form md-outline input-with-post-icon timepicker" darktheme="true">
+                    <div class="d-flex">
+                        <label for="dark-version-example">End datum wählen</label>
+                        <div class="num active i">i</div> 
+                    </div>
+                    <input type="date" id="dark-version-example" class="form-control" placeholder="Select time" required>
+                    <i class="fas fa-envelope  input-prefix"></i>
+                  </div>
+                </div>
+              </div>
+            
+            <!-- Toggle Switch for Code -->
+            <div class="switch-container switch-code mb-5">
+                <div class="form-check form-switch ios-switch">
+                    <input class="form-check-input" type="checkbox" id="codeToggle">
+                    <label class="form-check-label" for="codeToggle"></label>
+                </div>
+                <label class="switch-text text-toggle" for="codeToggle">Später definieren</label>
             </div>
 
             <!-- Info Box -->
-            <div class="info-box p-3 mt-2 mb-2">
-                <p class="text-primary">Tipps</p>
+            <div class="info-box-payment p-3 mt-4 mb-5">
+                <h5 class="text-primary">Tipps</h5>
                 <p class="text-help">Lorem ipsum dolor sit amet, consectetur sadipscing elitr
                     Lorem ipsum dolor sit amet, consectetur sadipscing elitr
                     Lorem ipsum dolor sit amet, consectetur sadipscing elitr
@@ -104,15 +130,14 @@
                     Lorem ipsum dolor sit amet, consectetur 
                     , sed diam...</p>
             </div>
+            <!-- Continue Buttons (Initially Hidden) -->
+            <div class="button-container float">
+                <button class="nav-button text-toggle save-btn float-lg-left" onclick="window.location='study-image.html';">Speichern, später fortsetzen</button>
+                <button class="nav-button next-btn float-lg-right" onclick="window.location='study-which.html';">weiter</button>
+            </div>
         </div>
 
-        <!-- Continue Buttons -->
-        <div class="button-container float">
-            <button class="nav-button text-toggle save-btn float-lg-left" onclick="window.location='study-keywords.html';">Speichern, später fortsetzen</button>
-            <button class="nav-button next-btn float-lg-right" onclick="window.location='study-image.html';">weiter</button>
-        </div>
-
-    </div>
+    </form>
 </main>
 
 <!-- Load jQuery -->

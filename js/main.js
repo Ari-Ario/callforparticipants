@@ -220,8 +220,21 @@
 				content: '<p>welcome to Medipro</p>'
 			}
 		
+			});
 		});
-	});
+
+		/*====================
+			Togel checkbox of Photos
+		======================*/
+		$(document).ready(function () {
+			$(".photo-box img").on("click", function (e) {
+				let checkbox = $(this).siblings(".photo-checkbox");
+				checkbox.prop("checked", !checkbox.prop("checked")); // Toggle checked state
+				e.stopPropagation(); // Prevent bubbling
+			});
+		});
+		
+	
 	
 	/*====================
 		Preloader JS
@@ -435,6 +448,26 @@
 			}
 		});
 	});
+	
+	
+	/*====================
+	* Select-Unselect study-keywords
+	======================*/
+	$(document).ready(function () {
+		$(".photo-box img").on("click", function (e) {
+			let checkbox = $(this).siblings(".photo-checkbox");
+	
+			if (checkbox.prop("checked")) {
+				checkbox.prop("checked", false);
+				$(this).siblings(".checkboxs").fadeOut(200);
+			} else {
+				checkbox.prop("checked", true);
+				$(this).siblings(".checkboxs").fadeIn(200);
+			}
+			e.stopPropagation(); // Prevent event bubbling
+		});
+	});
+	
 	
 	
 	/*====================

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Page</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">  
-    <link rel="stylesheet" href="css/rest.css">  <!-- Linking your existing CSS -->
+    <link rel="stylesheet" href="css/rest.css">
     
 </head>
 <body class="dark-mode">
@@ -74,7 +74,7 @@
     <!-- Progress Bar -->
     <div class="progress-container">
         <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 66%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
     </div>
 </header>
@@ -83,17 +83,60 @@
 <main class="container main-body py-4">
     <div class="row about-container">
 
-        <h2 class="about-title">Formuliere um was es in deiner Studie geht</h2>
+        <h2 class="about-title">Bilder (optional)</h2>
 
         <!-- Showed Section  -->
         <div class="">
-            <!-- TextBox -->
-            <div class=" mt-4 mb-2">
-                <p class="text-toggle">Schreiben Sie etwas über Ihren Hintergrund (optional)</p>
-                <textarea class="textarea" name="" id="" cols="30" rows="10"></textarea>
-                <p>up to 2000 characters</p>
-            </div>
 
+            <!-- Photo Box -->
+            <div class="mz-gallery-container mb-4">
+                <div class="mb-2 d-flex mz-gallery" id="photo-row">
+                    <label class="photo-box">
+                        <input type="checkbox" class="photo-checkbox" name="Keyword1" value="Keyword1">
+                        <img src="img/ImgTest/centrella-lasertechnik.png" alt="Statue of Liberty" width="300" height="300">
+                        <span class="checkboxs">&#10004;</span>
+                        <figcaption class="figcaption">PHOTO1</figcaption>
+                    </label>
+            
+                    <label class="photo-box">
+                        <input type="checkbox" class="photo-checkbox" name="Keyword2" value="Keyword2">
+                        <img src="img/ImgTest/Screenshot from 2025-01-20 14-46-28.png" alt="Night Sky" width="300" height="300">
+                        <span class="checkboxs">&#10004;</span>
+                        <figcaption>PHOTO2</figcaption>
+                    </label>
+            
+                    <label class="photo-box">
+                        <input type="checkbox" class="photo-checkbox" name="Keyword3" value="Keyword3">
+                        <img src="img/ImgTest/Screenshot from 2025-02-03 10-54-29.png" alt="Ravine Between Rocks" width="300" height="300">
+                        <span class="checkboxs">&#10004;</span>
+                        <figcaption>PHOTO3</figcaption>
+                    </label>
+            
+                    <label class="photo-box">
+                        <input type="checkbox" class="photo-checkbox" name="Keyword4" value="Keyword4">
+                        <img src="img/ImgTest/Screenshot from 2025-02-03 14-04-32.png" alt="Wheat Farm" width="300" height="300">
+                        <span class="checkboxs">&#10004;</span>
+                        <figcaption>PHOTO4</figcaption>
+                    </label>
+            
+                    <label class="photo-box">
+                        <input type="checkbox" class="photo-checkbox" name="Keyword5" value="Keyword5">
+                        <img src="img/ImgTest/centrella-lasertechnik.png" alt="City Street" width="300" height="300">
+                        <span class="checkboxs">&#10004;</span>
+                        <figcaption>PHOTO5</figcaption>
+                    </label>
+            
+                    <label class="photo-box">
+                        <input type="checkbox" class="photo-checkbox" name="Keyword6" value="Keyword6">
+                        <img src="img/ImgTest/Screenshot from 2025-01-20 14-46-28.png" alt="Crumbling Pier" width="300" height="300">
+                        <span class="checkboxs">&#10004;</span>
+                        <figcaption>PHOTO6</figcaption>
+                    </label>
+                </div>
+            </div>            
+            
+            
+            
             <!-- Info Box -->
             <div class="info-box p-3 mt-2 mb-2">
                 <p class="text-primary">Tipps</p>
@@ -108,8 +151,8 @@
 
         <!-- Continue Buttons -->
         <div class="button-container float">
-            <button class="nav-button text-toggle save-btn float-lg-left" onclick="window.location='study-keywords.html';">Speichern, später fortsetzen</button>
-            <button class="nav-button next-btn float-lg-right" onclick="window.location='study-image.html';">weiter</button>
+            <button class="nav-button text-toggle save-btn float-lg-left" onclick="window.location='study-description.html';">Speichern, später fortsetzen</button>
+            <button class="nav-button next-btn float-lg-right" onclick="window.location='study-when.html';">weiter</button>
         </div>
 
     </div>

@@ -443,6 +443,107 @@ body.light-mode .text-toggle {
 /* ----------- Checkboxes of page study-keywords------------------------*/
 
 
+/* --------------- Photo styling in study-image ----------------------- */
+.mz-gallery-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; 
+    overflow: hidden; 
+    margin: auto;
+}
+
+.mz-gallery {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+}
+
+/* Hide default scrollbar */
+.mz-gallery::-webkit-scrollbar {
+    height: 8px;
+}
+
+.mz-gallery::-webkit-scrollbar-thumb {
+    background: #A855F7;
+    border-radius: 5px;
+}
+
+
+/* Ensure the images don't disappear and stay visible */
+.photo-box {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    position: relative; 
+    text-align: center;
+    cursor: pointer;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    max-height: 300px;
+
+}
+
+.photo-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.photo-box:hover img {
+    transform: scale(1.05);
+}
+
+/* Hide the default checkbox */
+.photo-checkbox {
+    display: none;
+}
+
+/* Show checkmark at top-right when selected */
+.photo-box .checkboxs {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background-color: rgb(218, 218, 218);
+    border-radius: 50%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    display: none; 
+}
+
+/* Show checkbox when input is checked */
+.photo-checkbox:checked + img + .checkboxs {
+    display: block;
+}
+
+/* Selected state (change background) */
+.photo-checkbox:checked + img {
+    outline: 4px solid #A855F7;
+    outline-offset: 2px;
+    opacity: 0.8;
+}
+/* --------------- Ende Photo styling in study-image ----------------------- */
+
+.i {
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    background: gray;
+    color: #120A2C;
+    margin-right: 10px;
+}
 
 /* Mobile Screen */
 @media only screen and (max-width: 500px) {
@@ -506,6 +607,21 @@ body.light-mode .text-toggle {
     .nav-button {
         width: 100%;
     }
+    .mz-gallery {
+        display: block;
+        /* flex-wrap: wrap;
+        justify-content: center; */
+        
+    }
+    .mz-gallery-container {
+        width: 360px !important;
+    }
+    .photo-box {
+        width: 200px; 
+        height: auto;
+        max-height: 200px;
+        /* margin-bottom: 100px; */
+    }
 }
 
 @media only screen and (max-width: 912px) {
@@ -529,4 +645,15 @@ body.light-mode .text-toggle {
         font-weight: bold;
         width: 40vw;
     }
+    .mz-gallery-container {
+        max-width: 700px !important;
+    }
 }
+
+@media only screen and (max-width: 1024px) {
+    .mz-gallery-container {
+        max-width: 960px;
+    }
+}
+
+
