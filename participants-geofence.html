@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Page</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">  
+    <link rel="stylesheet" href="css/rest.css">  <!-- Linking your existing CSS -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body class="dark-mode">
+
+<!-- Header (Same as previous page, not changed) -->
+<header id="header" class="header">
+    <div class="container-fluid py-3">
+        <div class="d-flex justify-content-between align-items-center">
+            
+            <!-- Title -->
+            <div class="col-lg-2">
+                <h4 class="title"> <a href="index.html">Call for participants</a> </h4>
+            </div>
+
+            <!-- Progress Steps -->
+            <div class="col progress-steps d-flex justify-content-center flex-grow-1">
+                <div class="col-lg-3 step">
+                    <div class="step-content">
+                        <div class="num active">1</div>
+                        <div class="step-text">
+                            Researcher
+                            <small>Subtitle</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 step">
+                    <div class="step-content">
+                        <div class="num active">2</div>
+                        <div class="step-text">
+                            Study
+                            <small>Details ...</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 step active">
+                    <div class="step-content">
+                        <div class="num active">3</div>
+                        <div class="step-text">
+                            Participants
+                            <small>Subtitle</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 step">
+                    <div class="step-content">
+                        <div class="num">4</div>
+                        <div class="step-text">
+                            Done, draft created
+                            <small>Study can be published</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Light/Dark Mode Toggle -->
+            <div class="switch-container mr-3">
+                <label class="light-dark switch-text" for="themeToggle">Light</label>
+                <div class="form-check form-switch ios-switch">
+                    <input class="form-check-input" type="checkbox" id="themeToggle" checked>
+                    <label class="form-check-label" for="themeToggle"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 18%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="container main-body py-4">
+    <div class="row about-container">
+
+        <h2 class="about-title">Möchten Sie ihre Teilnehmer auf bestimmte geografische Gebite eingrenzen?</h2>
+        
+        <!-- Toggle Switches of worldwide and all continents -->
+        <div class="d-block w-100 float">
+            
+            <!-- Worldwide Toggle -->
+            <div class="switch-container mb-5 d-flex justify-content-between">
+                <label class="switch-text text-toggle" for="codeToggle">Worldwide</label>
+                <div class="form-check form-switch ios-switch">
+                    <input class="form-check-input" type="checkbox" id="codeToggle" checked>
+                    <label class="form-check-label" for="codeToggle"></label>
+                </div>
+            </div>
+            
+            <!-- Continents Toggles -->
+            <div class="continent-section">
+                <div class="switch-container mb-3 d-flex justify-content-between">
+                    <label class="switch-text text-toggle" for="africaToggle">Africa</label>
+                    <div class="form-check form-switch ios-switch">
+                        <input class="form-check-input continent-toggle" type="checkbox" id="africaToggle">
+                        <label class="form-check-label" for="africaToggle"></label>
+                    </div>
+                </div>
+                <div class="continent-dropdown" id="africaDropdown">
+                    <span class="toggle-dropdown add-countries" data-target="africa-popup"><i class="fa fa-plus" aria-hidden="true"></i> hinzufügen</span>
+                    <span class="toggle-dropdown"><i class="fa fa-minus" aria-hidden="true"></i> ausschließen</span>
+                </div>
+            </div>
+            
+            <div class="continent-section">
+                <div class="switch-container mb-3 d-flex justify-content-between">
+                    <label class="switch-text text-toggle" for="americaToggle">America</label>
+                    <div class="form-check form-switch ios-switch">
+                        <input class="form-check-input continent-toggle" type="checkbox" id="americaToggle">
+                        <label class="form-check-label" for="americaToggle"></label>
+                    </div>
+                </div>
+                <div class="continent-dropdown" id="americaDropdown">
+                    <span class="toggle-dropdown add-countries" data-target="america-popup"><i class="fa fa-plus" aria-hidden="true"></i> hinzufügen</span>
+                    <span class="toggle-dropdown"><i class="fa fa-minus" aria-hidden="true"></i> ausschließen</span>
+                </div>
+            </div>
+            
+            <div class="continent-section">
+                <div class="switch-container mb-3 d-flex justify-content-between">
+                    <label class="switch-text text-toggle" for="asiaToggle">Asia</label>
+                    <div class="form-check form-switch ios-switch">
+                        <input class="form-check-input continent-toggle" type="checkbox" id="asiaToggle">
+                        <label class="form-check-label" for="asiaToggle"></label>
+                    </div>
+                </div>
+                <div class="continent-dropdown" id="asiaDropdown">
+                    <span class="toggle-dropdown add-countries" data-target="asia-popup"><i class="fa fa-plus" aria-hidden="true"></i> hinzufügen</span>
+                    <span class="toggle-dropdown"><i class="fa fa-minus" aria-hidden="true"></i> ausschließen</span>
+                </div>
+            </div>
+            
+            <div class="continent-section">
+                <div class="switch-container mb-3 d-flex justify-content-between">
+                    <label class="switch-text text-toggle" for="europeToggle">Europe</label>
+                    <div class="form-check form-switch ios-switch">
+                        <input class="form-check-input continent-toggle" type="checkbox" id="europeToggle">
+                        <label class="form-check-label" for="europeToggle"></label>
+                    </div>
+                </div>
+                <div class="continent-dropdown" id="europeDropdown">
+                    <span class="toggle-dropdown add-countries" data-target="europe-popup"><i class="fa fa-plus" aria-hidden="true"></i> hinzufügen</span>
+                    <span class="toggle-dropdown"><i class="fa fa-minus" aria-hidden="true"></i> ausschließen</span>
+                </div>
+            </div>
+            
+            <div class="continent-section">
+                <div class="switch-container mb-3 d-flex justify-content-between">
+                    <label class="switch-text text-toggle" for="oceaniaToggle">Ozeanien</label>
+                    <div class="form-check form-switch ios-switch">
+                        <input class="form-check-input continent-toggle" type="checkbox" id="oceaniaToggle">
+                        <label class="form-check-label" for="oceaniaToggle"></label>
+                    </div>
+                </div>
+                <div class="continent-dropdown" id="oceaniaDropdown">
+                    <span class="toggle-dropdown add-countries" data-target="oceania-popup"><i class="fa fa-plus" aria-hidden="true"></i> hinzufügen</span>
+                    <span class="toggle-dropdown"><i class="fa fa-minus" aria-hidden="true"></i> ausschließen</span>
+                </div>
+            </div>
+            
+            <div class="continent-section">
+                <div class="switch-container mb-3 d-flex justify-content-between">
+                    <label class="switch-text text-toggle" for="antarcticaToggle">Antarktis</label>
+                    <div class="form-check form-switch ios-switch">
+                        <input class="form-check-input continent-toggle" type="checkbox" id="antarcticaToggle">
+                        <label class="form-check-label" for="antarcticaToggle"></label>
+                    </div>
+                </div>
+                <div class="continent-dropdown" id="antarcticaDropdown">
+                    <span class="toggle-dropdown add-countries" data-target="antarctica-popup"><i class="fa fa-plus" aria-hidden="true"></i> hinzufügen</span>
+                    <span class="toggle-dropdown"><i class="fa fa-minus" aria-hidden="true"></i> ausschließen</span>
+                </div>
+            </div>
+            
+            
+        </div>
+        
+        <!-- POPUPS FOR EACH CONTINENT -->
+        <div class="continent-popup text-toggle py-4" id="africa-popup">
+            <div class="popup-content text-toggle">
+                <h2>Africa</h2>
+                <p>Choose countries to include or exclude.</p>
+            </div>
+        </div>
+        
+        <div class="continent-popup" id="america-popup">
+            <div class="popup-content">
+                <h2>America</h2>
+                <p>Choose countries to include or exclude.</p>
+            </div>
+        </div>
+
+        <div class="continent-popup" id="asia-popup">
+            <div class="popup-content">
+                <h2>Africa</h2>
+                <p>Choose countries to include or exclude.</p>
+            </div>
+        </div>
+        
+        <div class="continent-popup" id="europe-popup">
+            <div class="popup-content">
+                <h2>America</h2>
+                <p>Choose countries to include or exclude.</p>
+            </div>
+        </div>
+
+        <div class="continent-popup" id="oceania-popup">
+            <div class="popup-content">
+                <h2>Africa</h2>
+                <p>Choose countries to include or exclude.</p>
+            </div>
+        </div>
+        
+        <div class="continent-popup" id="antarctica-popup">
+            <div class="popup-content">
+                <h2>America</h2>
+                <p>Choose countries to include or exclude.</p>
+            </div>
+        </div>
+
+            <!-- Continue Buttons (Initially Hidden) -->
+            <div class="button-container float">
+                <button class="nav-button text-toggle save-btn float-lg-left" onclick="window.location='study-image.html';">Speichern, später fortsetzen</button>
+                <button class="nav-button next-btn float-lg-right" onclick="window.location='participants-amount.html';">weiter</button>
+            </div>
+        </div>
+
+    </form>
+</main>
+
+<!-- Load jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+<!-- Custom JS -->
+<script src="js/main.js" defer></script>
+
+
+</body>
+</html>

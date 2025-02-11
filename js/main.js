@@ -468,6 +468,95 @@
 		});
 	});
 	
+	/*====================
+	* Select-Unselect geofence
+	======================*/
+	$(document).ready(function () {
+		// Set "Worldwide" as checked by default
+		$("#codeToggle").prop("checked", true);
+	
+		// When another continent is checked, uncheck "Worldwide"
+		$(".continent-toggle").on("change", function () {
+			if ($(this).prop("checked")) {
+				$("#codeToggle").prop("checked", false);
+			}
+		});
+	
+		// If "Worldwide" is checked, uncheck all continents
+		$("#codeToggle").on("change", function () {
+			if ($(this).prop("checked")) {
+				$(".continent-toggle").prop("checked", false);
+			}
+		});
+	
+		// Show dropdown when continent switch is turned on
+		$(".continent-toggle").on("change", function () {
+			let dropdown = $(this).closest(".continent-section").find(".continent-dropdown");
+			if ($(this).prop("checked")) {
+				dropdown.slideDown();
+			} else {
+				dropdown.slideUp();
+			}
+		});
+	
+		// Toggle dropdown for adding/excluding countries
+		$(".toggle-dropdown").on("click", function () {
+			$(this).closest(".continent-section").find(".continent-dropdown").slideToggle();
+		});
+	
+		// Open country popup on "+ hinzufügen" click
+		$(".add-countries").on("click", function () {
+			let targetPopup = $(this).data("target");
+			$("#" + targetPopup).fadeIn();
+		});
+	
+		// Close country popup when clicking outside
+		$(".close-popup").on("click", function () {
+			$(this).closest(".country-popup").fadeOut();
+		});
+	});	
+
+
+
+	// $(document).ready(function () {
+	// 	// Uncheck worldwide when a continent is checked
+	// 	$(".continent-toggle").on("change", function () {
+	// 		if ($(this).prop("checked")) {
+	// 			$("#codeToggle").prop("checked", false);
+	// 		}
+	// 	});
+	
+	// 	// Uncheck all continents when worldwide is checked
+	// 	$("#codeToggle").on("change", function () {
+	// 		if ($(this).prop("checked")) {
+	// 			$(".continent-toggle").prop("checked", false);
+	// 		}
+	// 	});
+	
+	// 	// Clicking the div toggles the dropdown (but not inside elements)
+	// 	$(".switch-container").on("click", function (event) {
+	// 		if (!$(event.target).is("input, label")) { 
+	// 			let dropdown = $(this).next(".continent-dropdown");
+	// 			$(".continent-dropdown").not(dropdown).slideUp(); // Close others
+	// 			dropdown.slideToggle(); // Toggle clicked one
+	// 		}
+	// 	});
+	
+	// 	// Open popup on clicking "+ hinzufügen"
+	// 	$(".add-countries").on("click", function (event) {
+	// 		event.stopPropagation();
+	// 		let targetPopup = $(this).data("target");
+	// 		$("#" + targetPopup).fadeIn();
+	// 	});
+	
+	// 	// Close popup only on clicking the switch
+	// 	$(".continent-toggle").on("change", function () {
+	// 		let targetPopup = $(this).closest(".continent-section").find(".add-countries").data("target");
+	// 		if (!$(this).prop("checked")) {
+	// 			$("#" + targetPopup).fadeOut();
+	// 		}
+	// 	});
+	// });
 	
 	
 	/*====================
