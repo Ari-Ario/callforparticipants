@@ -1,140 +1,94 @@
 
-<!-- ------------------------ Openening Times with Google Date API precisly --------------------------- -->
-<!-- apiKey= AIzaSyA1JNH_2wzLhiJE70-kf2dWA_tAaKYij18 -->
-
-<?php
-function getOpeningHours() {
-    // Define the path to the cache file
-    $cacheFile = __DIR__ . '/holiday_cache.json';
-    $cacheDuration = 90 * 24 * 60 * 60; // Cache duration: 90 days
-
-    // Check if the cache file exists and is still valid
-    if (file_exists($cacheFile) && (time() - filemtime($cacheFile)) < $cacheDuration) {
-        // Load holidays from the cache
-        $holidays = json_decode(file_get_contents($cacheFile), true);
-    } else {
-        // Fetch holidays from the Google Calendar API
-        $holidays = fetchHolidaysFromGoogleCalendar();
-
-        // If fetching was successful, cache the data
-        if ($holidays !== null) {
-            file_put_contents($cacheFile, json_encode($holidays));
-        } else {
-            // If API call fails and cache exists, use the cached data
-            if (file_exists($cacheFile)) {
-                $holidays = json_decode(file_get_contents($cacheFile), true);
-            } else {
-                // If no cache is available, define a fallback
-                $holidays = [];
-            }
-        }
-    }
-
-    // Retrieve opening hours from dynamic labels
-    $weekdayHours = [
-        'Monday' => label('footer.Mo 08:00–12:00 und 13:00–17:00'),
-        'Tuesday' => label('footer.Di 08:00–12:00 und 13:00–17:00'),
-        'Wednesday' => label('footer.Mi 08:00–12:00 und 13:00–17:00'),
-        'Thursday' => label('footer.Do 08:00–12:00 und 13:00–17:00'),
-        'Friday' => label('footer.Fr 08:00–16:30'),
-    ];
-
-    $today = new DateTime('now', new DateTimeZone('Europe/Zurich'));
-    $dayName = $today->format('l');
-    $date = $today->format('Y-m-d');
-
-    // Check if today is a holiday
-    if (isset($holidays[$date])) {
-        return 'Feiertag (' . $holidays[$date] . ')';
-    }
-
-    // Check if today is a weekend
-    if ($dayName === 'Saturday' || $dayName === 'Sunday') {
-        return 'Wochenende';
-    }
-
-    // Return the opening hours for today
-    return $weekdayHours[$dayName] ?? 'Geschlossen';
-}
-
-function fetchHolidaysFromGoogleCalendar() {
-    $calendarId = 'de.swiss#holiday@group.v.calendar.google.com';
-    $apiKey = 'AIzaSyA1JNH_2wzLhiJE70-kf2dWA_tAaKYij18';
-    $year = date('Y');
-    $url = "https://www.googleapis.com/calendar/v3/calendars/$calendarId/events?key=$apiKey&timeMin=$year-01-01T00:00:00Z&timeMax=$year-12-31T23:59:59Z";
-
-    $response = @file_get_contents($url);
-    if ($response === FALSE) {
-        return null; // API call failed
-    }
-
-    $data = json_decode($response, true);
-    $holidays = [];
-
-    foreach ($data['items'] as $event) {
-        if (isset($event['start']['date'])) {
-            $date = $event['start']['date'];
-            $holidays[$date] = $event['summary'];
-        }
-    }
-
-    return $holidays;
-}
-?>
-
-
-
-
-<!-- ------------------------ Openening Times with Google API precisly second --------------------------- -->
-<!-- apiKey= AIzaSyA1JNH_2wzLhiJE70-kf2dWA_tAaKYij18 -->
-
 <?php
 function getOpeningStatus() {
-    // Define cache files
-    $holidayCacheFile = __DIR__ . '/holiday_cache.json';
-    $vacationCacheFile = __DIR__ . '/vacation_cache.json';
-    $cacheDuration = 90 * 24 * 60 * 60; // 90 days later fetches Data from API (maximum 4 times per year)
+    // Load vacation days from label and convert to an array
 
-    // Load holidays (Google Calendar API)
-    if (file_exists($holidayCacheFile) && (time() - filemtime($holidayCacheFile)) < $cacheDuration) {
-        $holidays = json_decode(file_get_contents($holidayCacheFile), true);
-    } else {
-        $holidays = fetchHolidaysFromGoogleCalendar();
-        if ($holidays !== null) {
-            file_put_contents($holidayCacheFile, json_encode($holidays));
-        } else {
-            $holidays = file_exists($holidayCacheFile) ? json_decode(file_get_contents($holidayCacheFile), true) : [];
+    $vacationDaysInput = "    1. Januar 2025
+
+2. Januar 2025
+
+17.4.2025
+
+18.04.2025
+
+21. April 2025
+
+28. April 2025
+
+1. Mai 2025
+
+28. Mai 2025
+
+29. Mai 2025
+
+9. Juni 2025
+
+1. August 2025, 15. September 2025, 24. Dezember 2025, 25. Dezember 2025
+
+26. Dezember 2025
+
+31.12.2025";
+ 
+    // $vacationDaysInput = label('footer.Liste-Urlaubstage');
+    $vacationDays = [];
+
+    // German month names mapped to numbers
+    $germanMonths = [
+        'Januar' => '01', 'Februar' => '02', 'März' => '03', 'April' => '04',
+        'Mai' => '05', 'Juni' => '06', 'Juli' => '07', 'August' => '08',
+        'September' => '09', 'Oktober' => '10', 'November' => '11', 'Dezember' => '12'
+    ];
+
+    // Split by line breaks and commas
+    foreach (preg_split('/[\r\n,]+/', $vacationDaysInput) as $dateString) {
+        $dateString = trim($dateString);
+
+        // Match German month format (e.g., "1. Januar 2025")
+        if (preg_match('/(\d{1,2})\.\s*([A-Za-zäöüÄÖÜ]+)\s*(\d{4})/', $dateString, $matches)) {
+            $day = str_pad($matches[1], 2, '0', STR_PAD_LEFT);
+            $month = $germanMonths[$matches[2]] ?? null;
+            $year = $matches[3];
+
+            if ($month) {
+                $vacationDays[] = "$year-$month-$day";
+            }
+        }
+        // Match numeric format (e.g., "01.01.2025" or "1.1.2025")
+        elseif (preg_match('/(\d{1,2})\.(\d{1,2})\.(\d{4})/', $dateString, $matches)) {
+            $vacationDays[] = sprintf('%04d-%02d-%02d', $matches[3], $matches[2], $matches[1]);
+        }
+    }
+    print_r( $vacationDays);
+
+    // Dynamically generate opening hours from label()
+    $times = implode("\n", array(
+        label('footer.Mo 08:00–12:00 und 13:00–17:00'),
+        label('footer.Di 08:00–12:00 und 13:00–17:00'),
+        label('footer.Mi 08:00–12:00 und 13:00–17:00'),
+        label('footer.Do 08:00–12:00 und 13:00–17:00'),
+        label('footer.Fr 08:00–16:30'),
+    ));
+
+    // Split times dynamically into array
+    $lines = explode("\n", $times);
+    $weekdayHours = [];
+    $days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    
+    foreach ($lines as $index => $line) {
+        if (preg_match_all('/(\d{2}:\d{2})/', $line, $matches)) {
+            $weekdayHours[$days[$index]] = $matches[0];
         }
     }
 
-    // Load vacation days from cache
-    $vacationDays = file_exists($vacationCacheFile) ? json_decode(file_get_contents($vacationCacheFile), true) : [];
-
-    // Define opening hours dynamically from labels
-    $weekdayHours = [
-        'Monday'    => ['08:00', '12:00', '13:00', '17:00'],
-        'Tuesday'   => ['08:00', '12:00', '13:00', '17:00'],
-        'Wednesday' => ['08:00', '12:00', '13:00', '17:00'],
-        'Thursday'  => ['08:00', '12:00', '13:00', '17:00'],
-        'Friday'    => ['08:00', '12:00', '13:00', '16:30'], // Closes earlier on Friday
-    ];
-
-    // Get today's date and time
+    // Get current date and time
     $now = new DateTime('now', new DateTimeZone('Europe/Zurich'));
     $currentDay = $now->format('l'); // Full day name (e.g., Monday)
     $currentDate = $now->format('Y-m-d');
     $currentTime = $now->format('H:i');
 
-    // Check if today is a holiday
-    if (isset($holidays[$currentDate]) || $currentDay === 'Saturday' || $currentDay === 'Sunday') {
+    // Check if today is a vacation, holiday, or weekend
+    if (in_array($currentDate, $vacationDays) || in_array($currentDay, ['Saturday', 'Sunday'])) {
         return 'Heute geschlossen';
-    }
-
-    // Check if today is a vacation day
-    if (in_array($currentDate, $vacationDays)) {
-        $nextOpenDate = new DateTime(end($vacationDays));
-        $nextOpenDate->modify('+1 day');
-        return 'Wieder geöffnet ab ' . $nextOpenDate->format('d.m.Y');
     }
 
     // Determine opening status based on time
@@ -142,117 +96,19 @@ function getOpeningStatus() {
         $hours = $weekdayHours[$currentDay];
 
         if ($currentTime >= $hours[0] && $currentTime < $hours[1]) {
-            return "Geöffnet bis 12:00 und 13:00–" . $hours[3];
-        } elseif ($currentTime >= $hours[1] && $currentTime < $hours[2]) {
-            return "Geöffnet " .$hours[2]." bis " . $hours[3];
+            return "Geöffnet bis " . $hours[1] . " und " . $hours[2] . " bis " . $hours[3];
         } elseif ($currentTime >= $hours[2] && $currentTime < $hours[3]) {
             return "Geöffnet bis " . $hours[3];
         } else {
             return 'Geschlossen';
-            // return "Geöffnet ".$hours[0]." - " . $hours[1] .$hours[2]." - " . $hours[3];
         }
     }
-    // If all blocks above are false, then it returns:
+
     return 'Geschlossen';
 }
-
-// Function to fetch holidays from Google Calendar API
-function fetchHolidaysFromGoogleCalendar() {
-    $calendarId = 'de.swiss#holiday@group.v.calendar.google.com';
-    $apiKey = 'AIzaSyA1JNH_2wzLhiJE70-kf2dWA_tAaKYij18';
-    $year = date('Y');
-    $url = "https://www.googleapis.com/calendar/v3/calendars/$calendarId/events?key=$apiKey&timeMin=$year-01-01T00:00:00Z&timeMax=$year-12-31T23:59:59Z";
-
-    $response = @file_get_contents($url);
-    if ($response === FALSE) {
-        return null; // API call failed
-    }
-
-    $data = json_decode($response, true);
-    $holidays = [];
-
-    foreach ($data['items'] as $event) {
-        if (isset($event['start']['date'])) {
-            $date = $event['start']['date'];
-            $holidays[$date] = $event['summary'];
-        }
-    }
-
-    return $holidays;
-}
-
 ?>
 
+<!-- Display Opening Status -->
 <li class="opening-hours">
     <?php echo getOpeningStatus(); ?>
 </li>
-
-
-
-<!-- Example usage with vacation days:
- When a user submits, then saved like $vacationDays = "2025-07-15, 2025-07-16", -->
-
-<?php
-// File to store user-defined vacation days
-$vacationCacheFile = __DIR__ . '/vacation_cache.json';
-
-// Function to save new vacation days
-function saveVacationDays($newDates) {
-    global $vacationCacheFile;
-
-    // Read existing vacation days
-    if (file_exists($vacationCacheFile)) {
-        $vacationDays = json_decode(file_get_contents($vacationCacheFile), true);
-        if (!is_array($vacationDays)) {
-            $vacationDays = [];
-        }
-    } else {
-        $vacationDays = [];
-    }
-
-    // Merge and remove duplicates
-    $vacationDays = array_unique(array_merge($vacationDays, $newDates));
-
-    // Save back to file
-    file_put_contents($vacationCacheFile, json_encode($vacationDays, JSON_PRETTY_PRINT));
-}
-
-// Handling user input (e.g., from a form submission)
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['vacation_dates'])) {
-    $userInput = explode(',', $_POST['vacation_dates']); // Assuming input is comma-separated
-    $cleanedDates = [];
-
-    foreach ($userInput as $date) {
-        $trimmedDate = trim($date);
-        if (preg_match('/^\d{4}-\d{2}-\d{2}$/', $trimmedDate)) { // Validate YYYY-MM-DD format
-            $cleanedDates[] = $trimmedDate;
-        }
-    }
-
-    if (!empty($cleanedDates)) {
-        saveVacationDays($cleanedDates);
-        echo "Vacation days saved successfully!";
-    } else {
-        echo "Invalid date format!";
-    }
-}
-?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form method="POST" action="save_vacation.php">
-        <label>Enter vacation days (YYYY-MM-DD, comma-separated):</label>
-        <input type="text" name="vacation_dates">
-        <button type="submit">Save</button>
-    </form>
-    
-</body>
-</html>
-

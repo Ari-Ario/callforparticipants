@@ -499,15 +499,39 @@
 			}
 		});
 	
-		// Toggle dropdown for adding/excluding countries
-		$(".toggle-dropdown").on("click", function () {
-			$(this).closest(".continent-section").find(".continent-dropdown").slideToggle();
+		// Clicking the div toggles the dropdown (but not inside elements)
+		$(".switch-container").on("click", function (event) {
+			if (!$(event.target).is("input, label")) { 
+				let dropdown = $(this).next(".continent-dropdown");
+				$(".continent-dropdown").not(dropdown).slideUp(); // Close others
+				dropdown.slideToggle(); // Toggle clicked one
+			}
 		});
-	
+
+		const selectCountries = document.getElementById("selectCountries");
+		const excludeCountries = document.getElementById("excludeCountries");
 		// Open country popup on "+ hinzufügen" click
-		$(".add-countries").on("click", function () {
+		$(document).on("click", ".add-countries", function () {
 			let targetPopup = $(this).data("target");
+			console.log("Opening popup:", targetPopup); // Debugging
 			$("#" + targetPopup).fadeIn();
+
+			// Set the toggle switch to "Länder auswählen"
+			$("#toggleMode").prop("checked", false).trigger("change");
+			selectCountries.classList.remove("d-none");
+			excludeCountries.classList.add("d-none");
+		});
+
+		// Open country popup on "- ausschließen" click
+		$(document).on("click", ".remove-countries", function () {
+			let targetPopup = $(this).data("target");
+			console.log("Opening popup (remove):", targetPopup); // Debugging
+			$("#" + targetPopup).fadeIn();
+
+			// Set the toggle switch to "Länder ausschließen"
+			$("#toggleMode").prop("checked", true).trigger("change");
+			selectCountries.classList.add("d-none");
+			excludeCountries.classList.remove("d-none");
 		});
 	
 		// Close country popup when clicking outside
@@ -517,6 +541,182 @@
 	});	
 
 
+	/*====================
+	* Popups geofence, countries
+	======================*/
+	$(document).ready(function () {
+		const $toggleMode = $("#toggleMode");
+		const $selectCountries = $("#selectCountries");
+		const $excludeCountries = $("#excludeCountries");
+		const $countryBubbles = $(".country-bubble");
+	
+		// 🔄 Toggle between select and exclude / it functions only in Javascript
+		$toggleMode.on("change", function () {
+			if ($(this).prop("checked")) {
+				$selectCountries.addClass("d-none");
+				$excludeCountries.removeClass("d-none");
+			} else {
+				$selectCountries.removeClass("d-none");
+				$excludeCountries.addClass("d-none");
+			}
+		});
+		// $toggleMode.on("change", function () {
+		// 	if ($(this).is(":checked")) {
+		// 		$selectCountries.hide();
+		// 		$excludeCountries.show();
+		// 	} else {
+		// 		$selectCountries.show();
+		// 		$excludeCountries.hide();
+		// 	}
+		// }).trigger("change"); // Ensure correct state on page load
+
+	
+		// 🔎 Search Functionality
+		$("#searchInput").on("input", function () {
+			let filter = $(this).val().toLowerCase();
+			$(".country-bubble").each(function () {
+				let text = $(this).text().toLowerCase();
+				$(this).toggle(text.includes(filter));
+			});
+		});
+
+
+		// ✅ Handle country selection/deselection & disable in the opposite list
+		$(document).ready(function () {
+			let mainCategories = ["Ostasien", "Südasien", "Südostasien", "Nordeuropa", "Mitteleuropa", "Südeuropa"];
+			
+		
+			$(".country-bubble").on("click", function () {
+				let $bubble = $(this);
+				let country = $bubble.data("country");
+		
+				// Check if it's a main category
+				if (mainCategories.includes(country)) {
+					let $countryList = $bubble.closest(".country-list"); // Find the parent list
+					let $subCountries = $countryList.find(".country-bubble").not($bubble); // All sub-countries inside the list
+		
+					if ($bubble.hasClass("selected")) {
+						// 🔹 Deselect main category & all sub-countries
+						$bubble.removeClass("selected");
+						$subCountries.removeClass("selected");
+					} else {
+						// 🔹 Select main category & all sub-countries
+						$bubble.addClass("selected");
+						$subCountries.addClass("selected");
+					}
+				} else {
+					// Handle individual country selection
+					let $countryList = $bubble.closest(".country-list");
+					let $mainCategory = $countryList.find(".country-bubble").first(); // First bubble is always the main category
+					let $allSubCountries = $countryList.find(".country-bubble").not($mainCategory); // All sub-countries
+		
+					if ($bubble.hasClass("selected")) {
+						// 🔹 Deselect individual country
+						$bubble.removeClass("selected");
+		
+						// If any sub-country is unselected, also unselect the main category
+						if ($allSubCountries.filter(".selected").length !== $allSubCountries.length) {
+							$mainCategory.removeClass("selected");
+						}
+					} else {
+						// 🔹 Select individual country
+						$bubble.addClass("selected");
+		
+						// If all sub-countries are selected, select the main category too
+						if ($allSubCountries.length === $allSubCountries.filter(".selected").length) {
+							$mainCategory.addClass("selected");
+						}
+					}
+					
+				}
+
+
+				// Handle disabling selected countries from one side to another and vice versa
+				function disableOppositeCountries(country) {
+					const currentListId = $bubble.closest(".country-section").attr("id"); // Get the current list ID (selectCountries or excludeCountries)
+					const oppositeListId = currentListId === "selectCountries" ? "excludeCountries" : "selectCountries"; // Determine the opposite list ID
+				
+					const selectedInCurrentList = document.querySelector(`#${currentListId} .country-bubble[data-country='${country}']`);
+					const selectedInOppositeList = document.querySelector(`#${oppositeListId} .country-bubble[data-country='${country}']`);
+				
+					if (selectedInCurrentList && selectedInOppositeList) {
+						// Disable in the opposite list if selected in the current list
+						if (selectedInCurrentList.classList.contains("selected")) {
+							selectedInOppositeList.style.opacity = "0.5";
+							selectedInOppositeList.classList.add("disabled");
+							selectedInOppositeList.style.pointerEvents = "none"; // Prevent clicking
+						} else {
+							selectedInOppositeList.style.opacity = "1";
+							selectedInOppositeList.classList.remove("disabled");
+							selectedInOppositeList.style.pointerEvents = "auto"; // Allow clicking
+						}
+					}
+				}
+				
+				// Call this function after handling selection/deselection
+				disableOppositeCountries(country);
+
+				// If it's a main category, disable all sub-countries in the opposite list
+				if (mainCategories.includes(country)) {
+					const $countryList = $bubble.closest(".country-list");
+					const $subCountries = $countryList.find(".country-bubble").not($bubble);
+
+					$subCountries.each(function () {
+						const subCountry = $(this).data("country");
+						disableOppositeCountries(subCountry);
+					});
+
+					// Disable the main category in the opposite list
+					disableOppositeCountries(country);
+				}
+
+				// Additional block to disable mainCategories in the opposite side if any sub-country is selected
+				function disableMainCategoryIfSubCountriesSelected(mainCategory) {
+					const $countryList = $(`.country-bubble[data-country='${mainCategory}']`).closest(".country-list");
+					const $subCountries = $countryList.find(".country-bubble").not(`[data-country='${mainCategory}']`);
+
+					let shouldDisableMainCategory = false;
+
+					// Check if any sub-country is selected in the current side
+					$subCountries.each(function () {
+						const subCountry = $(this).data("country");
+						const $currentBubble = $(`.country-bubble[data-country='${subCountry}']`);
+						const $oppositeBubble = $(`#selectCountries .country-bubble[data-country='${subCountry}'], #excludeCountries .country-bubble[data-country='${subCountry}']`)
+							.not($currentBubble);
+
+						if ($oppositeBubble.length && $oppositeBubble.hasClass("selected")) {
+							shouldDisableMainCategory = true;
+							return false; // Break the loop
+						}
+					});
+
+					// Disable or enable the main category in the opposite side based on the check
+					const $oppositeMainCategory = $(`#selectCountries .country-bubble[data-country='${mainCategory}'], #excludeCountries .country-bubble[data-country='${mainCategory}']`)
+						.not($(`.country-bubble[data-country='${mainCategory}']`)); // Ensure we only target the opposite side
+
+					if (shouldDisableMainCategory) {
+						$oppositeMainCategory.css("opacity", "0.5").addClass("disabled").css("pointer-events", "none");
+					} else {
+						$oppositeMainCategory.css("opacity", "1").removeClass("disabled").css("pointer-events", "auto");
+					}
+				}
+
+				// Call this function for each main category after handling selection/deselection
+				mainCategories.forEach(mainCategory => {
+					disableMainCategoryIfSubCountriesSelected(mainCategory);
+				});
+
+
+			});
+
+
+		});
+		
+		
+
+	});
+	
+	
 
 	// $(document).ready(function () {
 	// 	// Uncheck worldwide when a continent is checked

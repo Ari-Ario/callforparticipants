@@ -487,7 +487,6 @@ body.light-mode .text-toggle {
     height: 300px;
     margin: 10px;
     max-height: 300px;
-
 }
 
 .photo-box img {
@@ -547,14 +546,14 @@ body.light-mode .text-toggle {
     margin-right: 10px;
 }
 
-/* --------------- geofence styling ----------------------- */
 
-/* Dropdown for continents */
-/* Add bottom border to each section */
+
+/* --------------- geofence styling und Dropdown for continents ----------------------- */
+
 .continent-section {
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+    /* padding-bottom: 10px; */
+    margin-bottom: 15px;
 }
 
 /* Dropdown styling */
@@ -606,7 +605,131 @@ body.dark-mode .continent-popup {
     --popup-bg: #120A2C;
     --popup-text: white;
 }
-/* --------------- geofence styling ----------------------- */
+
+/* Toggle switch Controls */
+.switch6 {  max-width: 24em;  margin: 0 auto; border: 1px solid #cccccc9f; border-radius: 5px; }
+.switch6-light > span, .switch-toggle > span {  color: #000000; }
+.switch6-light span span, .switch6-light label, .switch-toggle span span, .switch-toggle label {  color: #fff; text-align: center; }
+
+.switch-toggle a, 
+.switch6-light span span { display: none; }
+
+.switch6-light { display: block; height: 40px; text-align: center; position: relative; overflow: visible; padding: 0px; margin-left:0px; margin: 0; }
+.switch6-light * { box-sizing: border-box; }
+.switch6-light a { display: block; transition: all 0.3s ease-out 0s; }
+
+.switch6-light label, 
+.switch6-light > span { line-height: 30px; vertical-align: middle;}
+
+.switch6-light label {font-weight: 700; margin-bottom: px; max-width: 100%;}
+
+.switch6-light input:focus ~ a, .switch6-light input:focus + label { outline: 1px dotted rgb(136, 136, 136); height: 100%; }
+.switch6-light input { position: absolute; opacity: 0; z-index: 5; }
+.switch6-light input:not(:checked) ~ a { right: 50%; }
+.switch6-light input:checked ~ a { right: 0%; }
+.switch6-light > span { position: absolute; left: -100px; width: 100%; height: 100%; margin: 0px;  padding-right: 100px; text-align: left; }
+.switch6-light > span span { position: absolute; top: 0px; padding-top: 4px;  height: 100%; left: 0px; z-index: 5; display: block; width: 50%; margin-left: 100px; text-align: center; }
+.switch6-light > span span:last-child { left: 50%; }
+.switch6-light a { position: absolute; right: 50%; top: -50%; z-index: 4; display: block; width: 50%; height: 100%; padding: 0px; }
+
+
+/* Country Selection Styles */
+.country-section {
+}
+.country-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 15px;
+}
+
+.country-bubble {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: 2px solid #8A6FC1;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    position: relative;
+}
+
+.country-bubble i {
+    margin-right: 8px;
+}
+
+/* Selected State */
+.country-bubble.selected {
+    background: #6c63ff;
+    color: white;
+    border: none;
+}
+
+/* Hide the + icon when selected */
+.country-bubble.selected i.fa-plus,
+.country-bubble.exclude.selected i.fa-minus {
+    display: none;
+}
+
+/* Show the close button (fa-times) when selected */
+.country-bubble.selected::after {
+    content: "\f00d"; /* FontAwesome close icon */
+    font-family: FontAwesome;
+    margin-left: 10px;
+}
+
+/* Exclusion Bubble */
+.country-bubble.exclude {
+    border-color: #ff6961;
+}
+
+.country-bubble.exclude.selected {
+    background: #d32f2f;
+    color: white;
+    border: none;
+}
+
+/* Search Bar */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-container input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #8A6FC1;
+    background: transparent;
+    color: white;
+    outline: none;
+}
+
+/* Dark Mode Adaptation */
+body.dark-mode .country-bubble {
+    border-color: #8A6FC1;
+    color: white;
+}
+
+body.dark-mode .search-container input {
+    border-color: #8A6FC1;
+    color: white;
+}
+
+body.light-mode .country-bubble {
+    border-color: black;
+    color: black;
+}
+
+body.light-mode .search-container input {
+    border-color: black;
+    color: black;
+}
+/* --------------- End geofence styling ----------------------- */
 
 /* Mobile Screen */
 @media only screen and (max-width: 500px) {
