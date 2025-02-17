@@ -551,7 +551,7 @@ body.light-mode .text-toggle {
 /* --------------- geofence styling und Dropdown for continents ----------------------- */
 
 .continent-section {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid #A855F7;
     /* padding-bottom: 10px; */
     margin-bottom: 15px;
 }
@@ -630,7 +630,7 @@ body.dark-mode .continent-popup {
 .switch6-light > span { position: absolute; left: -100px; width: 100%; height: 100%; margin: 0px;  padding-right: 100px; text-align: left; }
 .switch6-light > span span { position: absolute; top: 0px; padding-top: 4px;  height: 100%; left: 0px; z-index: 5; display: block; width: 50%; margin-left: 100px; text-align: center; }
 .switch6-light > span span:last-child { left: 50%; }
-.switch6-light a { position: absolute; right: 50%; top: -50%; z-index: 4; display: block; width: 50%; height: 100%; padding: 0px; }
+.switch6-light a { position: absolute; right: 50%; top: -50%; z-index: 4; display: block; width: 50%; height: 100%; padding: 0px; background-color: #A855F7; }
 
 
 /* Country Selection Styles */
@@ -640,7 +640,7 @@ body.dark-mode .continent-popup {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid #A855F7;
     padding-bottom: 15px;
 }
 

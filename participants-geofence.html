@@ -81,392 +81,798 @@
     </div>
 </header>
 
-<!-- Main Content -->
-<main class="container main-body py-4">
-    <div class="row about-container">
-
-        <h2 class="about-title">Möchten Sie ihre Teilnehmer auf bestimmte geografische Gebite eingrenzen?</h2>
-        
-        <!-- Toggle Switches of worldwide and all continents -->
-        <div class="d-block w-100 float">
+    <!-- Main Content -->
+    <main class="container main-body py-4">
+        <div class="row about-container">
+    
+            <h2 class="about-title">Möchten Sie ihre Teilnehmer auf bestimmte geografische Gebite eingrenzen?</h2>
             
-            <!-- Worldwide Toggle -->
-            <div class="switch-container mb-5 d-flex justify-content-between">
-                <label class="switch-text text-toggle" for="codeToggle">Worldwide</label>
-                <div class="form-check form-switch ios-switch">
-                    <input class="form-check-input" type="checkbox" id="codeToggle" checked>
-                    <label class="form-check-label" for="codeToggle"></label>
-                </div>
-            </div>
-            
-            <!-- Continents Toggles -->
-            <div class="continent-section">
-                <div class="switch-container mb-3 d-flex justify-content-between">
-                    <label class="switch-text text-toggle" for="africaToggle">Africa</label>
+            <!-- Toggle Switches of worldwide and all continents -->
+            <div class="d-block w-100 float">
+                
+                <!-- Worldwide Toggle -->
+                <div class="switch-container mb-5 d-flex justify-content-between">
+                    <label class="switch-text text-toggle" for="codeToggle">Worldwide</label>
                     <div class="form-check form-switch ios-switch">
-                        <input class="form-check-input continent-toggle" type="checkbox" id="africaToggle">
-                        <label class="form-check-label" for="africaToggle"></label>
+                        <input class="form-check-input" type="checkbox" id="codeToggle" checked>
+                        <label class="form-check-label" for="codeToggle"></label>
                     </div>
                 </div>
-                <div class="continent-dropdown" id="africaDropdown">
-                    <span class="toggle-dropdown add-countries" data-target="africa-popup"><i class="fa fa-plus" aria-hidden="true"></i> hinzufügen</span>
-                    <span class="toggle-dropdown remove-countries" data-target="africa-popup"><i class="fa fa-minus" aria-hidden="true"></i> ausschließen</span>
-                </div>
-            </div>
-            
-            <div class="continent-section">
-                <div class="switch-container mb-3 d-flex justify-content-between">
-                    <label class="switch-text text-toggle" for="americaToggle">America</label>
-                    <div class="form-check form-switch ios-switch">
-                        <input class="form-check-input continent-toggle" type="checkbox" id="americaToggle">
-                        <label class="form-check-label" for="americaToggle"></label>
-                    </div>
-                </div>
-                <div class="continent-dropdown" id="americaDropdown">
-                    <span class="toggle-dropdown add-countries" data-target="america-popup"><i class="fa fa-plus" aria-hidden="true"></i> hinzufügen</span>
-                    <span class="toggle-dropdown remove-countries" data-target="america-popup"><i class="fa fa-minus" aria-hidden="true"></i> ausschließen</span>
-                </div>
-            </div>
-            
-            <div class="continent-section">
-                <div class="switch-container mb-3 d-flex justify-content-between">
-                    <label class="switch-text text-toggle" for="asiaToggle">Asia</label>
-                    <div class="form-check form-switch ios-switch">
-                        <input class="form-check-input continent-toggle" type="checkbox" id="asiaToggle">
-                        <label class="form-check-label" for="asiaToggle"></label>
-                    </div>
-                </div>
-                <div class="continent-dropdown" id="asiaDropdown">
-                    <span class="toggle-dropdown add-countries" data-target="asia-popup"><i class="fa fa-plus" aria-hidden="true"></i> hinzufügen</span>
-                    <span class="toggle-dropdown remove-countries" data-target="asia-popup"><i class="fa fa-minus" aria-hidden="true"></i> ausschließen</span>
-                </div>
-            </div>
-            
-            <div class="continent-section">
-                <div class="switch-container mb-3 d-flex justify-content-between">
-                    <label class="switch-text text-toggle" for="europeToggle">Europe</label>
-                    <div class="form-check form-switch ios-switch">
-                        <input class="form-check-input continent-toggle" type="checkbox" id="europeToggle">
-                        <label class="form-check-label" for="europeToggle"></label>
-                    </div>
-                </div>
-                <div class="continent-dropdown" id="europeDropdown">
-                    <span class="toggle-dropdown add-countries" data-target="europe-popup"><i class="fa fa-plus" aria-hidden="true"></i> hinzufügen</span>
-                    <span class="toggle-dropdown remove-countries" data-target="europe-popup"><i class="fa fa-minus" aria-hidden="true"></i> ausschließen</span>
-                </div>
-            </div>
-            
-            <div class="continent-section">
-                <div class="switch-container mb-3 d-flex justify-content-between">
-                    <label class="switch-text text-toggle" for="oceaniaToggle">Ozeanien</label>
-                    <div class="form-check form-switch ios-switch">
-                        <input class="form-check-input continent-toggle" type="checkbox" id="oceaniaToggle">
-                        <label class="form-check-label" for="oceaniaToggle"></label>
-                    </div>
-                </div>
-                <div class="continent-dropdown" id="oceaniaDropdown">
-                    <span class="toggle-dropdown add-countries" data-target="oceania-popup"><i class="fa fa-plus" aria-hidden="true"></i> hinzufügen</span>
-                    <span class="toggle-dropdown remove-countries" data-target="oceania-popup"><i class="fa fa-minus" aria-hidden="true"></i> ausschließen</span>
-                </div>
-            </div>
-            
-            <div class="continent-section">
-                <div class="switch-container mb-3 d-flex justify-content-between">
-                    <label class="switch-text text-toggle" for="antarcticaToggle">Antarktis</label>
-                    <div class="form-check form-switch ios-switch">
-                        <input class="form-check-input continent-toggle" type="checkbox" id="antarcticaToggle">
-                        <label class="form-check-label" for="antarcticaToggle"></label>
-                    </div>
-                </div>
-                <div class="continent-dropdown" id="antarcticaDropdown">
-                    <span class="toggle-dropdown add-countries" data-target="antarctica-popup"><i class="fa fa-plus" aria-hidden="true"></i> hinzufügen</span>
-                    <span class="toggle-dropdown remove-countries" data-target="antarctica-popup"><i class="fa fa-minus" aria-hidden="true"></i> ausschließen</span>
-                </div>
-            </div>
-            
-            
-        </div>
-        
-        <!-- POPUPS FOR EACH CONTINENT -->
-        <div class="continent-popup text-toggle py-4" id="africa-popup">
-            <div class="popup-content text-toggle">
-                <h2>Africa</h2>
-                <!-- Toggle switch -->
-                <div class="d-flex justify-content-center mb-4">
-                    <div class="col">
-                        <div class="switch6">
-                            <label class="switch6-light">
-                                <input type="checkbox" id="toggleMode" class="switch">
-                                <span>
-                                    <span>Länder auswählen</span>
-                                    <span>Länder ausschließen</span>
-                                </span>
-                                <a class="btn btn-primary"></a>
-                            </label>
+                
+                <!-- Continents Toggles -->
+                <div class="continent-section">
+                    <div class="switch-container mb-3 d-flex justify-content-between">
+                        <label class="switch-text text-toggle" for="africaToggle">Africa</label>
+                        <div class="form-check form-switch ios-switch">
+                            <input class="form-check-input continent-toggle" type="checkbox" id="africaToggle">
+                            <label class="form-check-label" for="africaToggle"></label>
                         </div>
                     </div>
+                    <div class="continent-dropdown" id="africaDropdown">
+                        <span class="toggle-dropdown add-countries" data-target="africa-popup"><i class="fa fa-plus" aria-hidden="true"></i> hinzufügen</span>
+                        <span class="toggle-dropdown remove-countries" data-target="africa-popup"><i class="fa fa-minus" aria-hidden="true"></i> ausschließen</span>
+                    </div>
                 </div>
+                
+                <div class="continent-section">
+                    <div class="switch-container mb-3 d-flex justify-content-between">
+                        <label class="switch-text text-toggle" for="americaToggle">America</label>
+                        <div class="form-check form-switch ios-switch">
+                            <input class="form-check-input continent-toggle" type="checkbox" id="americaToggle">
+                            <label class="form-check-label" for="americaToggle"></label>
+                        </div>
+                    </div>
+                    <div class="continent-dropdown" id="americaDropdown">
+                        <span class="toggle-dropdown add-countries" data-target="america-popup"><i class="fa fa-plus" aria-hidden="true"></i> hinzufügen</span>
+                        <span class="toggle-dropdown remove-countries" data-target="america-popup"><i class="fa fa-minus" aria-hidden="true"></i> ausschließen</span>
+                    </div>
+                </div>
+                
+                <div class="continent-section">
+                    <div class="switch-container mb-3 d-flex justify-content-between">
+                        <label class="switch-text text-toggle" for="asiaToggle">Asia</label>
+                        <div class="form-check form-switch ios-switch">
+                            <input class="form-check-input continent-toggle" type="checkbox" id="asiaToggle">
+                            <label class="form-check-label" for="asiaToggle"></label>
+                        </div>
+                    </div>
+                    <div class="continent-dropdown" id="asiaDropdown">
+                        <span class="toggle-dropdown add-countries" data-target="asia-popup"><i class="fa fa-plus" aria-hidden="true"></i> hinzufügen</span>
+                        <span class="toggle-dropdown remove-countries" data-target="asia-popup"><i class="fa fa-minus" aria-hidden="true"></i> ausschließen</span>
+                    </div>
+                </div>
+                
+                <div class="continent-section">
+                    <div class="switch-container mb-3 d-flex justify-content-between">
+                        <label class="switch-text text-toggle" for="europeToggle">Europe</label>
+                        <div class="form-check form-switch ios-switch">
+                            <input class="form-check-input continent-toggle" type="checkbox" id="europeToggle">
+                            <label class="form-check-label" for="europeToggle"></label>
+                        </div>
+                    </div>
+                    <div class="continent-dropdown" id="europeDropdown">
+                        <span class="toggle-dropdown add-countries" data-target="europe-popup"><i class="fa fa-plus" aria-hidden="true"></i> hinzufügen</span>
+                        <span class="toggle-dropdown remove-countries" data-target="europe-popup"><i class="fa fa-minus" aria-hidden="true"></i> ausschließen</span>
+                    </div>
+                </div>
+                
+                <div class="continent-section">
+                    <div class="switch-container mb-3 d-flex justify-content-between">
+                        <label class="switch-text text-toggle" for="oceaniaToggle">Ozeanien</label>
+                        <div class="form-check form-switch ios-switch">
+                            <input class="form-check-input continent-toggle" type="checkbox" id="oceaniaToggle">
+                            <label class="form-check-label" for="oceaniaToggle"></label>
+                        </div>
+                    </div>
+                    <div class="continent-dropdown" id="oceaniaDropdown">
+                        <span class="toggle-dropdown add-countries" data-target="oceania-popup"><i class="fa fa-plus" aria-hidden="true"></i> hinzufügen</span>
+                        <span class="toggle-dropdown remove-countries" data-target="oceania-popup"><i class="fa fa-minus" aria-hidden="true"></i> ausschließen</span>
+                    </div>
+                </div>
+                
+                <div class="continent-section">
+                    <div class="switch-container mb-3 d-flex justify-content-between">
+                        <label class="switch-text text-toggle" for="antarcticaToggle">Antarktis</label>
+                        <div class="form-check form-switch ios-switch">
+                            <input class="form-check-input continent-toggle" type="checkbox" id="antarcticaToggle">
+                            <label class="form-check-label" for="antarcticaToggle"></label>
+                        </div>
+                    </div>
+                    <div class="continent-dropdown" id="antarcticaDropdown">
+                        <span class="toggle-dropdown add-countries" data-target="antarctica-popup"><i class="fa fa-plus" aria-hidden="true"></i> hinzufügen</span>
+                        <span class="toggle-dropdown remove-countries" data-target="antarctica-popup"><i class="fa fa-minus" aria-hidden="true"></i> ausschließen</span>
+                    </div>
+                </div>
+                
+                
+            </div>
+
+            <!-- Africa continent -->
+            <div class="continent-popup" id="africa-popup">
+
+                <div class="popup-content">
+                    <h2>Afrika</h2>
+
+                    <!-- Toggle switch -->
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="col">
+                            <div class="switch6">
+                                <label class="switch6-light">
+                                    <input type="checkbox" id="toggleMode" class="switch">
+                                    <span>
+                                        <span class="text-toggle">Länder auswählen</span>
+                                        <span class="text-toggle">Länder ausschließen</span>
+                                    </span>
+                                    <a class="btn btn-primary"></a>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search bar -->
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="🔍 Suchen">
+                    </div>
+
+                    <!-- Countries for selection -->
+                    <div class="country-section" id="selectCountries">
+                        <h3 class="mt-4 country-header">Nordafrika</h3>
+                        <div class="country-list">
+                            <span class="country-bubble" data-country="Nordafrika"><i class="fa fa-plus"></i> Nordafrika</span>
+                            <span class="country-bubble" data-country="Ägypten"><i class="fa fa-plus"></i> Ägypten</span>
+                            <span class="country-bubble" data-country="Algerien"><i class="fa fa-plus"></i> Algerien</span>
+                            <span class="country-bubble" data-country="Libyen"><i class="fa fa-plus"></i> Libyen</span>
+                            <span class="country-bubble" data-country="Marokko"><i class="fa fa-plus"></i> Marokko</span>
+                            <span class="country-bubble" data-country="Sudan"><i class="fa fa-plus"></i> Sudan</span>
+                            <span class="country-bubble" data-country="Tunesien"><i class="fa fa-plus"></i> Tunesien</span>
+                            <span class="country-bubble" data-country="West-Sahara"><i class="fa fa-plus"></i> West-Sahara</span>
+                        </div>
+
+                        <h3 class="mt-4 country-header">Westafrika</h3>
+                        <div class="country-list">
+                            <span class="country-bubble" data-country="Westafrika"><i class="fa fa-plus"></i> Westafrika</span>
+                            <span class="country-bubble" data-country="Benin"><i class="fa fa-plus"></i> Benin</span>
+                            <span class="country-bubble" data-country="Burkina Faso"><i class="fa fa-plus"></i> Burkina Faso</span>
+                            <span class="country-bubble" data-country="Elfenbeinküste"><i class="fa fa-plus"></i> Elfenbeinküste</span>
+                            <span class="country-bubble" data-country="Gambia"><i class="fa fa-plus"></i> Gambia</span>
+                            <span class="country-bubble" data-country="Ghana"><i class="fa fa-plus"></i> Ghana</span>
+                            <span class="country-bubble" data-country="Guinea"><i class="fa fa-plus"></i> Guinea</span>
+                            <span class="country-bubble" data-country="Kap Verde"><i class="fa fa-plus"></i> Kap Verde</span>
+                            <span class="country-bubble" data-country="Liberia"><i class="fa fa-plus"></i> Liberia</span>
+                            <span class="country-bubble" data-country="Mali"><i class="fa fa-plus"></i> Mali</span>
+                            <span class="country-bubble" data-country="Mauretanien"><i class="fa fa-plus"></i> Mauretanien</span>
+                            <span class="country-bubble" data-country="Niger"><i class="fa fa-plus"></i> Niger</span>
+                            <span class="country-bubble" data-country="Nigeria"><i class="fa fa-plus"></i> Nigeria</span>
+                            <span class="country-bubble" data-country="Senegal"><i class="fa fa-plus"></i> Senegal</span>
+                            <span class="country-bubble" data-country="Sierra Leone"><i class="fa fa-plus"></i> Sierra Leone</span>
+                            <span class="country-bubble" data-country="Togo"><i class="fa fa-plus"></i> Togo</span>
+                        </div>
+
+                        <h3 class="mt-4 country-header">Zentralafrika</h3>
+                        <div class="country-list">
+                            <span class="country-bubble" data-country="Zentralafrika"><i class="fa fa-plus"></i> Zentralafrika</span>
+                            <span class="country-bubble" data-country="Angola"><i class="fa fa-plus"></i> Angola</span>
+                            <span class="country-bubble" data-country="Gabun"><i class="fa fa-plus"></i> Gabun</span>
+                            <span class="country-bubble" data-country="Kamerun"><i class="fa fa-plus"></i> Kamerun</span>
+                            <span class="country-bubble" data-country="Kongo"><i class="fa fa-plus"></i> Kongo</span>
+                            <span class="country-bubble" data-country="Tschad"><i class="fa fa-plus"></i> Tschad</span>
+                            <span class="country-bubble" data-country="Zentralafrikanische Republik"><i class="fa fa-plus"></i> Zentralafrikanische Republik</span>
+                        </div>
+                        <h3 class="mt-4 country-header">Ostafrika</h3>
+                        <div class="country-list">
+                            <span class="country-bubble" data-country="Ostafrika"><i class="fa fa-plus"></i> Ostafrika</span>
+                            <span class="country-bubble" data-country="Äthiopien"><i class="fa fa-plus"></i> Äthiopien</span>
+                            <span class="country-bubble" data-country="Eritrea"><i class="fa fa-plus"></i> Eritrea</span>
+                            <span class="country-bubble" data-country="Kenia"><i class="fa fa-plus"></i> Kenia</span>
+                            <span class="country-bubble" data-country="Madagaskar"><i class="fa fa-plus"></i> Madagaskar</span>
+                            <span class="country-bubble" data-country="Malawi"><i class="fa fa-plus"></i> Malawi</span>
+                            <span class="country-bubble" data-country="Mosambik"><i class="fa fa-plus"></i> Mosambik</span>
+                            <span class="country-bubble" data-country="Ruanda"><i class="fa fa-plus"></i> Ruanda</span>
+                            <span class="country-bubble" data-country="Somalia"><i class="fa fa-plus"></i> Somalia</span>
+                            <span class="country-bubble" data-country="Tansania"><i class="fa fa-plus"></i> Tansania</span>
+                            <span class="country-bubble" data-country="Uganda"><i class="fa fa-plus"></i> Uganda</span>
+                            <span class="country-bubble" data-country="Sambia"><i class="fa fa-plus"></i> Sambia</span>
+                            <span class="country-bubble" data-country="Simbabwe"><i class="fa fa-plus"></i> Simbabwe</span>
+                        </div>
+        
+                        <h3 class="mt-4 country-header">Südliches Afrika</h3>
+                        <div class="country-list">
+                            <span class="country-bubble" data-country="Südliches Afrika"><i class="fa fa-plus"></i> Südliches Afrika</span>
+                            <span class="country-bubble" data-country="Botswana"><i class="fa fa-plus"></i> Botswana</span>
+                            <span class="country-bubble" data-country="Eswatini"><i class="fa fa-plus"></i> Eswatini</span>
+                            <span class="country-bubble" data-country="Lesotho"><i class="fa fa-plus"></i> Lesotho</span>
+                            <span class="country-bubble" data-country="Namibia"><i class="fa fa-plus"></i> Namibia</span>
+                            <span class="country-bubble" data-country="Südafrika"><i class="fa fa-plus"></i> Südafrika</span>
+                        </div>
+                    </div>
+
+
+                    <!-- Countries for exclusion -->
+                    <div class="country-section d-none" id="excludeCountries">
+                        <h3 class="mt-4 country-header">Nordafrika</h3>
+                        <div class="country-list">
+                            <span class="country-bubble exclude" data-country="Nordafrika"><i class="fa fa-minus"></i> Nordafrika</span>
+                            <span class="country-bubble exclude" data-country="Ägypten"><i class="fa fa-minus"></i> Ägypten</span>
+                            <span class="country-bubble exclude" data-country="Algerien"><i class="fa fa-minus"></i> Algerien</span>
+                            <span class="country-bubble exclude" data-country="Libyen"><i class="fa fa-minus"></i> Libyen</span>
+                            <span class="country-bubble exclude" data-country="Marokko"><i class="fa fa-minus"></i> Marokko</span>
+                            <span class="country-bubble exclude" data-country="Sudan"><i class="fa fa-minus"></i> Sudan</span>
+                            <span class="country-bubble exclude" data-country="Tunesien"><i class="fa fa-minus"></i> Tunesien</span>
+                            <span class="country-bubble exclude" data-country="West-Sahara"><i class="fa fa-minus"></i> West-Sahara</span>
+                        </div>
+
+                        <h3 class="mt-4 country-header">Westafrika</h3>
+                        <div class="country-list">
+                            <span class="country-bubble exclude" data-country="Westafrika"><i class="fa fa-minus"></i> Westafrika</span>
+                            <span class="country-bubble exclude" data-country="Benin"><i class="fa fa-minus"></i> Benin</span>
+                            <span class="country-bubble exclude" data-country="Burkina Faso"><i class="fa fa-minus"></i> Burkina Faso</span>
+                            <span class="country-bubble exclude" data-country="Ghana"><i class="fa fa-minus"></i> Ghana</span>
+                            <span class="country-bubble exclude" data-country="Mali"><i class="fa fa-minus"></i> Mali</span>
+                            <span class="country-bubble exclude" data-country="Niger"><i class="fa fa-minus"></i> Niger</span>
+                            <span class="country-bubble exclude" data-country="Nigeria"><i class="fa fa-minus"></i> Nigeria</span>
+                            <span class="country-bubble exclude" data-country="Senegal"><i class="fa fa-minus"></i> Senegal</span>
+                            <span class="country-bubble exclude" data-country="Sierra Leone"><i class="fa fa-minus"></i> Sierra Leone</span>
+                            <span class="country-bubble exclude" data-country="Togo"><i class="fa fa-minus"></i> Togo</span>
+                        </div>
             
-                <!-- Search bar -->
-                <div class="search-container">
-                    <input type="text" id="searchInput" placeholder="🔍 Suchen">
+                        <h3 class="mt-4 country-header">Zentralafrika</h3>
+                        <div class="country-list">
+                            <span class="country-bubble exclude" data-country="Zentralafrika"><i class="fa fa-minus"></i> Zentralafrika</span>
+                            <span class="country-bubble exclude" data-country="Angola"><i class="fa fa-minus"></i> Angola</span>
+                            <span class="country-bubble exclude" data-country="Gabun"><i class="fa fa-minus"></i> Gabun</span>
+                            <span class="country-bubble exclude" data-country="Kamerun"><i class="fa fa-minus"></i> Kamerun</span>
+                            <span class="country-bubble exclude" data-country="Kongo"><i class="fa fa-minus"></i> Kongo</span>
+                            <span class="country-bubble exclude" data-country="Tschad"><i class="fa fa-minus"></i> Tschad</span>
+                            <span class="country-bubble exclude" data-country="Zentralafrikanische Republik"><i class="fa fa-minus"></i> Zentralafrikanische Republik</span>
+                        </div>
+            
+                        <h3 class="mt-4 country-header">Ostafrika</h3>
+                        <div class="country-list">
+                            <span class="country-bubble exclude" data-country="Ostafrika"><i class="fa fa-minus"></i> Ostafrika</span>
+                            <span class="country-bubble exclude" data-country="Äthiopien"><i class="fa fa-minus"></i> Äthiopien</span>
+                            <span class="country-bubble exclude" data-country="Eritrea"><i class="fa fa-minus"></i> Eritrea</span>
+                            <span class="country-bubble exclude" data-country="Kenia"><i class="fa fa-minus"></i> Kenia</span>
+                            <span class="country-bubble exclude" data-country="Madagaskar"><i class="fa fa-minus"></i> Madagaskar</span>
+                            <span class="country-bubble exclude" data-country="Malawi"><i class="fa fa-minus"></i> Malawi</span>
+                            <span class="country-bubble exclude" data-country="Mosambik"><i class="fa fa-minus"></i> Mosambik</span>
+                            <span class="country-bubble exclude" data-country="Ruanda"><i class="fa fa-minus"></i> Ruanda</span>
+                            <span class="country-bubble exclude" data-country="Somalia"><i class="fa fa-minus"></i> Somalia</span>
+                            <span class="country-bubble exclude" data-country="Tansania"><i class="fa fa-minus"></i> Tansania</span>
+                            <span class="country-bubble exclude" data-country="Uganda"><i class="fa fa-minus"></i> Uganda</span>
+                            <span class="country-bubble exclude" data-country="Sambia"><i class="fa fa-minus"></i> Sambia</span>
+                            <span class="country-bubble exclude" data-country="Simbabwe"><i class="fa fa-minus"></i> Simbabwe</span>
+                        </div>
+            
+                        <h3 class="mt-4 country-header">Südliches Afrika</h3>
+                        <div class="country-list">
+                            <span class="country-bubble exclude" data-country="Südliches Afrika"><i class="fa fa-minus"></i> Südliches Afrika</span>
+                            <span class="country-bubble exclude" data-country="Botswana"><i class="fa fa-minus"></i> Botswana</span>
+                            <span class="country-bubble exclude" data-country="Eswatini"><i class="fa fa-minus"></i> Eswatini</span>
+                            <span class="country-bubble exclude" data-country="Lesotho"><i class="fa fa-minus"></i> Lesotho</span>
+                            <span class="country-bubble exclude" data-country="Namibia"><i class="fa fa-minus"></i> Namibia</span>
+                            <span class="country-bubble exclude" data-country="Südafrika"><i class="fa fa-minus"></i> Südafrika</span>
+                        </div>
+                    </div>
+            
+                    <div class="popup-footer">
+                        <button class="nav-button text-toggle save-btn float-lg-left cancel">Abbrechen und zurück</button>
+                        <button class="nav-button next-btn float-lg-right confirm">Weiter</button>
+                    </div>
                 </div>
             
             </div>
-        </div>
-        
-        <div class="continent-popup" id="america-popup">
-            <div class="popup-content">
-                <h2>America</h2>
-                <p>Choose countries to include or exclude.</p>
+
+
+            <!-- America continent -->
+            <div class="continent-popup" id="america-popup">
+
+                <div class="popup-content">
+                    <h2>Amerika</h2>
+
+                    <!-- Toggle switch -->
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="col">
+                            <div class="switch6">
+                                <label class="switch6-light">
+                                    <input type="checkbox" id="toggleMode" class="switch">
+                                    <span>
+                                        <span class="text-toggle">Länder auswählen</span>
+                                        <span class="text-toggle">Länder ausschließen</span>
+                                    </span>
+                                    <a class="btn btn-primary"></a>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search bar -->
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="🔍 Suchen">
+                    </div>
+
+                    <!-- Countries for selection -->
+                    <div class="country-section" id="selectCountries">
+                        <h3 class="mt-4 country-header">Nordamerika</h3>
+                        <div class="country-list">
+                            <span class="country-bubble" data-country="Nordamerika"><i class="fa fa-plus"></i> Nordamerika</span>
+                            <span class="country-bubble" data-country="Kanada"><i class="fa fa-plus"></i> Kanada</span>
+                            <span class="country-bubble" data-country="Vereinigte Staaten"><i class="fa fa-plus"></i> Vereinigte Staaten</span>
+                            <span class="country-bubble" data-country="Mexiko"><i class="fa fa-plus"></i> Mexiko</span>
+                        </div>
+
+                        <h3 class="mt-4 country-header">Mittelamerika</h3>
+                        <div class="country-list">
+                            <span class="country-bubble" data-country="Mittelamerika"><i class="fa fa-plus"></i> Mittelamerika</span>
+                            <span class="country-bubble" data-country="Belize"><i class="fa fa-plus"></i> Belize</span>
+                            <span class="country-bubble" data-country="Costa Rica"><i class="fa fa-plus"></i> Costa Rica</span>
+                            <span class="country-bubble" data-country="El Salvador"><i class="fa fa-plus"></i> El Salvador</span>
+                            <span class="country-bubble" data-country="Guatemala"><i class="fa fa-plus"></i> Guatemala</span>
+                            <span class="country-bubble" data-country="Honduras"><i class="fa fa-plus"></i> Honduras</span>
+                            <span class="country-bubble" data-country="Nicaragua"><i class="fa fa-plus"></i> Nicaragua</span>
+                            <span class="country-bubble" data-country="Panama"><i class="fa fa-plus"></i> Panama</span>
+                        </div>
+
+                        <h3 class="mt-4 country-header">Südamerika</h3>
+                        <div class="country-list">
+                            <span class="country-bubble" data-country="Südamerika"><i class="fa fa-plus"></i> Südamerika</span>
+                            <span class="country-bubble" data-country="Argentinien"><i class="fa fa-plus"></i> Argentinien</span>
+                            <span class="country-bubble" data-country="Bolivien"><i class="fa fa-plus"></i> Bolivien</span>
+                            <span class="country-bubble" data-country="Brasilien"><i class="fa fa-plus"></i> Brasilien</span>
+                            <span class="country-bubble" data-country="Chile"><i class="fa fa-plus"></i> Chile</span>
+                            <span class="country-bubble" data-country="Kolumbien"><i class="fa fa-plus"></i> Kolumbien</span>
+                            <span class="country-bubble" data-country="Ecuador"><i class="fa fa-plus"></i> Ecuador</span>
+                            <span class="country-bubble" data-country="Guyana"><i class="fa fa-plus"></i> Guyana</span>
+                            <span class="country-bubble" data-country="Paraguay"><i class="fa fa-plus"></i> Paraguay</span>
+                            <span class="country-bubble" data-country="Peru"><i class="fa fa-plus"></i> Peru</span>
+                            <span class="country-bubble" data-country="Suriname"><i class="fa fa-plus"></i> Suriname</span>
+                            <span class="country-bubble" data-country="Uruguay"><i class="fa fa-plus"></i> Uruguay</span>
+                            <span class="country-bubble" data-country="Venezuela"><i class="fa fa-plus"></i> Venezuela</span>
+                        </div>
+                    </div>
+
+                    <!-- Countries for exclusion -->
+                    <div class="country-section d-none" id="excludeCountries">
+                        <h3 class="mt-4 country-header">Nordamerika</h3>
+                        <div class="country-list">
+                            <span class="country-bubble exclude" data-country="Nordamerika"><i class="fa fa-minus"></i> Nordamerika</span>
+                            <span class="country-bubble exclude" data-country="Kanada"><i class="fa fa-minus"></i> Kanada</span>
+                            <span class="country-bubble exclude" data-country="Vereinigte Staaten"><i class="fa fa-minus"></i> Vereinigte Staaten</span>
+                            <span class="country-bubble exclude" data-country="Mexiko"><i class="fa fa-minus"></i> Mexiko</span>
+                        </div>
+
+                        <h3 class="mt-4 country-header">Mittelamerika</h3>
+                        <div class="country-list">
+                            <span class="country-bubble exclude" data-country="Mittelamerika"><i class="fa fa-minus"></i> Mittelamerika</span>
+                            <span class="country-bubble exclude" data-country="Belize"><i class="fa fa-minus"></i> Belize</span>
+                            <span class="country-bubble exclude" data-country="Costa Rica"><i class="fa fa-minus"></i> Costa Rica</span>
+                            <span class="country-bubble exclude" data-country="El Salvador"><i class="fa fa-minus"></i> El Salvador</span>
+                            <span class="country-bubble exclude" data-country="Guatemala"><i class="fa fa-minus"></i> Guatemala</span>
+                            <span class="country-bubble exclude" data-country="Honduras"><i class="fa fa-minus"></i> Honduras</span>
+                            <span class="country-bubble exclude" data-country="Nicaragua"><i class="fa fa-minus"></i> Nicaragua</span>
+                            <span class="country-bubble exclude" data-country="Panama"><i class="fa fa-minus"></i> Panama</span>
+                        </div>
+
+                        <h3 class="mt-4 country-header">Südamerika</h3>
+                        <div class="country-list">
+                            <span class="country-bubble exclude" data-country="Südamerika"><i class="fa fa-minus"></i> Südamerika</span>
+                            <span class="country-bubble exclude" data-country="Argentinien"><i class="fa fa-minus"></i> Argentinien</span>
+                            <span class="country-bubble exclude" data-country="Bolivien"><i class="fa fa-minus"></i> Bolivien</span>
+                            <span class="country-bubble exclude" data-country="Brasilien"><i class="fa fa-minus"></i> Brasilien</span>
+                            <span class="country-bubble exclude" data-country="Chile"><i class="fa fa-minus"></i> Chile</span>
+                            <span class="country-bubble exclude" data-country="Kolumbien"><i class="fa fa-minus"></i> Kolumbien</span>
+                            <span class="country-bubble exclude" data-country="Ecuador"><i class="fa fa-minus"></i> Ecuador</span>
+                            <span class="country-bubble exclude" data-country="Guyana"><i class="fa fa-minus"></i> Guyana</span>
+                            <span class="country-bubble exclude" data-country="Paraguay"><i class="fa fa-minus"></i> Paraguay</span>
+                            <span class="country-bubble exclude" data-country="Peru"><i class="fa fa-minus"></i> Peru</span>
+                            <span class="country-bubble exclude" data-country="Suriname"><i class="fa fa-minus"></i> Suriname</span>
+                            <span class="country-bubble exclude" data-country="Uruguay"><i class="fa fa-minus"></i> Uruguay</span>
+                            <span class="country-bubble exclude" data-country="Venezuela"><i class="fa fa-minus"></i> Venezuela</span>
+                        </div>
+                    </div>
+
+                    <div class="popup-footer">
+                        <button class="nav-button text-toggle save-btn float-lg-left cancel">Abbrechen und zurück</button>
+                        <button class="nav-button next-btn float-lg-right confirm">Weiter</button>
+                    </div>
+                </div>
+
             </div>
-        </div>
 
-        <div class="continent-popup" id="asia-popup">
-            <div class="popup-content">
-                <h2>Asia</h2>
-                <!-- Toggle switch -->
-                <div class="d-flex justify-content-center mb-4">
-                    <div class="col">
-                        <div class="switch6">
-                            <label class="switch6-light">
-                                <input type="checkbox" id="toggleMode" class="switch">
-                                <span>
-                                    <span>Länder auswählen</span>
-                                    <span>Länder ausschließen</span>
-                                </span>
-                                <a class="btn btn-primary"></a>
-                            </label>
+
+            <!-- Asia continent -->
+            <div class="continent-popup" id="asia-popup">
+                <div class="popup-content">
+                    <h2>Asia</h2>
+                    <!-- Toggle switch -->
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="col">
+                            <div class="switch6">
+                                <label class="switch6-light">
+                                    <input type="checkbox" id="toggleMode" class="switch">
+                                    <span>
+                                        <span class="text-toggle">Länder auswählen</span>
+                                        <span class="text-toggle">Länder ausschließen</span>
+                                    </span>
+                                    <a class="btn btn-primary"></a>
+                                </label>
+                            </div>
                         </div>
                     </div>
-                </div>
-            
-                <!-- Search bar -->
-                <div class="search-container">
-                    <input type="text" id="searchInput" placeholder="🔍 Suchen">
-                </div>
-                            
-                <!-- Countries for selection -->
-                <div class="country-section" id="selectCountries">
-                    <h3 class="mt-4 country-header">Ostasien</h3>
-                    <div class="country-list">
-                        <span class="country-bubble" data-country="Ostasien"><i class="fa fa-plus"></i> Ostasien</span>
-                        <span class="country-bubble" data-country="China"><i class="fa fa-plus"></i> China</span>
-                        <span class="country-bubble" data-country="Japan"><i class="fa fa-plus"></i> Japan</span>
-                        <span class="country-bubble" data-country="Südkorea"><i class="fa fa-plus"></i> Südkorea</span>
-                        <span class="country-bubble" data-country="Nordkorea"><i class="fa fa-plus"></i> Nordkorea</span>
-                        <span class="country-bubble" data-country="Mongolei"><i class="fa fa-plus"></i> Mongolei</span>
-                        <span class="country-bubble" data-country="Taiwan"><i class="fa fa-plus"></i> Taiwan</span>
+                
+                    <!-- Search bar -->
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="🔍 Suchen">
                     </div>
-
-                    <h3 class="mt-4 country-header">Südasien</h3>
-                    <div class="country-list">
-                        <span class="country-bubble" data-country="Südasien"><i class="fa fa-plus"></i> Südasien</span>
-                        <span class="country-bubble" data-country="Indien"><i class="fa fa-plus"></i> Indien</span>
-                        <span class="country-bubble" data-country="Pakistan"><i class="fa fa-plus"></i> Pakistan</span>
-                        <span class="country-bubble" data-country="Bangladesch"><i class="fa fa-plus"></i> Bangladesch</span>
-                        <span class="country-bubble" data-country="Nepal"><i class="fa fa-plus"></i> Nepal</span>
-                        <span class="country-bubble" data-country="Sri Lanka"><i class="fa fa-plus"></i> Sri Lanka</span>
-                        <span class="country-bubble" data-country="Bhutan"><i class="fa fa-plus"></i> Bhutan</span>
-                        <span class="country-bubble" data-country="Malediven"><i class="fa fa-plus"></i> Malediven</span>
-                    </div>
-
-                    <h3 class="mt-4 country-header">Südostasien</h3>
-                    <div class="country-list">
-                        <span class="country-bubble" data-country="Südostasien"><i class="fa fa-plus"></i> Südostasien</span>
-                        <span class="country-bubble" data-country="Indonesien"><i class="fa fa-plus"></i> Indonesien</span>
-                        <span class="country-bubble" data-country="Thailand"><i class="fa fa-plus"></i> Thailand</span>
-                        <span class="country-bubble" data-country="Vietnam"><i class="fa fa-plus"></i> Vietnam</span>
-                        <span class="country-bubble" data-country="Malaysia"><i class="fa fa-plus"></i> Malaysia</span>
-                        <span class="country-bubble" data-country="Philippinen"><i class="fa fa-plus"></i> Philippinen</span>
-                        <span class="country-bubble" data-country="Singapur"><i class="fa fa-plus"></i> Singapur</span>
-                        <span class="country-bubble" data-country="Myanmar"><i class="fa fa-plus"></i> Myanmar</span>
-                        <span class="country-bubble" data-country="Laos"><i class="fa fa-plus"></i> Laos</span>
-                        <span class="country-bubble" data-country="Kambodscha"><i class="fa fa-plus"></i> Kambodscha</span>
-                        <span class="country-bubble" data-country="Brunei"><i class="fa fa-plus"></i> Brunei</span>
-                    </div>
-                </div>
-
-                <!-- Countries for exclusion -->
-                <div class="country-section d-none" id="excludeCountries">
-                    <h3 class="mt-4 country-header">Ostasien</h3>
-                    <div class="country-list">
-                        <span class="country-bubble exclude" data-country="Ostasien"><i class="fa fa-minus"></i> Ostasien</span>
-                        <span class="country-bubble exclude" data-country="China"><i class="fa fa-minus"></i> China</span>
-                        <span class="country-bubble exclude" data-country="Japan"><i class="fa fa-minus"></i> Japan</span>
-                        <span class="country-bubble exclude" data-country="Südkorea"><i class="fa fa-minus"></i> Südkorea</span>
-                        <span class="country-bubble exclude" data-country="Nordkorea"><i class="fa fa-minus"></i> Nordkorea</span>
-                        <span class="country-bubble exclude" data-country="Mongolei"><i class="fa fa-minus"></i> Mongolei</span>
-                        <span class="country-bubble exclude" data-country="Taiwan"><i class="fa fa-minus"></i> Taiwan</span>
-                    </div>
-
-                    <h3 class="mt-4 country-header">Südasien</h3>
-                    <div class="country-list">
-                        <span class="country-bubble exclude" data-country="Südasien"><i class="fa fa-minus"></i> Südasien</span>
-                        <span class="country-bubble exclude" data-country="Indien"><i class="fa fa-minus"></i> Indien</span>
-                        <span class="country-bubble exclude" data-country="Pakistan"><i class="fa fa-minus"></i> Pakistan</span>
-                        <span class="country-bubble exclude" data-country="Bangladesch"><i class="fa fa-minus"></i> Bangladesch</span>
-                        <span class="country-bubble exclude" data-country="Nepal"><i class="fa fa-minus"></i> Nepal</span>
-                        <span class="country-bubble exclude" data-country="Sri Lanka"><i class="fa fa-minus"></i> Sri Lanka</span>
-                        <span class="country-bubble exclude" data-country="Bhutan"><i class="fa fa-minus"></i> Bhutan</span>
-                        <span class="country-bubble exclude" data-country="Malediven"><i class="fa fa-minus"></i> Malediven</span>
-                    </div>
-
-                    <h3 class="mt-4 country-header">Südostasien</h3>
-                    <div class="country-list">
-                        <span class="country-bubble exclude" data-country="Südostasien"><i class="fa fa-minus"></i> Südostasien</span>
-                        <span class="country-bubble exclude" data-country="Indonesien"><i class="fa fa-minus"></i> Indonesien</span>
-                        <span class="country-bubble exclude" data-country="Thailand"><i class="fa fa-minus"></i> Thailand</span>
-                        <span class="country-bubble exclude" data-country="Vietnam"><i class="fa fa-minus"></i> Vietnam</span>
-                        <span class="country-bubble exclude" data-country="Malaysia"><i class="fa fa-minus"></i> Malaysia</span>
-                        <span class="country-bubble exclude" data-country="Philippinen"><i class="fa fa-minus"></i> Philippinen</span>
-                        <span class="country-bubble exclude" data-country="Singapur"><i class="fa fa-minus"></i> Singapur</span>
-                        <span class="country-bubble exclude" data-country="Myanmar"><i class="fa fa-minus"></i> Myanmar</span>
-                        <span class="country-bubble exclude" data-country="Laos"><i class="fa fa-minus"></i> Laos</span>
-                        <span class="country-bubble exclude" data-country="Kambodscha"><i class="fa fa-minus"></i> Kambodscha</span>
-                        <span class="country-bubble exclude" data-country="Brunei"><i class="fa fa-minus"></i> Brunei</span>
-                    </div>
-                </div>            </div>
-        </div>
-        
-        <div class="continent-popup" id="europe-popup">
-
-            <div class="popup-content" id="popup-content">
-                <h2>Europe</h2>
-            
-                <!-- Toggle switch -->
-                <div class="d-flex justify-content-center mb-4">
-                    <div class="col">
-                        <div class="switch6">
-                            <label class="switch6-light">
-                                <input type="checkbox" id="toggleMode" class="switch">
-                                <span>
-                                    <span>Länder auswählen</span>
-                                    <span>Länder ausschließen</span>
-                                </span>
-                                <a class="btn btn-primary"></a>
-                            </label>
+                                
+                    <!-- Countries for selection -->
+                    <div class="country-section" id="selectCountries">
+                        <h3 class="mt-4 country-header">Ostasien</h3>
+                        <div class="country-list">
+                            <span class="country-bubble" data-country="Ostasien"><i class="fa fa-plus"></i> Ostasien</span>
+                            <span class="country-bubble" data-country="China"><i class="fa fa-plus"></i> China</span>
+                            <span class="country-bubble" data-country="Japan"><i class="fa fa-plus"></i> Japan</span>
+                            <span class="country-bubble" data-country="Südkorea"><i class="fa fa-plus"></i> Südkorea</span>
+                            <span class="country-bubble" data-country="Nordkorea"><i class="fa fa-plus"></i> Nordkorea</span>
+                            <span class="country-bubble" data-country="Mongolei"><i class="fa fa-plus"></i> Mongolei</span>
+                            <span class="country-bubble" data-country="Taiwan"><i class="fa fa-plus"></i> Taiwan</span>
+                        </div>
+    
+                        <h3 class="mt-4 country-header">Südasien</h3>
+                        <div class="country-list">
+                            <span class="country-bubble" data-country="Südasien"><i class="fa fa-plus"></i> Südasien</span>
+                            <span class="country-bubble" data-country="Indien"><i class="fa fa-plus"></i> Indien</span>
+                            <span class="country-bubble" data-country="Pakistan"><i class="fa fa-plus"></i> Pakistan</span>
+                            <span class="country-bubble" data-country="Bangladesch"><i class="fa fa-plus"></i> Bangladesch</span>
+                            <span class="country-bubble" data-country="Nepal"><i class="fa fa-plus"></i> Nepal</span>
+                            <span class="country-bubble" data-country="Sri Lanka"><i class="fa fa-plus"></i> Sri Lanka</span>
+                            <span class="country-bubble" data-country="Bhutan"><i class="fa fa-plus"></i> Bhutan</span>
+                            <span class="country-bubble" data-country="Malediven"><i class="fa fa-plus"></i> Malediven</span>
+                        </div>
+    
+                        <h3 class="mt-4 country-header">Südostasien</h3>
+                        <div class="country-list">
+                            <span class="country-bubble" data-country="Südostasien"><i class="fa fa-plus"></i> Südostasien</span>
+                            <span class="country-bubble" data-country="Indonesien"><i class="fa fa-plus"></i> Indonesien</span>
+                            <span class="country-bubble" data-country="Thailand"><i class="fa fa-plus"></i> Thailand</span>
+                            <span class="country-bubble" data-country="Vietnam"><i class="fa fa-plus"></i> Vietnam</span>
+                            <span class="country-bubble" data-country="Malaysia"><i class="fa fa-plus"></i> Malaysia</span>
+                            <span class="country-bubble" data-country="Philippinen"><i class="fa fa-plus"></i> Philippinen</span>
+                            <span class="country-bubble" data-country="Singapur"><i class="fa fa-plus"></i> Singapur</span>
+                            <span class="country-bubble" data-country="Myanmar"><i class="fa fa-plus"></i> Myanmar</span>
+                            <span class="country-bubble" data-country="Laos"><i class="fa fa-plus"></i> Laos</span>
+                            <span class="country-bubble" data-country="Kambodscha"><i class="fa fa-plus"></i> Kambodscha</span>
+                            <span class="country-bubble" data-country="Brunei"><i class="fa fa-plus"></i> Brunei</span>
                         </div>
                     </div>
+    
+                    <!-- Countries for exclusion -->
+                    <div class="country-section d-none" id="excludeCountries">
+                        <h3 class="mt-4 country-header">Ostasien</h3>
+                        <div class="country-list">
+                            <span class="country-bubble exclude" data-country="Ostasien"><i class="fa fa-minus"></i> Ostasien</span>
+                            <span class="country-bubble exclude" data-country="China"><i class="fa fa-minus"></i> China</span>
+                            <span class="country-bubble exclude" data-country="Japan"><i class="fa fa-minus"></i> Japan</span>
+                            <span class="country-bubble exclude" data-country="Südkorea"><i class="fa fa-minus"></i> Südkorea</span>
+                            <span class="country-bubble exclude" data-country="Nordkorea"><i class="fa fa-minus"></i> Nordkorea</span>
+                            <span class="country-bubble exclude" data-country="Mongolei"><i class="fa fa-minus"></i> Mongolei</span>
+                            <span class="country-bubble exclude" data-country="Taiwan"><i class="fa fa-minus"></i> Taiwan</span>
+                        </div>
+    
+                        <h3 class="mt-4 country-header">Südasien</h3>
+                        <div class="country-list">
+                            <span class="country-bubble exclude" data-country="Südasien"><i class="fa fa-minus"></i> Südasien</span>
+                            <span class="country-bubble exclude" data-country="Indien"><i class="fa fa-minus"></i> Indien</span>
+                            <span class="country-bubble exclude" data-country="Pakistan"><i class="fa fa-minus"></i> Pakistan</span>
+                            <span class="country-bubble exclude" data-country="Bangladesch"><i class="fa fa-minus"></i> Bangladesch</span>
+                            <span class="country-bubble exclude" data-country="Nepal"><i class="fa fa-minus"></i> Nepal</span>
+                            <span class="country-bubble exclude" data-country="Sri Lanka"><i class="fa fa-minus"></i> Sri Lanka</span>
+                            <span class="country-bubble exclude" data-country="Bhutan"><i class="fa fa-minus"></i> Bhutan</span>
+                            <span class="country-bubble exclude" data-country="Malediven"><i class="fa fa-minus"></i> Malediven</span>
+                        </div>
+    
+                        <h3 class="mt-4 country-header">Südostasien</h3>
+                        <div class="country-list">
+                            <span class="country-bubble exclude" data-country="Südostasien"><i class="fa fa-minus"></i> Südostasien</span>
+                            <span class="country-bubble exclude" data-country="Indonesien"><i class="fa fa-minus"></i> Indonesien</span>
+                            <span class="country-bubble exclude" data-country="Thailand"><i class="fa fa-minus"></i> Thailand</span>
+                            <span class="country-bubble exclude" data-country="Vietnam"><i class="fa fa-minus"></i> Vietnam</span>
+                            <span class="country-bubble exclude" data-country="Malaysia"><i class="fa fa-minus"></i> Malaysia</span>
+                            <span class="country-bubble exclude" data-country="Philippinen"><i class="fa fa-minus"></i> Philippinen</span>
+                            <span class="country-bubble exclude" data-country="Singapur"><i class="fa fa-minus"></i> Singapur</span>
+                            <span class="country-bubble exclude" data-country="Myanmar"><i class="fa fa-minus"></i> Myanmar</span>
+                            <span class="country-bubble exclude" data-country="Laos"><i class="fa fa-minus"></i> Laos</span>
+                            <span class="country-bubble exclude" data-country="Kambodscha"><i class="fa fa-minus"></i> Kambodscha</span>
+                            <span class="country-bubble exclude" data-country="Brunei"><i class="fa fa-minus"></i> Brunei</span>
+                        </div>
+                    </div>           
                 </div>
-            
-                <!-- Search bar -->
-                <div class="search-container">
-                    <input type="text" id="searchInput" placeholder="🔍 Suchen">
-                </div>
-            
-                <!-- Countries for selection -->
-                <div class="country-section" id="selectCountries">
-                    <h3 class="mt-4 country-header">Nordeuropa</h3>
-                    <div class="country-list">
-                        <span class="country-bubble" data-country="Nordeuropa"><i class="fa fa-plus"></i> Nordeuropa</span>
-                        <span class="country-bubble" data-country="Norwegen"><i class="fa fa-plus"></i> Norwegen</span>
-                        <span class="country-bubble" data-country="Schweden"><i class="fa fa-plus"></i> Schweden</span>
-                        <span class="country-bubble" data-country="Dänemark"><i class="fa fa-plus"></i> Dänemark</span>
-                        <span class="country-bubble" data-country="Finnland"><i class="fa fa-plus"></i> Finnland</span>
-                        <span class="country-bubble" data-country="Island"><i class="fa fa-plus"></i> Island</span>
-                    </div>
-
-                    <h3 class="mt-4 country-header">Mitteleuropa</h3>
-                    <div class="country-list">
-                        <span class="country-bubble" data-country="Mitteleuropa"><i class="fa fa-plus"></i> Mitteleuropa</span>
-                        <span class="country-bubble" data-country="Deutschland"><i class="fa fa-plus"></i> Deutschland</span>
-                        <span class="country-bubble" data-country="Österreich"><i class="fa fa-plus"></i> Österreich</span>
-                        <span class="country-bubble" data-country="Schweiz"><i class="fa fa-plus"></i> Schweiz</span>
-                        <span class="country-bubble" data-country="Polen"><i class="fa fa-plus"></i> Polen</span>
-                        <span class="country-bubble" data-country="Tschechien"><i class="fa fa-plus"></i> Tschechien</span>
-                        <span class="country-bubble" data-country="Slowakei"><i class="fa fa-plus"></i> Slowakei</span>
-                        <span class="country-bubble" data-country="Ungarn"><i class="fa fa-plus"></i> Ungarn</span>
-                        <span class="country-bubble" data-country="Weißrussland"><i class="fa fa-plus"></i> Weißrussland</span>
-                    </div>
-
-                    <h3 class="mt-4 country-header">Südeuropa</h3>
-                    <div class="country-list">
-                        <span class="country-bubble" data-country="Südeuropa"><i class="fa fa-plus"></i> Südeuropa</span>
-                        <span class="country-bubble" data-country="Spanien"><i class="fa fa-plus"></i> Spanien</span>
-                        <span class="country-bubble" data-country="Portugal"><i class="fa fa-plus"></i> Portugal</span>
-                        <span class="country-bubble" data-country="Italien"><i class="fa fa-plus"></i> Italien</span>
-                        <span class="country-bubble" data-country="Griechenland"><i class="fa fa-plus"></i> Griechenland</span>
-                        <span class="country-bubble" data-country="Malta"><i class="fa fa-plus"></i> Malta</span>
-                        <span class="country-bubble" data-country="Zypern"><i class="fa fa-plus"></i> Zypern</span>
-                    </div>
-                </div>
-
-                <!-- Countries for exclusion -->
-                <div class="country-section d-none" id="excludeCountries">
-                    <h3 class="mt-4 country-header">Nordeuropa</h3>
-                    <div class="country-list">
-                        <span class="country-bubble exclude" data-country="Nordeuropa"><i class="fa fa-minus"></i> Nordeuropa</span>
-                        <span class="country-bubble exclude" data-country="Norwegen"><i class="fa fa-minus"></i> Norwegen</span>
-                        <span class="country-bubble exclude" data-country="Schweden"><i class="fa fa-minus"></i> Schweden</span>
-                        <span class="country-bubble exclude" data-country="Dänemark"><i class="fa fa-minus"></i> Dänemark</span>
-                        <span class="country-bubble exclude" data-country="Finnland"><i class="fa fa-minus"></i> Finnland</span>
-                        <span class="country-bubble exclude" data-country="Island"><i class="fa fa-minus"></i> Island</span>
-                    </div>
-
-                    <h3 class="mt-4 country-header">Mitteleuropa</h3>
-                    <div class="country-list">
-                        <span class="country-bubble exclude" data-country="Mitteleuropa"><i class="fa fa-minus"></i> Mitteleuropa</span>
-                        <span class="country-bubble exclude" data-country="Deutschland"><i class="fa fa-minus"></i> Deutschland</span>
-                        <span class="country-bubble exclude" data-country="Österreich"><i class="fa fa-minus"></i> Österreich</span>
-                        <span class="country-bubble exclude" data-country="Schweiz"><i class="fa fa-minus"></i> Schweiz</span>
-                        <span class="country-bubble exclude" data-country="Polen"><i class="fa fa-minus"></i> Polen</span>
-                        <span class="country-bubble exclude" data-country="Tschechien"><i class="fa fa-minus"></i> Tschechien</span>
-                        <span class="country-bubble exclude" data-country="Slowakei"><i class="fa fa-minus"></i> Slowakei</span>
-                        <span class="country-bubble exclude" data-country="Ungarn"><i class="fa fa-minus"></i> Ungarn</span>
-                        <span class="country-bubble exclude" data-country="Weißrussland"><i class="fa fa-minus"></i> Weißrussland</span>
-                    </div>
-
-                    <h3 class="mt-4 country-header">Südeuropa</h3>
-                    <div class="country-list">
-                        <span class="country-bubble exclude" data-country="Südeuropa"><i class="fa fa-minus"></i> Südeuropa</span>
-                        <span class="country-bubble exclude" data-country="Spanien"><i class="fa fa-minus"></i> Spanien</span>
-                        <span class="country-bubble exclude" data-country="Portugal"><i class="fa fa-minus"></i> Portugal</span>
-                        <span class="country-bubble exclude" data-country="Italien"><i class="fa fa-minus"></i> Italien</span>
-                        <span class="country-bubble exclude" data-country="Griechenland"><i class="fa fa-minus"></i> Griechenland</span>
-                        <span class="country-bubble exclude" data-country="Malta"><i class="fa fa-minus"></i> Malta</span>
-                        <span class="country-bubble exclude" data-country="Zypern"><i class="fa fa-minus"></i> Zypern</span>
-                    </div>
-                </div>
-
-            
                 <div class="popup-footer">
-                    <button class="btn cancel">Abbrechen und zurück</button>
-                    <button class="btn confirm">Weiter</button>
+                    <button class="nav-button text-toggle save-btn float-lg-left cancel">Abbrechen und zurück</button>
+                    <button class="nav-button next-btn float-lg-right confirm">Weiter</button>
                 </div>
             </div>
-            
-        </div>
-        
 
-        <div class="continent-popup" id="oceania-popup">
-            <div class="popup-content">
-                <h2>oceania</h2>
-                <p>Choose countries to include or exclude.</p>
-            </div>
-        </div>
-        
-        <div class="continent-popup" id="antarctica-popup">
-            <div class="popup-content">
-                <h2>Antarktica</h2>
-                <p>Choose countries to include or exclude.</p>
-            </div>
-        </div>
+            <!-- Europe continent -->
+            <div class="continent-popup" id="europe-popup">
 
-            <!-- Continue Buttons (Initially Hidden) -->
-            <div class="button-container float">
-                <button class="nav-button text-toggle save-btn float-lg-left" onclick="window.location='study-image.html';">Speichern, später fortsetzen</button>
-                <button class="nav-button next-btn float-lg-right" onclick="window.location='participants-amount.html';">weiter</button>
+                <div class="popup-content" id="popup-content">
+                    <h2>Europe</h2>
+                
+                    <!-- Toggle switch -->
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="col">
+                            <div class="switch6">
+                                <label class="switch6-light">
+                                    <input type="checkbox" id="toggleMode" class="switch">
+                                    <span>
+                                        <span class="text-toggle">Länder auswählen</span>
+                                        <span class="text-toggle">Länder ausschließen</span>
+                                    </span>
+                                    <a class="btn btn-primary"></a>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Search bar -->
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="🔍 Suchen">
+                    </div>
+                
+                    <!-- Countries for selection -->
+                    <div class="country-section" id="selectCountries">
+                        <h3 class="mt-4 country-header">Nordeuropa</h3>
+                        <div class="country-list">
+                            <span class="country-bubble" data-country="Nordeuropa"><i class="fa fa-plus"></i> Nordeuropa</span>
+                            <span class="country-bubble" data-country="Norwegen"><i class="fa fa-plus"></i> Norwegen</span>
+                            <span class="country-bubble" data-country="Schweden"><i class="fa fa-plus"></i> Schweden</span>
+                            <span class="country-bubble" data-country="Dänemark"><i class="fa fa-plus"></i> Dänemark</span>
+                            <span class="country-bubble" data-country="Finnland"><i class="fa fa-plus"></i> Finnland</span>
+                            <span class="country-bubble" data-country="Island"><i class="fa fa-plus"></i> Island</span>
+                        </div>
+    
+                        <h3 class="mt-4 country-header">Mitteleuropa</h3>
+                        <div class="country-list">
+                            <span class="country-bubble" data-country="Mitteleuropa"><i class="fa fa-plus"></i> Mitteleuropa</span>
+                            <span class="country-bubble" data-country="Deutschland"><i class="fa fa-plus"></i> Deutschland</span>
+                            <span class="country-bubble" data-country="Österreich"><i class="fa fa-plus"></i> Österreich</span>
+                            <span class="country-bubble" data-country="Schweiz"><i class="fa fa-plus"></i> Schweiz</span>
+                            <span class="country-bubble" data-country="Polen"><i class="fa fa-plus"></i> Polen</span>
+                            <span class="country-bubble" data-country="Tschechien"><i class="fa fa-plus"></i> Tschechien</span>
+                            <span class="country-bubble" data-country="Slowakei"><i class="fa fa-plus"></i> Slowakei</span>
+                            <span class="country-bubble" data-country="Ungarn"><i class="fa fa-plus"></i> Ungarn</span>
+                            <span class="country-bubble" data-country="Weißrussland"><i class="fa fa-plus"></i> Weißrussland</span>
+                        </div>
+    
+                        <h3 class="mt-4 country-header">Südeuropa</h3>
+                        <div class="country-list">
+                            <span class="country-bubble" data-country="Südeuropa"><i class="fa fa-plus"></i> Südeuropa</span>
+                            <span class="country-bubble" data-country="Spanien"><i class="fa fa-plus"></i> Spanien</span>
+                            <span class="country-bubble" data-country="Portugal"><i class="fa fa-plus"></i> Portugal</span>
+                            <span class="country-bubble" data-country="Italien"><i class="fa fa-plus"></i> Italien</span>
+                            <span class="country-bubble" data-country="Griechenland"><i class="fa fa-plus"></i> Griechenland</span>
+                            <span class="country-bubble" data-country="Malta"><i class="fa fa-plus"></i> Malta</span>
+                            <span class="country-bubble" data-country="Zypern"><i class="fa fa-plus"></i> Zypern</span>
+                        </div>
+                    </div>
+    
+                    <!-- Countries for exclusion -->
+                    <div class="country-section d-none" id="excludeCountries">
+                        <h3 class="mt-4 country-header">Nordeuropa</h3>
+                        <div class="country-list">
+                            <span class="country-bubble exclude" data-country="Nordeuropa"><i class="fa fa-minus"></i> Nordeuropa</span>
+                            <span class="country-bubble exclude" data-country="Norwegen"><i class="fa fa-minus"></i> Norwegen</span>
+                            <span class="country-bubble exclude" data-country="Schweden"><i class="fa fa-minus"></i> Schweden</span>
+                            <span class="country-bubble exclude" data-country="Dänemark"><i class="fa fa-minus"></i> Dänemark</span>
+                            <span class="country-bubble exclude" data-country="Finnland"><i class="fa fa-minus"></i> Finnland</span>
+                            <span class="country-bubble exclude" data-country="Island"><i class="fa fa-minus"></i> Island</span>
+                        </div>
+    
+                        <h3 class="mt-4 country-header">Mitteleuropa</h3>
+                        <div class="country-list">
+                            <span class="country-bubble exclude" data-country="Mitteleuropa"><i class="fa fa-minus"></i> Mitteleuropa</span>
+                            <span class="country-bubble exclude" data-country="Deutschland"><i class="fa fa-minus"></i> Deutschland</span>
+                            <span class="country-bubble exclude" data-country="Österreich"><i class="fa fa-minus"></i> Österreich</span>
+                            <span class="country-bubble exclude" data-country="Schweiz"><i class="fa fa-minus"></i> Schweiz</span>
+                            <span class="country-bubble exclude" data-country="Polen"><i class="fa fa-minus"></i> Polen</span>
+                            <span class="country-bubble exclude" data-country="Tschechien"><i class="fa fa-minus"></i> Tschechien</span>
+                            <span class="country-bubble exclude" data-country="Slowakei"><i class="fa fa-minus"></i> Slowakei</span>
+                            <span class="country-bubble exclude" data-country="Ungarn"><i class="fa fa-minus"></i> Ungarn</span>
+                            <span class="country-bubble exclude" data-country="Weißrussland"><i class="fa fa-minus"></i> Weißrussland</span>
+                        </div>
+    
+                        <h3 class="mt-4 country-header">Südeuropa</h3>
+                        <div class="country-list">
+                            <span class="country-bubble exclude" data-country="Südeuropa"><i class="fa fa-minus"></i> Südeuropa</span>
+                            <span class="country-bubble exclude" data-country="Spanien"><i class="fa fa-minus"></i> Spanien</span>
+                            <span class="country-bubble exclude" data-country="Portugal"><i class="fa fa-minus"></i> Portugal</span>
+                            <span class="country-bubble exclude" data-country="Italien"><i class="fa fa-minus"></i> Italien</span>
+                            <span class="country-bubble exclude" data-country="Griechenland"><i class="fa fa-minus"></i> Griechenland</span>
+                            <span class="country-bubble exclude" data-country="Malta"><i class="fa fa-minus"></i> Malta</span>
+                            <span class="country-bubble exclude" data-country="Zypern"><i class="fa fa-minus"></i> Zypern</span>
+                        </div>
+                    </div>
+    
+                
+                    <div class="popup-footer">
+                        <button class="nav-button text-toggle save-btn float-lg-left cancel">Abbrechen und zurück</button>
+                        <button class="nav-button next-btn float-lg-right confirm">Weiter</button>
+                    </div>
+                </div>
+                
             </div>
-    </div>
 
-</main>
+            <!-- Ozeanien continent -->
+            <div class="continent-popup" id="oceania-popup">
+
+                <div class="popup-content">
+                    <h2>Ozeanien</h2>
+
+                    <!-- Toggle switch -->
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="col">
+                            <div class="switch6">
+                                <label class="switch6-light">
+                                    <input type="checkbox" id="toggleMode" class="switch">
+                                    <span>
+                                        <span class="text-toggle">Länder auswählen</span>
+                                        <span class="text-toggle">Länder ausschließen</span>
+                                    </span>
+                                    <a class="btn btn-primary"></a>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search bar -->
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="🔍 Suchen">
+                    </div>
+
+                    <!-- Countries for selection -->
+                    <div class="country-section" id="selectCountries">
+                        <h3 class="mt-4 country-header">Australien</h3>
+                        <div class="country-list">
+                            <span class="country-bubble" data-country="Australien"><i class="fa fa-plus"></i> Australien</span>
+                        </div>
+
+                        <h3 class="mt-4 country-header">Melanesien</h3>
+                        <div class="country-list">
+                            <span class="country-bubble" data-country="Melanesien"><i class="fa fa-plus"></i> Melanesien</span>
+                            <span class="country-bubble" data-country="Fidschi"><i class="fa fa-plus"></i> Fidschi</span>
+                            <span class="country-bubble" data-country="Papua-Neuguinea"><i class="fa fa-plus"></i> Papua-Neuguinea</span>
+                            <span class="country-bubble" data-country="Salomonen"><i class="fa fa-plus"></i> Salomonen</span>
+                            <span class="country-bubble" data-country="Vanuatu"><i class="fa fa-plus"></i> Vanuatu</span>
+                        </div>
+
+                        <h3 class="mt-4 country-header">Mikronesien</h3>
+                        <div class="country-list">
+                            <span class="country-bubble" data-country="Mikronesien"><i class="fa fa-plus"></i> Mikronesien</span>
+                            <span class="country-bubble" data-country="Kiribati"><i class="fa fa-plus"></i> Kiribati</span>
+                            <span class="country-bubble" data-country="Marshallinseln"><i class="fa fa-plus"></i> Marshallinseln</span>
+                            <span class="country-bubble" data-country="Nauru"><i class="fa fa-plus"></i> Nauru</span>
+                            <span class="country-bubble" data-country="Palau"><i class="fa fa-plus"></i> Palau</span>
+                            <span class="country-bubble" data-country="Mikronesien (Staat)"><i class="fa fa-plus"></i> Mikronesien (Staat)</span>
+                        </div>
+
+                        <h3 class="mt-4 country-header">Polynesien</h3>
+                        <div class="country-list">
+                            <span class="country-bubble" data-country="Polynesien"><i class="fa fa-plus"></i> Polynesien</span>
+                            <span class="country-bubble" data-country="Samoa"><i class="fa fa-plus"></i> Samoa</span>
+                            <span class="country-bubble" data-country="Tonga"><i class="fa fa-plus"></i> Tonga</span>
+                            <span class="country-bubble" data-country="Tuvalu"><i class="fa fa-plus"></i> Tuvalu</span>
+                        </div>
+                    </div>
+
+                    <!-- Countries for exclusion -->
+                    <div class="country-section d-none" id="excludeCountries">
+                        <h3 class="mt-4 country-header">Australien</h3>
+                        <div class="country-list">
+                            <span class="country-bubble exclude" data-country="Australien"><i class="fa fa-minus"></i> Australien</span>
+                        </div>
+
+                        <h3 class="mt-4 country-header">Melanesien</h3>
+                        <div class="country-list">
+                            <span class="country-bubble exclude" data-country="Melanesien"><i class="fa fa-minus"></i> Melanesien</span>
+                            <span class="country-bubble exclude" data-country="Fidschi"><i class="fa fa-minus"></i> Fidschi</span>
+                            <span class="country-bubble exclude" data-country="Papua-Neuguinea"><i class="fa fa-minus"></i> Papua-Neuguinea</span>
+                            <span class="country-bubble exclude" data-country="Salomonen"><i class="fa fa-minus"></i> Salomonen</span>
+                            <span class="country-bubble exclude" data-country="Vanuatu"><i class="fa fa-minus"></i> Vanuatu</span>
+                        </div>
+
+                        <h3 class="mt-4 country-header">Mikronesien</h3>
+                        <div class="country-list">
+                            <span class="country-bubble exclude" data-country="Mikronesien"><i class="fa fa-minus"></i> Mikronesien</span>
+                            <span class="country-bubble exclude" data-country="Kiribati"><i class="fa fa-minus"></i> Kiribati</span>
+                            <span class="country-bubble exclude" data-country="Marshallinseln"><i class="fa fa-minus"></i> Marshallinseln</span>
+                            <span class="country-bubble exclude" data-country="Nauru"><i class="fa fa-minus"></i> Nauru</span>
+                            <span class="country-bubble exclude" data-country="Palau"><i class="fa fa-minus"></i> Palau</span>
+                            <span class="country-bubble exclude" data-country="Mikronesien (Staat)"><i class="fa fa-minus"></i> Mikronesien (Staat)</span>
+                        </div>
+
+                        <h3 class="mt-4 country-header">Polynesien</h3>
+                        <div class="country-list">
+                            <span class="country-bubble exclude" data-country="Polynesien"><i class="fa fa-minus"></i> Polynesien</span>
+                            <span class="country-bubble exclude" data-country="Samoa"><i class="fa fa-minus"></i> Samoa</span>
+                            <span class="country-bubble exclude" data-country="Tonga"><i class="fa fa-minus"></i> Tonga</span>
+                            <span class="country-bubble exclude" data-country="Tuvalu"><i class="fa fa-minus"></i> Tuvalu</span>
+                        </div>
+                    </div>
+
+                    <div class="popup-footer">
+                        <button class="nav-button text-toggle save-btn float-lg-left cancel">Abbrechen und zurück</button>
+                        <button class="nav-button next-btn float-lg-right confirm">Weiter</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Antarctica continent -->
+            <div class="continent-popup" id="antarctica-popup">
+
+                <div class="popup-content">
+                    <h2>Antarktis</h2>
+
+                    <!-- Toggle switch -->
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="col">
+                            <div class="switch6">
+                                <label class="switch6-light">
+                                    <input type="checkbox" id="toggleMode" class="switch">
+                                    <span>
+                                        <span class="text-toggle">Länder auswählen</span>
+                                        <span class="text-toggle">Länder ausschließen</span>
+                                    </span>
+                                    <a class="btn btn-primary"></a>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search bar -->
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="🔍 Suchen">
+                    </div>
+
+                    <!-- Countries for selection -->
+                    <div class="country-section" id="selectCountries">
+                        <h3 class="mt-4 country-header">Antarktis</h3>
+                        <div class="country-list">
+                            <span class="country-bubble" data-country="Antarktis"><i class="fa fa-plus"></i> Antarktis</span>
+                        </div>
+                    </div>
+
+                    <!-- Countries for exclusion -->
+                    <div class="country-section d-none" id="excludeCountries">
+                        <h3 class="mt-4 country-header">Antarktis</h3>
+                        <div class="country-list">
+                            <span class="country-bubble exclude" data-country="Antarktis"><i class="fa fa-minus"></i> Antarktis</span>
+                        </div>
+                    </div>
+
+                    <div class="popup-footer">
+                        <button class="nav-button text-toggle save-btn float-lg-left cancel">Abbrechen und zurück</button>
+                        <button class="nav-button next-btn float-lg-right confirm">Weiter</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+                        <!-- Continue Buttons (Initially Hidden) -->
+                        <div class="button-container float">
+                            <button class="nav-button text-toggle save-btn float-lg-left" onclick="window.location='study-image.html';">Speichern, später fortsetzen</button>
+                            <button class="nav-button next-btn float-lg-right" onclick="window.location='participants-amount.html';">weiter</button>
+                        </div>
+
+        </div>
+    </main>
 
 <!-- Load jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 <!-- Custom JS -->
 <script src="js/main.js" defer></script>
-
 
 </body>
 </html>
