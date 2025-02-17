@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Page</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">  
+    <link rel="stylesheet" href="css/rest.css">  <!-- Linking your existing CSS -->
+    
+</head>
+<body class="dark-mode">
+
+    <!-- Header (Same as previous page, not changed) -->
+    <header id="header" class="header">
+        <div class="container-fluid py-3">
+            <div class="d-flex justify-content-between align-items-center">
+                
+                <!-- Title -->
+                <div class="col-lg-2">
+                    <h4 class="title"> <a href="index.html">Call for participants</a> </h4>
+                </div>
+
+                <!-- Progress Steps -->
+                <div class="col progress-steps d-flex justify-content-center flex-grow-1">
+                    <div class="col-lg-3 step">
+                        <div class="step-content">
+                            <div class="num active">1</div>
+                            <div class="step-text">
+                                Researcher
+                                <small>Subtitle</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 step">
+                        <div class="step-content">
+                            <div class="num active">2</div>
+                            <div class="step-text">
+                                Study
+                                <small>Details ...</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 step active">
+                        <div class="step-content">
+                            <div class="num active">3</div>
+                            <div class="step-text">
+                                Participants
+                                <small>Subtitle</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 step">
+                        <div class="step-content">
+                            <div class="num">4</div>
+                            <div class="step-text">
+                                Done, draft created
+                                <small>Study can be published</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Light/Dark Mode Toggle -->
+                <div class="switch-container mr-3">
+                    <label class="light-dark switch-text" for="themeToggle">Light</label>
+                    <div class="form-check form-switch ios-switch">
+                        <input class="form-check-input" type="checkbox" id="themeToggle" checked>
+                        <label class="form-check-label" for="themeToggle"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container main-body py-4">
+        <div class="row about-container">
+
+            <h2 class="about-title">Gibt es eine Einwendunsentschädigung?</h2>
+            <h2 class="about-title">Wenn Ja, whelche?</h2>
+
+            <!-- Selection Grid -->
+            <div class="selection-grid mt-3">
+                <label class="selection-box">
+                    <input type="radio" name="studyHow" class="studyOnline" value="online">
+                    <div class="box-detail">
+                        <div>
+                            <p class="box-detail-title">Gutschein</p>
+                            
+                            <p>Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur  </p>
+                        </div>
+                        <span class="checkmark">&#10004;</span>
+                    </div>
+                </label>
+
+                <label class="selection-box">
+                    <input type="radio" name="studyHow" class="studyPerson" value="person">
+                    <div class="box-detail">
+                        <div>
+                            <p class="box-detail-title">Geld</p>
+                            
+                            <p>Lorem ipsum dolor sit amet, consectetur </p>
+                        </div>
+                        <span class="checkmark">&#10004;</span>
+                    </div>
+                </label>
+
+                <label class="selection-box">
+                    <input type="radio" name="studyHow" class="studyOther" value="other">
+                    <div class="box-detail">
+                        <div>
+                            <p class="box-detail-title">Other</p>
+                            
+                            <p>Lorem ipsum dolor sit amet, consectetur </p>
+                        </div>
+                        <span class="checkmark">&#10004;</span>
+                    </div>
+                </label>
+            </div>
+
+            <!-- Hidden Section Gutschein Option (Initially Hidden) -->
+            <div class="hidden-section py-4">
+                <!--  Input -->
+                <div class="mb-5">
+                    <label for="link" class="form-label text-toggle">Bitte beschreibe deine Auswahl</label>
+                    <input type="link" class="form-control" id="link" placeholder="Input">
+                </div>
+
+                <!-- Info Box -->
+                <div class="info-box-payment p-3 mt-4 mb-5">
+                    <h5 class="text-primary">Tipps</h5>
+                    <p class="text-help">Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                        Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                        Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                        Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                        Lorem ipsum dolor sit amet, consectetur 
+                        , sed diam...</p>
+                </div>
+            </div>
+
+            <!-- Hidden Section Other Option (Initially Hidden) -->
+            <div class="hidden-section-person py-4">
+                <!-- TextBox -->
+                <div class="mb-2">
+                    <p class="text-toggle">Bitte bechreiben Etwas</p>
+                    <textarea class="textarea" name="" id="" cols="30" rows="5"></textarea>
+                </div>
+
+                <!-- Info Box -->
+                <div class="info-box-payment p-3 mt-4 mb-5">
+                    <h5 class="text-primary">Tipps</h5>
+                    <p class="text-help">Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                        Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                        Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                        Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                        Lorem ipsum dolor sit amet, consectetur 
+                        , sed diam...</p>
+                </div>
+            </div>
+
+            <!-- Hidden Section Other Option (Initially Hidden) -->
+            <div class="hidden-section-other py-4">
+                <!-- TextBox -->
+                <div class="mb-2">
+                    <p class="text-toggle">Bitte bechreiben Sie Ihre Auswahl</p>
+                    <textarea class="textarea" name="" id="" cols="30" rows="5"></textarea>
+                </div>
+
+                <!-- Info Box -->
+                <div class="info-box-payment p-3 mt-4 mb-5">
+                    <h5 class="text-primary">Tipps</h5>
+                    <p class="text-help">Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                        Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                        Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                        Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                        Lorem ipsum dolor sit amet, consectetur 
+                        , sed diam...</p>
+                </div>
+            </div>
+
+            <!-- Continue Buttons (Initially Hidden) -->
+            <div class="button-container float">
+                <button class="nav-btn text-toggle save-btn float-lg-left" onclick="window.location='research-extra.html';">Speichern, später fortsetzen</button>
+                <button class="nav-btn next-btn float-lg-right" onclick="window.location='preview-mode.html';">Super, fast geschaft, <br> weiter zur Vorschau</button>
+            </div>
+        </div>
+    </main>
+
+<!-- Load jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+<!-- Custom JS -->
+<script src="js/main.js" defer></script>
+
+
+</body>
+</html>

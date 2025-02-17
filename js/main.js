@@ -844,6 +844,30 @@
 	
 	
 	/*====================
+	  * Text-input Adding
+	======================*/
+	$(document).ready(function () {
+		// Add new text input when "+Default" is clicked
+		$("#add-default").on("click", function () {
+			const newInput = `
+				<div class="mb-2 input-with-remove">
+					<i class="fa fa-minus remove-input"></i>
+					<div class="input-container">
+						<input class="text-input" placeholder="Anforderung">
+					</div>
+				</div>
+			`;
+			$("#text-inputs-container").append(newInput);
+		});
+	
+		// Remove text input when "-" is clicked
+		$(document).on("click", ".remove-input", function () {
+			$(this).closest(".input-with-remove").remove();
+		});
+	});
+
+
+	/*====================
 	  * Initiate Pure Counter
 	======================*/
 	new PureCounter();

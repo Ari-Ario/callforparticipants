@@ -6,7 +6,9 @@
     <title>New Page</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">  
     <link rel="stylesheet" href="css/rest.css">  <!-- Linking your existing CSS -->
-    
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
 <body class="dark-mode">
 
@@ -31,7 +33,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 step active">
+                <div class="col-lg-3 step">
                     <div class="step-content">
                         <div class="num active">2</div>
                         <div class="step-text">
@@ -40,9 +42,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 step">
+                <div class="col-lg-3 step active">
                     <div class="step-content">
-                        <div class="num">3</div>
+                        <div class="num active">3</div>
                         <div class="step-text">
                             Participants
                             <small>Subtitle</small>
@@ -74,7 +76,7 @@
     <!-- Progress Bar -->
     <div class="progress-container">
         <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
     </div>
 </header>
@@ -83,41 +85,52 @@
 <main class="container main-body py-4">
     <div class="row about-container">
 
-        <h2 class="about-title">Wann soll die Studie stattfinden?</h2>
-        <p>Die Laufezeit Entspricht dem gewählten Lizenz-Packet.</p>
-        <p>Die Lizenz kann hier jederzeit ungewählt werden.</p>
+        <h2 class="about-title">Weitere Teilnehmermerkmale</h2>
 
         <!-- Date Section -->
-        <form action="" method="post" autocomplete="off" class=" py-4">
-            <!-- Date Inputs -->
-            <div class="row mb-4">
-                <div class="col-md-6">
-                  <div class="md-form md-outline input-with-post-icon timepicker" twelvehour="true">
-                      <label for="light-version-examples">Start datum wählen</label>
-                    <input type="date" id="light-version-examples" class="form-control" placeholder="Select time" required>
-                    <i class="fas fa-envelope input-prefix"></i>
-                  </div>
-                </div>
-              
-                <div class="col-md-6">
-                  <div class="md-form md-outline input-with-post-icon timepicker" darktheme="true">
-                    <div class="d-flex">
-                        <label for="dark-version-example">End datum wählen</label>
-                        <div class="num active i">i</div> 
-                    </div>
-                    <input type="date" id="dark-version-example" class="form-control" placeholder="Select time" required>
-                    <i class="fas fa-envelope  input-prefix"></i>
-                  </div>
-                </div>
-              </div>
-            
+        <!-- <form action="" method="post" autocomplete="off" class=" py-4"> -->
+
             <!-- Toggle Switch for Code -->
-            <div class="switch-container switch-code mb-5">
-                <div class="form-check form-switch ios-switch">
-                    <input class="form-check-input" type="checkbox" id="codeToggle">
-                    <label class="form-check-label" for="codeToggle"></label>
+            <div class="switch-text-container continent-section">
+                <div class="switch-container mb-2 justify-content-between">
+                    <label class="switch-label text-toggle" for="toggleGeoOne">Datenfreigabe verpflichten</label>
+                    <div class="form-check form-switch ios-switch">
+                        <input class="form-check-input" type="checkbox" id="toggleGeoOne">
+                        <label class="form-check-label" for="toggleGeoOne"></label>
+                    </div>
                 </div>
-                <label class="switch-text text-toggle" for="codeToggle">Später definieren</label>
+                <p class="text-help text-toggle">Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                    Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                    Lorem ipsum dolor sit amet, consectetur 
+                    , sed diam...</p>
+            </div>
+            <div class="switch-text-container continent-section">
+                <div class="switch-container mb-2 justify-content-between">
+                    <label class="switch-label text-toggle" for="toggleGeoTwo">Nur Teilnehmer mit Review</label>
+                    <div class="form-check form-switch ios-switch">
+                        <input class="form-check-input" type="checkbox" id="toggleGeoTwo">
+                        <label class="form-check-label" for="toggleGeoTwo"></label>
+                    </div>
+                </div>
+                <p class="text-help text-toggle">Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                    Lorem ipsum dolor sit amet, consectetur sadipscing elitr
+                    Lorem ipsum dolor sit amet, consectetur 
+                    , sed diam...</p>
+            </div>
+
+            <!-- Select with star Icon -->
+            <div class="py-4 w-100">
+                <!-- Select with star Icon -->
+                <div class="mb-2">
+                    <p class="text-toggle">Minimum Review</p>
+                    <div class="input-container d-flex mb-2">
+                        <i class="fa-regular fa-star"></i> 
+                        <select class="form-select form-select-inner me-2">
+                            <option>10</option>
+                            <option selected>20</option>
+                        </select>
+                    </div>
+                </div>
             </div>
 
             <!-- Info Box -->
@@ -132,11 +145,12 @@
             </div>
             <!-- Continue Buttons (Initially Hidden) -->
             <div class="button-container float">
-                <button class="nav-button text-toggle save-btn float-lg-left" onclick="window.location='study-image.html';">Speichern, später fortsetzen</button>
-                <button class="nav-button next-btn float-lg-right" onclick="window.location='participants-amount.html';">weiter</button>
+                <button class="nav-button text-toggle save-btn float-lg-left" onclick="window.location='participants-geofence.html';">Speichern, später fortsetzen</button>
+                <button class="nav-button next-btn float-lg-right" onclick="window.location='participants-who.html';">weiter</button>
             </div>
 
-    </form>
+        <!-- </form> -->
+    </div>
 </main>
 
 <!-- Load jQuery -->

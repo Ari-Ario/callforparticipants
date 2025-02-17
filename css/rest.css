@@ -141,7 +141,11 @@ body.light-mode .text-toggle {
     font-size: 16px;
     white-space: nowrap; /* Prevents breaking */
 }
-
+.switch-label {
+    font-size: 18px;
+    font-weight: bolder;
+    white-space: nowrap; 
+}
 
 
 
@@ -730,6 +734,49 @@ body.light-mode .search-container input {
     color: black;
 }
 /* --------------- End geofence styling ----------------------- */
+
+/* --------------- participants-who styling ----------------------- */
+.input-with-remove,
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-container .text-input {
+    flex: 1;
+    padding: 8px;
+    /* border: 1px solid #ccc; */
+    border-radius: 4px;
+}
+
+.remove-input {
+    cursor: pointer;
+    color: #A855F7;
+    font-weight: bolder;
+    margin-right: 10px;
+    padding: 10px;
+}
+.add-defaul { 
+    width: 100%;
+
+    }
+#add-default {
+    text-align: left;
+    cursor: pointer !important;
+    color: #A855F7;
+    font-weight: bold;
+}
+.add-defaul h4 {
+    display: inline-block;
+}
+
+#add-default:hover {
+    color: #A855F7;
+}
+/* --------------- END participants-who styling ----------------------- */
+
+
 
 /* Mobile Screen */
 @media only screen and (max-width: 500px) {
